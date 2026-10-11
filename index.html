@@ -11,7 +11,7 @@ body{position:relative;overflow-x:hidden;min-height:100vh}
 .w{position:relative;z-index:1;max-width:1100px;margin:auto;padding:16px}
 h1,h2,h3{font-family:"Playfair Display",Georgia,serif;margin:.2em 0}h1{font-size:28px}h2{font-size:20px}h3{font-size:16px;margin-top:18px}
 .card{background:var(--card);border:1px solid rgba(240,203,215,.82);border-radius:24px;padding:18px;box-shadow:0 20px 55px rgba(66,105,77,.10)}
-.hd{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;margin-bottom:12px}.hd label{min-width:220px}
+.hd{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;margin-bottom:12px}.hd label{min-width:220px}.hd>div:first-child{flex:1 1 300px;min-width:0}.hd h1,.hd #hello{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 label{display:block;font-weight:600;font-size:13px;margin:10px 0 4px}
 .in{width:100%;padding:10px 12px;border:1px solid var(--green);border-radius:14px;background:rgba(255,255,255,.88);color:var(--ink);font:inherit}.in:focus{outline:none;border-color:#e8b4c2;box-shadow:0 0 0 4px rgba(217,137,164,.15);background:#fff}.in::placeholder{color:#a9808b}
 button{font:inherit;cursor:pointer;color:inherit}
@@ -215,7 +215,7 @@ const PAL={"Personnel":["#f3dfe2","#7a3945"],"Études":["#e6e1ec","#5d4f73"],"Ro
 const pal=c=>{if(PAL[c])return PAL[c];let h=0;for(const x of c||"")h=(h*31+x.charCodeAt(0))>>>0;return CUS[h%4]},sty=c=>{const p=pal(c);return`background:${p[0]};color:${p[1]}`};
 const fill=(sel,first,arr,keep)=>{sel.innerHTML=`<option value="all">${first}</option>`+arr.map(a=>`<option>${esc(a)}</option>`).join("");sel.value=arr.includes(keep)?keep:"all"};
 
-function rHead(){$("#ttl").textContent=D.name?"Journal de "+D.name:"Mon Journal Quotidien";$("#hello").textContent=(D.name?"Bonjour "+D.name+" · ":"")+today.toLocaleDateString(LOC,{weekday:"long",day:"numeric",month:"long"})}
+function rHead(){$("#ttl").textContent=D.name?"Journal de "+D.name:"Mon Journal Quotidien";$("#ttl").title=$("#ttl").textContent;$("#hello").textContent=(D.name?"Bonjour "+D.name+" · ":"")+today.toLocaleDateString(LOC,{weekday:"long",day:"numeric",month:"long"})}
 const setDone=(t,x)=>{t.st=x?"done":"open";t.dn=x?iso(today):"";(t.items||[]).forEach(i=>i.d=x)};
 const items=(t,old=[])=>t.split("\n").map(x=>x.trim()).filter(Boolean).map(x=>({t:x,d:!!old.find(o=>o.t==x&&o.d)}));
 const folders=()=>[...new Set([...D.folders,...D.notes.map(n=>n.folder)])].filter(Boolean).sort();
