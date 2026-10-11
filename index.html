@@ -96,7 +96,7 @@ body{background:var(--page)}.card{background:var(--card);border-color:var(--bd)}
 <aside class="card"><h2>Nouvelle tâche</h2>
 <form id="f-task"><label>Titre<input id="t-title" class="in" required maxlength="120"></label>
 <label>Contenu<textarea id="t-body" class="in" rows="4" maxlength="2000" placeholder="Pain&#10;Lait&#10;Œufs"></textarea></label>
-<label>Catégorie<input id="t-cat" class="in" maxlength="50" list="dl-c" value="Personnel"></label>
+<label>Catégorie<select id="t-cat" class="in"></select></label>
 <label>Priorité<select id="t-prio" class="in"><option value="1">Urgent</option><option value="2" selected>Normal</option><option value="3">Plus tard</option></select></label>
 <label>Matière<select id="t-sub" class="in subsel"></select></label>
 <label>Échéance<input id="t-date" type="date" class="in"></label>
@@ -219,7 +219,7 @@ const items=(t,old=[])=>t.split("\n").map(x=>x.trim()).filter(Boolean).map(x=>({
 const folders=()=>[...new Set([...D.folders,...D.notes.map(n=>n.folder)])].filter(Boolean).sort();
 function chips(id,arr,dl,ed){$(id).innerHTML=arr.map(n=>`<span class="chip">${esc(n)}<button data-a="${ed}" data-id="${esc(n)}" aria-label="Modifier ${esc(n)}">✎</button><button data-a="${dl}" data-id="${esc(n)}" aria-label="Supprimer ${esc(n)}">×</button></span>`).join("")}
 function rTasks(){
- const C=cats();chips("#m-c",C,"dc","ec");
+ const C=cats();chips("#m-c",C,"dc","ec");{const tc=$("#t-cat"),cu=tc.value||"Personnel",ch=C.includes(cu)?cu:(C[0]||"");tc.innerHTML=C.map(x=>`<option value="${esc(x)}"${x==ch?" selected":""}>${esc(x)}</option>`).join("");tc.value=ch}
  $("#dl-c").innerHTML=C.map(x=>`<option value="${esc(x)}">`).join("");
  fill($("#fc"),"Toutes les catégories",C,$("#fc").value);
  const sh=D.tasks.filter(t=>($("#fc").value=="all"||t.cat==$("#fc").value)).sort((a,b)=>(a.st=="done")-(b.st=="done")||(a.p||2)-(b.p||2));
