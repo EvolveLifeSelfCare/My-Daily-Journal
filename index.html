@@ -13,7 +13,7 @@ h1,h2,h3{font-family:"Playfair Display",Georgia,serif;margin:.2em 0}h1{font-size
 .card{background:var(--card);border:1px solid rgba(240,203,215,.82);border-radius:24px;padding:18px;box-shadow:0 20px 55px rgba(66,105,77,.10)}
 .hd{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;margin-bottom:12px}.hd label{min-width:220px}.hd>div:first-child{flex:1 1 300px;min-width:0}.hd h1,.hd #hello{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}@media(max-width:1000px){.hd h1{font-size:26px!important}}
 label{display:block;font-weight:600;font-size:13px;margin:10px 0 4px}
-.stg{max-width:560px}.stg select{display:block;margin-top:4px}.stg .thg select{margin-top:0}.stg label{display:block;margin:14px 0 0}.stg label.chk{display:flex;gap:8px;align-items:center;font-weight:600}.stg .thg{display:flex;flex-wrap:wrap;gap:8px;align-items:center;text-transform:none}
+.stg select{display:block;margin-top:4px}.stg .thg select{margin-top:0}#v-settings .g{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));align-items:start}.stg label{display:block;margin:14px 0 0}.stg label.chk{display:flex;gap:8px;align-items:center;font-weight:600}.stg .thg{display:flex;flex-wrap:wrap;gap:8px;align-items:center;text-transform:none}
 select option,select optgroup{background:#fffdf8!important;color:#2b1f1f!important}
 .in{width:100%;padding:10px 12px;border:1px solid var(--green);border-radius:14px;background:rgba(255,255,255,.88);color:var(--ink);font:inherit}.in:focus{outline:none;border-color:#e8b4c2;box-shadow:0 0 0 4px rgba(217,137,164,.15);background:#fff}.in::placeholder{color:#a9808b}
 button{font:inherit;cursor:pointer;color:inherit}
@@ -171,13 +171,7 @@ body{background:var(--page)}.card{background:var(--card);border-color:var(--bd)}
 <div id="n-b" class="ed" contenteditable="true" role="textbox" aria-label="Contenu"></div>
 <button class="btn" id="n-sv">Enregistrer la note</button> <button type="button" class="soft" id="n-cx" hidden style="margin-top:8px">Annuler</button></form></aside>
 <section class="card"><h2>Mes notes</h2><div id="nl" style="display:grid;gap:12px;margin-top:12px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))"></div></section></div></section>
-<section id="v-settings" class="v"><div class="card stg"><h2>Paramètres</h2><p style="font-size:13px;color:var(--soft)">Tes réglages sont enregistrés sur cet appareil.</p>
-<label>Ton prénom<input id="name" class="in" maxlength="40"></label>
-<label>Langue<select id="lg" class="in" style="max-width:320px"><option value="fr">Français</option><option value="en">English</option><option value="es">Español</option><option value="de">Deutsch</option></select></label>
-<label>Thème du journal<span class="thg" style="margin-top:4px"><select id="app-th" class="in" style="width:auto;max-width:240px"><option value="vintage">Vintage</option><option value="sage">Sauge et crème</option><option value="lavande">Lavande et rose poudré</option><option value="ciel">Bleu ciel et beige</option><option value="nuit">Nuit</option></select><button type="button" class="soft" id="cus-b" aria-controls="cusp">Personnaliser</button></span></label>
-<label class="chk"><input type="checkbox" id="askc"> Confirmer avant suppression</label>
-<label>Sauvegarde<span style="display:block;margin-top:4px"><button type="button" class="soft" id="bk">💾 Sauvegarde et restauration</button></span></label>
-</div></section>
+<section id="v-settings" class="v"><div class="g"><section class="card stg"><h2>Moi</h2><p style="font-size:13px;color:var(--soft)">Tes réglages sont enregistrés sur cet appareil.</p><label>Ton prénom<input id="name" class="in" maxlength="40"></label><label>Langue<select id="lg" class="in" style="max-width:320px"><option value="fr">Français</option><option value="en">English</option><option value="es">Español</option><option value="de">Deutsch</option></select></label></section><section class="card stg"><h2>Apparence</h2><label>Thème du journal<span class="thg" style="margin-top:4px"><select id="app-th" class="in" style="width:auto;max-width:240px"><option value="vintage">Vintage</option><option value="sage">Sauge et crème</option><option value="lavande">Lavande et rose poudré</option><option value="ciel">Bleu ciel et beige</option><option value="nuit">Nuit</option></select><button type="button" class="soft" id="cus-b" aria-controls="cusp">Personnaliser</button></span></label></section><section class="card stg"><h2>Données</h2><label class="chk"><input type="checkbox" id="askc"> Confirmer avant suppression</label><label>Sauvegarde<span style="display:block;margin-top:4px"><button type="button" class="soft" id="bk">💾 Sauvegarde et restauration</button></span></label></section></div></section>
 <section id="v-tips" class="v"><div class="g">
 <aside class="card"><h2>Ajouter une astuce</h2><p style="font-size:13px;color:var(--soft)">Tes astuces sont enregistrées sur cet appareil : toi seule peux les voir.</p><div id="tp-form"></div><datalist id="dl-t"></datalist><p style="margin-top:14px"><button id="tp-x" class="soft sm" type="button">Exporter mes astuces</button></p></aside>
 <section class="card"><h2>Techniques et astuces</h2><input id="tp-q" class="in" type="search" placeholder="Rechercher une astuce…" aria-label="Rechercher"><div id="tp-f" class="chips"></div><div id="tp-l"></div></section>
@@ -900,6 +894,9 @@ Choisis la langue du planner.|Choose the planner's language.|Elige el idioma del
 Change les couleurs de tout le planner.|Changes the colours of the whole planner.|Cambia los colores de todo el planner.|Ändert die Farben des ganzen Planers.
 Demande une confirmation avant chaque suppression.|Asks for confirmation before each deletion.|Pide confirmación antes de cada eliminación.|Fragt vor jedem Löschen nach.
 Paramètres|Settings|Ajustes|Einstellungen
+Moi|Me|Yo|Ich
+Apparence|Appearance|Apariencia|Darstellung
+Données|Data|Datos|Daten
 Tes réglages sont enregistrés sur cet appareil.|Your settings are saved on this device.|Tus ajustes se guardan en este dispositivo.|Deine Einstellungen werden auf diesem Gerät gespeichert.
 💾 Sauvegarde et restauration|💾 Backup and restore|💾 Copia y restauración|💾 Sicherung und Wiederherstellung
 Sauvegarder ou restaurer tes données.|Back up or restore your data.|Guardar o restaurar tus datos.|Daten sichern oder wiederherstellen.
