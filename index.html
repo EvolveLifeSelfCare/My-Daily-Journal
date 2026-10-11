@@ -86,7 +86,7 @@ body{background:var(--page)}.card{background:var(--card);border-color:var(--bd)}
 </nav>
 
 <section id="v-today" class="v on"><div class="g e">
-<section class="card"><h2>Aujourd'hui</h2><div id="td-ev"></div><h3>Tâches du jour et en retard</h3><div id="td-t"></div><h3>Habitudes</h3><div id="td-h"></div></section>
+<section class="card"><h2>Aujourd'hui</h2><div id="td-ev"></div><h3>Tâches du jour</h3><div id="td-t"></div><h3 id="td-lh" style="color:var(--wine)" hidden>En retard</h3><div id="td-l" hidden></div><h3>Habitudes</h3><div id="td-h"></div></section>
 <div><div class="card"><h2>Compte à rebours</h2><div id="td-ex" class="chips"></div><form id="f-ex" class="row" style="margin-top:10px"><input id="ex-t" class="in" required maxlength="60" placeholder="Ex. Partiel de droit"><input id="ex-d" type="date" class="in" required><select id="ex-sub" class="in subsel" aria-label="Matière"></select><button class="btn">Ajouter</button></form></div>
 <div class="card" style="margin-top:16px"><h2>Statistiques de la semaine</h2><div id="td-s"></div><label>Objectif de révision (min/semaine)<input id="gw" type="number" min="0" class="in"></label></div>
 <div class="card" style="margin-top:16px"><h2>Recherche</h2><input id="sr" class="in" placeholder="Tâche, note, flashcard, événement…"><div id="sr-r"></div></div></div>
@@ -487,7 +487,8 @@ $("#bk").onclick=()=>{info(`<h3>Sauvegarde</h3><p style="font-size:13px">Copie c
 function rToday(){const k=iso(today),w=wkS(),T0=new Date(today.getFullYear(),today.getMonth(),today.getDate()),ws=o=>Array.from({length:7},(_,i)=>o[iso(new Date(w.getFullYear(),w.getMonth(),w.getDate()+i))]||0).reduce((a,b)=>a+b,0);
  $("#td-ev").innerHTML=evOn(k).map(e=>`<div class="ev" style="${evSty(e)};font-size:14px;padding:8px">${e.time||"Journée"} · ${esc(e.title)}</div>`).join("")||`<div class="empty">Aucun événement aujourd'hui.</div>`;
  const tt=D.tasks.filter(t=>t.st!="done"&&((t.due&&t.due<=k)||t.p==1)).sort((a,b)=>(a.due||"9").localeCompare(b.due||"9"));
- $("#td-t").innerHTML=tt.map(t=>`<label class="ck"><input type="checkbox" data-c="tdone" data-id="${t.id}"><span><span translate="no">${esc(t.title)}</span> ${t.due&&t.due<k?`<small style="color:var(--wine)">(en retard)</small>`:""}</span></label>`).join("")||`<div class="empty">Rien d'urgent.</div>`;
+ const trow=t=>`<label class="ck"><input type="checkbox" data-c="tdone" data-id="${t.id}"><span><span translate="no">${esc(t.title)}</span> ${t.due&&t.due<k?`<small style="color:var(--wine)">${dLab(t.due)}</small>`:""}</span></label>`,lateT=tt.filter(t=>t.due&&t.due<k),dayT=tt.filter(t=>!(t.due&&t.due<k));
+ $("#td-t").innerHTML=dayT.map(trow).join("")||`<div class="empty">Rien d'urgent.</div>`;$("#td-lh").hidden=$("#td-l").hidden=!lateT.length;$("#td-l").innerHTML=lateT.map(trow).join("");
  $("#td-h").innerHTML=D.habits.map(h=>`<label class="ck"><input type="checkbox" data-c="hab" data-id="${h.id}" ${h.log.includes(k)?"checked":""}><span>${esc(h.name)} 🔥 ${streak(h)}</span></label>`).join("")||`<div class="empty">Aucune habitude.</div>`;
  $("#td-ex").innerHTML=D.exams.filter(e=>e.date>=k).sort((a,b)=>a.date.localeCompare(b.date)).map(e=>{const d=Math.round((new Date(e.date+"T00:00")-T0)/864e5);return`<div class="card" style="padding:10px;min-width:120px;text-align:center"><div style="font-size:26px;font-weight:700;color:var(--wine)">${d?"J-"+d:"Aujourd'hui"}</div><span translate="no">${esc(e.title)}</span><div><button class="ic" data-a="eex" data-id="${e.id}" aria-label="Modifier">✎</button><button class="ic" data-a="dex" data-id="${e.id}" aria-label="Supprimer">🗑</button></div></div>`}).join("")||`<div class="empty">Aucun examen à venir.</div>`;
  $("#td-s").innerHTML=[["Tâches terminées cette semaine",D.tasks.filter(t=>t.dn&&t.dn>=iso(w)).length],["Tâches en retard",tt.filter(t=>t.due&&t.due<k).length],["Habitudes validées aujourd'hui",D.habits.filter(h=>h.log.includes(k)).length+"/"+D.habits.length],["Révision (minuteur) cette semaine",ws(D.rev)+" min"],["Flashcards sues cette semaine",ws(D.fcs)],["Objectif hebdomadaire",D.goalW?ws(D.rev)+" / "+D.goalW+" min":"–"]].map(x=>`<div class="row" style="padding:6px 0;border-top:1px solid var(--line)"><span>${x[0]}</span><b>${x[1]}</b></div>`).join("")}
@@ -536,6 +537,8 @@ Plus tard|Later|Más tarde|Später
 Échéance|Due date|Fecha límite|Fälligkeit
 Ajouter la tâche|Add task|Añadir tarea|Aufgabe hinzufügen
 Mes listes|My lists|Mis listas|Meine Listen
+Tâches du jour|Tasks for today|Tareas de hoy|Aufgaben für heute
+En retard|Overdue|Atrasadas|Überfällig
 Cases à cocher|Checkboxes|Casillas para marcar|Kontrollkästchen
 + Ajouter une case|+ Add a box|+ Añadir una casilla|+ Kästchen hinzufügen
 Ex. Pain|E.g. Bread|Ej. Pan|z. B. Brot
