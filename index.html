@@ -373,7 +373,7 @@ document.addEventListener("click",async e=>{const b=e.target.closest("[data-a]")
  if(a=="rq"){qi=Math.floor(Math.random()*1e6);return rQuote()}
  if(a=="tst"){const t=f("tasks"),n=NEXT[t.st];if(n=="done"||t.st=="done")setDone(t,n=="done");else t.st=n;return upd()}
  if(a=="dtask")return del("Supprimer cette tâche ?",()=>D.tasks=D.tasks.filter(t=>t.id!=id));
- if(a=="etask"){const t=f("tasks"),r=await edit("Modifier la tâche",[["title","Titre"],["cat","Catégorie"],["due","Échéance","date"],["p","Priorité","s",PRIO],["sub","Matière","s",SUBO],["body","Contenu","a"]],{...t,p:String(t.p||2),body:(t.items||[]).map(i=>i.t).join("\n")});if(r){Object.assign(t,{title:r.title.trim()||t.title,cat:r.cat.trim(),due:r.due,p:r.p,sub:r.sub,items:items(r.body,t.items)});upd()}return}
+ if(a=="etask"){const t=f("tasks"),r=await edit("Modifier la tâche",[["title","Titre"],["cat","Catégorie","s",()=>({"":"—",...Object.fromEntries(cats().map(x=>[esc(x),esc(x)]))})],["due","Échéance","date"],["p","Priorité","s",PRIO],["sub","Matière","s",SUBO],["body","Contenu","a"]],{...t,p:String(t.p||2),body:(t.items||[]).map(i=>i.t).join("\n")});if(r){Object.assign(t,{title:r.title.trim()||t.title,cat:r.cat.trim(),due:r.due,p:r.p,sub:r.sub,items:items(r.body,t.items)});upd()}return}
    if(a=="dc")return del(`Supprimer la catégorie « ${id} » ?`,()=>{D.cats=D.cats.filter(x=>x!=id);D.tasks.forEach(t=>{if(t.cat==id)t.cat=""})});
  if(a=="ec")return ren(id,n=>{D.cats=D.cats.map(x=>x==id?n:x);D.tasks.forEach(t=>{if(t.cat==id)t.cat=n})});
  if((a=="dev"||a=="eev")&&/^tt/.test(id))return;
