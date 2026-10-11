@@ -1,0 +1,1067 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mon Journal Quotidien</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Playfair+Display:wght@600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Lora:wght@400;600&family=Caveat:wght@500&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--ink:#3b2f29;--soft:#80705f;--rose:#d8b4ae;--btn:#722f3d;--dg:#722f3d;--wine:#722f3d;--gold:#a8884a;--pale:#f7eeeb;--line:#ece3d3;--green:#e6dcc8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px "DM Sans",system-ui,sans-serif}
+body{position:relative;overflow-x:hidden;min-height:100vh}
+.w{position:relative;z-index:1;max-width:1100px;margin:auto;padding:16px}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;margin:.2em 0}h1{font-size:28px}h2{font-size:20px}h3{font-size:16px;margin-top:18px}
+.card{background:var(--card);border:1px solid rgba(240,203,215,.82);border-radius:24px;padding:18px;box-shadow:0 20px 55px rgba(66,105,77,.10)}
+.hd{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;margin-bottom:12px}.hd label{min-width:220px}
+label{display:block;font-weight:600;font-size:13px;margin:10px 0 4px}
+.in{width:100%;padding:10px 12px;border:1px solid var(--green);border-radius:14px;background:rgba(255,255,255,.88);color:var(--ink);font:inherit}.in:focus{outline:none;border-color:#e8b4c2;box-shadow:0 0 0 4px rgba(217,137,164,.15);background:#fff}.in::placeholder{color:#a9808b}
+button{font:inherit;cursor:pointer;color:inherit}
+.btn,.soft{border:0;border-radius:12px;padding:10px 14px;font-weight:600;background:var(--btn);color:#fff}
+.soft{background:var(--pale);color:#934e68}.soft:hover{background:#f3cad7}.sm{padding:6px 10px;font-size:12px}form>.btn{width:100%;margin-top:14px}
+.ic{background:none;border:0;padding:4px 8px;opacity:.7}
+nav{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;background:#f6faf4;border:1px solid #f1d9e1;border-radius:16px;padding:8px}
+nav button{border:0;border-radius:12px;padding:10px 14px;font-weight:600;background:none;color:var(--soft)}
+nav button.on,.mb.on{background:var(--rose);color:#fff}
+.v{display:none}.v.on{display:block}
+.g{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:850px){.g{grid-template-columns:.8fr 1.2fr}.g.c{grid-template-columns:1.3fr .7fr}.g.e{grid-template-columns:1fr 1fr}}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:space-between}.row .in{width:auto;flex:1;min-width:120px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.chip{display:inline-flex;gap:4px;align-items:center;border-radius:99px;padding:3px 10px;font-size:12px;font-weight:600;background:var(--pale);color:#934e68}.chip button{border:0;background:none;padding:0 2px;font-weight:700}
+.bar{height:8px;border-radius:9px;background:var(--green);overflow:hidden;margin:6px 0 10px}.bar i{display:block;height:100%;width:0;background:#d989a4}
+.ti{display:flex;gap:10px;align-items:center;padding:12px 0;border-top:1px solid var(--line)}.ti>div{flex:1;min-width:0}.ti p{margin:0;font-weight:600}
+.ti.done .tn{opacity:.5;text-decoration:line-through}.ti.progress .tn{color:#b9607e}
+.cw{overflow-x:auto}.mg{display:grid;grid-template-columns:repeat(7,minmax(44px,1fr))}
+.hdc{text-align:center;font-size:12px;font-weight:700;color:var(--soft);padding:6px 0}
+.day{min-height:78px;padding:4px;border:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:none;text-align:left;vertical-align:top}
+.day.out{opacity:.4}.day b{display:inline-flex;width:24px;height:24px;border-radius:99px;align-items:center;justify-content:center;font-size:12px}.day.td b{background:var(--rose);color:#fff}
+.ev{display:block;font-size:10px;padding:2px 4px;border-radius:6px;margin-top:3px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.yr{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;padding:8px}.yr button{padding:14px;border:1px solid #f1d8e1;border-radius:12px;background:#f8fbf6;text-align:left;font-weight:600;text-transform:capitalize}.yr small{display:block;font-weight:400;color:var(--soft)}
+.dv{padding:8px}.dv .ev{font-size:14px;padding:8px;display:flex;justify-content:space-between;gap:8px;white-space:normal}
+.big{font-size:56px;font-weight:700;font-variant-numeric:tabular-nums;margin:14px 0}.ctr{text-align:center}
+#calm,#fs{background:var(--tbg);color:var(--tfg)}#calm{border-radius:24px;padding:12px;min-height:60vh}#calm .card{background:var(--tcard);color:var(--tcfg);border-color:transparent}
+#fs{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}#fs[hidden],#md[hidden]{display:none}#fs .t{font-size:min(22vw,32vh);font-weight:700;font-variant-numeric:tabular-nums;line-height:1}#fs .ctl{position:absolute;bottom:20px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;padding:0 12px}#fs .in{width:auto}
+#md{position:fixed;inset:0;z-index:100;background:rgba(40,60,45,.45);display:flex;align-items:center;justify-content:center;padding:16px}#md .card{width:min(440px,100%);max-height:90vh;overflow:auto}
+.ck{display:flex;gap:8px;align-items:center;font-weight:400;font-size:14px;margin:3px 0}.ck.d span{text-decoration:line-through;opacity:.5}
+.wk{display:flex;gap:8px;margin-top:6px}.wk div{text-align:center;font-size:11px;color:var(--soft);min-width:22px}.wk span{display:block;font-size:18px;filter:grayscale(1);opacity:.35}.wk .on span{filter:none;opacity:1}
+.q{font:600 24px/1.5 "Playfair Display",Georgia,serif;margin:16px 0}
+.qi{background:var(--pale);border-radius:12px;padding:10px;margin-top:8px;display:flex;gap:8px;font-style:italic}.qi span{flex:1}
+.hb{display:flex;gap:12px;align-items:center;padding:12px 0;border-top:1px solid var(--line)}.hb>div{flex:1}
+.dots{display:flex;gap:4px;margin-top:6px}.dots i{width:12px;height:12px;border-radius:99px;background:var(--line)}.dots i.f{background:var(--rose)}
+.nt{border:1px solid var(--line);border-radius:16px;padding:12px;background:var(--bg)}.nt p{white-space:pre-wrap;margin:8px 0 0}
+.empty{text-align:center;color:var(--soft);padding:24px}
+input[type=checkbox]{width:18px;height:18px;accent-color:var(--rose)}
+a.btn{text-decoration:none;display:inline-block}.sub{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}.sb.on{background:var(--rose);color:#fff}.sp{display:none}.sp.on{display:block}
+.sw{width:34px;height:34px;border-radius:99px;border:2px solid rgba(0,0,0,.2);padding:0}#sw-c{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}#sw-c[hidden]{display:none}
+.pl{display:grid;grid-template-columns:44px repeat(7,minmax(70px,1fr));min-width:560px}.hc{font-size:11px;color:var(--soft);padding:4px;border-top:1px solid var(--line)}.pc{border-top:1px solid var(--line);border-left:1px solid var(--line);min-height:34px;padding:2px}.hdc.td{color:var(--rose)}
+#ff{position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;align-items:center;justify-content:center}#ff[hidden]{display:none}#ff .card{min-height:50vh;font-size:min(6vw,34px)!important}.wk div{min-width:30px!important}
+.fg{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:12px}.fc{position:relative;border-radius:16px;padding:14px;min-height:110px;cursor:pointer;display:flex;flex-direction:column;justify-content:flex-end;gap:2px;border:2px solid transparent;box-shadow:0 6px 16px rgba(66,105,77,.12)}.fc.on{border-color:var(--rose)}.fc .em{font-size:30px}.fc small{opacity:.8}.fc .fa{position:absolute;top:6px;right:6px}.fc .ic{color:inherit}
+.ed{min-height:200px;padding:8px 12px;border:1px solid var(--green);border-radius:14px;line-height:28px;color:#2f3b33;outline:none}.ed:focus{border-color:#e8b4c2;box-shadow:0 0 0 4px rgba(217,137,164,.15)}.tb{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}.hl{width:28px;height:28px;border:2px solid rgba(0,0,0,.15);border-radius:8px;padding:0}.nb{min-height:56px}#n-sw{display:flex;gap:8px;flex-wrap:wrap}
+.fq{transition:opacity 1.2s ease;opacity:0;font:italic 600 min(3.4vw,28px)/1.5 "Playfair Display",Georgia,serif;text-align:center;max-width:min(800px,88vw);min-height:3em;margin-left:auto;margin-right:auto}.fq.on{opacity:1}
+.card{border-color:rgba(246,222,230,.9)}.soft{color:#2f5a42}.soft:hover{background:#f9dce5}.chip,.chip button{color:#2f5a42}nav{background:#e9f3ea;border-color:#cfe4d3}nav button.on,.mb.on,.sb.on{background:var(--dg);color:#fff}.bar i{background:#4a7c5f}.in::placeholder{color:#7d9a88}.ti.progress .tn{color:#3f6b52}.hdc.td{color:var(--dg)}.day.td b{background:var(--dg)}.dots i.f{background:var(--dg)}input[type=checkbox]{accent-color:var(--dg)}.fc.on{border-color:var(--dg)}
+.card{border-color:rgba(240,190,208,.9)}.hd{background:linear-gradient(135deg,#fcdbe6,#fff3f7)}nav{background:#fcdbe6;border-color:#f4c1d1}.in{border-color:#f0c4d3}.bar{background:#fbe0e9}.yr button{background:#fff0f5;border-color:#f4c9d6}.soft,.chip{background:#fbd9e4}
+body{background:#fff}.card{border-color:#f8e3ea}.hd{background:linear-gradient(135deg,#fdf0f4,#fff)}nav{background:#fdf0f4;border-color:#f8e1e8}.in{border-color:#f6dce4}.bar{background:#fdf0f4}.yr button{background:#fff;border-color:#f8e1e8}.soft,.chip{background:#fdeef3}.soft:hover{background:#fbe3ea}
+body{font-family:"Lora",Georgia,serif}h1,h2,h3{font-family:"Cormorant Garamond","Playfair Display",Georgia,serif;font-weight:700;letter-spacing:.01em}h1{font-size:38px}h2{font-size:27px}h3{font-size:21px}.card{border-radius:14px;box-shadow:0 2px 14px rgba(31,59,45,.06)}.in,.btn,.soft,nav button{border-radius:8px}nav,.fc,.ed{border-radius:10px}.chip{border-radius:6px;letter-spacing:.03em}.nt{border-radius:4px}.hd{background:#fff;border-bottom:2px solid #e6cbd5}.hd small{letter-spacing:.22em;text-transform:uppercase;font-size:11px}label{font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft)}.q,.fq{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:600}.q{font-size:32px}.big,#fs .t{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600}.big{font-size:66px}
+.card{background:var(--card);border-color:#e9dad4}.hd{background:var(--card);border-bottom:3px double var(--gold)}nav{background:#f5e9ea;border-color:#e6d3d2}.in{border-color:#dccdc6;background:#fff}.in:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,149,90,.2)}.in::placeholder{color:#a39a8e}.soft,.chip{background:#f5e9ea;color:#4a3a3d}.soft:hover{background:#efdadc}.bar{background:#efe3e0}.bar i{background:var(--gold)}.day.td b{background:var(--wine)}.hdc.td{color:var(--wine)}.yr button{background:#fffdf9;border-color:#e6d3d2}.btn:hover{background:#2a4234}.btn{letter-spacing:.03em}
+body{background:#f5eee0 radial-gradient(circle at 15% 8%,rgba(168,136,74,.13),transparent 45%),radial-gradient(circle at 88% 92%,rgba(114,47,61,.08),transparent 50%)}h1{color:var(--wine)}.card{background:var(--card);border-color:#dccdb4;box-shadow:0 2px 12px rgba(59,47,41,.08)}nav{background:#efe4d0;border-color:#dccdb4}.in{background:#fffcf4;border-color:#d9c9ac}.in::placeholder{color:#a9997f}.soft,.chip{background:#efe1dc;color:#4a3a36}.soft:hover{background:#e8d3cd}.bar{background:#e8dcc6}.yr button{background:#fbf6ea;border-color:#dccdb4}
+.chip button{color:#4a3a36}.ti.progress .tn{color:var(--wine)}.btn:hover{background:#5a2330}
+body{background:#fff}.card{background:#fff;border-color:#e9dfcf;box-shadow:0 1px 4px rgba(59,47,41,.05)}.hd{background:#fff}nav{background:#fff;border-color:#e6d9c8}.in{background:#fff;border-color:#e3d6c0}.soft,.chip{background:#f7eeeb}.bar{background:#f1e9da}.yr button{background:#fff;border-color:#e6d9c8}.card,nav,.hd,.fc,.nt,.ed,#calm,.qi,.yr button,#md .card{border-radius:0!important}.in,.btn,.soft,nav button,.chip{border-radius:2px!important}
+.emw{position:relative;display:inline-block}.emg{display:none;flex-wrap:wrap;gap:4px;position:absolute;z-index:60;top:100%;left:0;width:270px;margin-top:4px;padding:8px;background:#fff;border:1px solid var(--line);box-shadow:0 6px 18px rgba(0,0,0,.12);max-height:170px;overflow:auto}.emb{border:1px solid var(--line);background:#fff;padding:4px 7px;font-size:18px;border-radius:2px;cursor:pointer;line-height:1.3}.emb:hover{background:var(--pale)}.emg.open{display:flex}#tip{position:fixed;z-index:3000;max-width:260px;padding:8px 11px;background:var(--ink);color:var(--card);font:13px/1.35 inherit;font-family:inherit;box-shadow:0 4px 14px rgba(0,0,0,.25);pointer-events:none;border-radius:2px}#tip[hidden]{display:none}button,summary,.sw,[data-a]{-webkit-touch-callout:none}button,summary,.sw{-webkit-user-select:none;user-select:none}.emg.em2{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);margin:0;width:min(400px,92vw);max-height:80vh;overflow:auto;padding:16px;z-index:2000;box-shadow:0 0 0 100vmax rgba(40,25,20,.4),0 10px 40px rgba(0,0,0,.3);display:none}.emg.em2.open{display:block}.emc{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin:14px 0 6px;border-bottom:1px solid var(--line);padding-bottom:3px}.emr{display:flex;flex-wrap:wrap;gap:4px}.emb{font-size:22px!important}.emw[hidden]{display:none}button.chip{border:0;cursor:pointer}.chip.on{background:var(--btn);color:#fff}.flt{position:fixed;z-index:60;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--gold);box-shadow:0 10px 30px rgba(0,0,0,.28);resize:both;overflow:hidden;min-width:220px;min-height:140px;max-width:96vw;max-height:92vh}.flt.min{height:auto!important;min-height:0;resize:none}.flt.min .flb,.flt.min .ftb{display:none}.flh{display:flex;gap:6px;align-items:center;padding:6px;background:var(--s2);cursor:move;touch-action:none}.fgr{padding:0 6px;font-size:18px;line-height:1;cursor:move;color:var(--soft);user-select:none}.flh input{flex:1;min-width:0;border:0;background:transparent;font:inherit;font-weight:700;color:var(--ink);cursor:text}.ftb{display:flex;gap:4px;padding:4px 6px;align-items:center}.flb{flex:1;overflow:auto;padding:8px 12px;min-height:0!important}#topbar{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:12px;padding:8px 0;margin-bottom:8px;background:var(--page)}#mn-l{font-family:"Cormorant Garamond",Georgia,serif;font-size:20px;color:var(--wine)}.bg{display:flex;flex-direction:column;gap:4px;width:22px}.bg i{display:block;height:2px;background:var(--wine)}#mn-b{padding:10px 12px}nav,#v-calm>.sub{display:none!important}#mnu{position:fixed;inset:0;z-index:90}#mnu[hidden]{display:none}#mn-bd{position:absolute;inset:0;background:rgba(40,25,20,.4)}#mn-p{position:absolute;left:0;top:0;bottom:0;width:min(330px,86vw);overflow:auto;background:var(--card);border-right:1px solid var(--bd);padding:18px;box-shadow:6px 0 24px rgba(0,0,0,.2)}.mg2{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin:16px 0 4px;border-bottom:1px solid var(--line);padding-bottom:3px}.mi{display:block;width:100%;text-align:left;padding:10px 12px;border:0;background:none;font-weight:600;color:var(--ink);border-radius:0}.mi:hover{background:var(--s2)}.mi.on{background:var(--btn);color:#fff}#pm-o[hidden],#pm-c[hidden]{display:none!important}.emg.cpop{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);margin:0;width:min(380px,92vw);max-height:90vh;overflow:auto;padding:16px;z-index:2000;box-shadow:0 0 0 100vmax rgba(40,25,20,.4),0 10px 40px rgba(0,0,0,.3)}.cok{width:100%;margin-top:12px}.cb .cs{display:none}.cpv{height:30px;margin-bottom:10px;border:1px solid rgba(0,0,0,.25);display:flex;align-items:flex-end;justify-content:flex-end;padding:2px 6px;font-size:12px}.emg.cpop.open{display:block}.shg{display:grid;grid-template-columns:repeat(12,1fr);gap:3px}.shb{aspect-ratio:1;border:0;padding:0;cursor:pointer;min-width:0;border-radius:0}.shb:hover{outline:2px solid var(--ink);outline-offset:-2px}.cs{display:inline-block;width:14px;height:14px;border:1px solid rgba(0,0,0,.35);vertical-align:-2px}.cnl{display:flex;align-items:center;gap:8px;margin-top:8px;font-size:13px}.cn{width:44px;height:30px;padding:0;border:1px solid var(--line);background:none}#fo-e,#me-e{cursor:pointer}
+.ck{text-transform:none;letter-spacing:0;color:var(--ink);font-size:14px}#ts{display:flex;position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:120;background:#3b2f29;color:#fff;padding:10px 14px;gap:10px;align-items:center}#ts[hidden],#sw-warn[hidden]{display:none}#fs-p{font-size:18px;opacity:.8}.res{display:block;width:100%;text-align:left;border:0;border-top:1px solid var(--line);background:none;padding:6px 0;cursor:pointer}
+.ic[data-id^="tt"]{display:none}
+:root{--page:#fff;--bd:#e9dfcf;--nv:#fff;--s2:#f7eeeb;--sh:#e8d3cd;--inbg:#fff;--inb:#e3d6c0;--barbg:#f1e9da;--btnh:#5a2330}
+body{background:var(--page)}.card{background:var(--card);border-color:var(--bd)}.hd{background:var(--card);border-bottom-color:var(--gold)}nav{background:var(--nv);border-color:var(--bd)}.in{background:var(--inbg);border-color:var(--inb);color:var(--ink)}.soft,.chip{background:var(--s2);color:var(--ink)}.soft:hover{background:var(--sh)}.chip button{color:var(--ink)}.bar{background:var(--barbg)}.yr button{background:var(--card);border-color:var(--bd);color:var(--ink)}.btn:hover{background:var(--btnh)}.emg,.emb{background:var(--card);color:var(--ink)}.fc{color:#3b2f29}#calm .in{color:var(--ink)}
+:root[data-theme="sage"]{--bg:#fbf8ef;--card:#fffdf7;--ink:#2f4636;--soft:#6c8070;--rose:#d9c9b0;--btn:#5d7f61;--dg:#5d7f61;--wine:#4e6e52;--gold:#c4a574;--pale:#eef2e6;--line:#e3e6d3;--green:#d4dfc9;--page:#f6f1e3;--bd:#e1e4d0;--nv:#edf1e2;--s2:#edf1e2;--sh:#e1e8d3;--inbg:#fffefa;--inb:#d5dcc4;--barbg:#e8edd9;--btnh:#4d6c51;}
+:root[data-theme="lavande"]{--bg:#fdfafe;--card:#fffdfe;--ink:#3d3550;--soft:#7d7390;--rose:#e6c9d6;--btn:#7b68a8;--dg:#7b68a8;--wine:#9a5f8a;--gold:#c9a0b8;--pale:#f3ecf7;--line:#ece3f0;--green:#e7e0f0;--page:#faf6fb;--bd:#e8dff0;--nv:#f4ecf6;--s2:#f4ecf6;--sh:#eadcf0;--inbg:#fff;--inb:#ddd0e6;--barbg:#efe6f4;--btnh:#65548f;}
+:root[data-theme="ciel"]{--bg:#fffdf9;--card:#fffdf9;--ink:#34475a;--soft:#74879a;--rose:#cfdbe6;--btn:#4f7aa3;--dg:#4f7aa3;--wine:#b0825a;--gold:#cdb892;--pale:#eaf1f7;--line:#e6e2d6;--green:#dbe6ef;--page:#f7f5ef;--bd:#e4e1d4;--nv:#eaf1f6;--s2:#eaf1f6;--sh:#dce8f1;--inbg:#fffefb;--inb:#d3dde5;--barbg:#e1eaf1;--btnh:#3f6a91;}
+:root[data-theme="nuit"]{--bg:#1f1c28;--card:#1f1c28;--ink:#eae6f2;--soft:#a9a2bb;--rose:#6b5a86;--btn:#7a62bd;--dg:#7a62bd;--wine:#c25e8b;--gold:#d8b46a;--pale:#2a2536;--line:#332e41;--green:#3a3450;--page:#16141c;--bd:#332e41;--nv:#2a2536;--s2:#2a2536;--sh:#352f45;--inbg:#2a2536;--inb:#40395a;--barbg:#2f2a3d;--btnh:#6a52a8;color-scheme:dark;}
+</style></head>
+<body><div class="w">
+<div id="topbar"><button id="mn-b" class="soft" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mnu"><span class="bg"><i></i><i></i><i></i></span></button><b id="mn-l"></b></div>
+<div id="mnu" hidden><div id="mn-bd"></div><aside id="mn-p" role="dialog" aria-label="Menu"><div class="row" style="margin-bottom:6px"><h2>Menu</h2><button id="mn-x" class="soft sm" type="button" aria-label="Fermer le menu">✕</button></div><div id="mn-c"></div></aside></div>
+<div id="sw-warn" role="alert" hidden style="background:#f3dfe2;color:#722f3d;padding:10px 14px;margin-bottom:12px">Enregistrement impossible : tes données ne seront pas conservées. Utilise le bouton Sauvegarde.</div>
+<header class="card hd"><div><small>Mon organisateur</small><h1 id="ttl"></h1><div id="hello" style="color:var(--soft)"></div></div>
+<label>Ton prénom<input id="name" class="in" maxlength="40"></label><label style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="askc"> Confirmer avant suppression</label><select id="app-th" class="in" style="width:auto" aria-label="Thème du journal"><option value="vintage">Vintage</option><option value="sage">Sauge et crème</option><option value="lavande">Lavande et rose poudré</option><option value="ciel">Bleu ciel et beige</option><option value="nuit">Nuit</option></select><select id="lg" class="in" style="width:auto" aria-label="Langue"><option value="fr">Français</option><option value="en">English</option><option value="es">Español</option><option value="de">Deutsch</option></select><button class="soft sm" id="bk">Sauvegarde</button></header>
+<nav>
+<button class="on" aria-current="page" data-a="tab" data-id="today">Aujourd'hui</button><button data-a="tab" data-id="tasks">Tâches</button><button data-a="tab" data-id="cal">Calendrier</button><button data-a="tab" data-id="time">Temps</button><button data-a="tab" data-id="calm">Études</button><button data-a="tab" data-id="quotes">Citations</button><button data-a="tab" data-id="habits">Habitudes</button><button data-a="tab" data-id="notes">Notes</button><button data-a="tab" data-id="tips">Astuces</button>
+</nav>
+
+<section id="v-today" class="v on"><div class="g e">
+<section class="card"><h2>Aujourd'hui</h2><div id="td-ev"></div><h3>Tâches du jour et en retard</h3><div id="td-t"></div><h3>Habitudes</h3><div id="td-h"></div></section>
+<div><div class="card"><h2>Compte à rebours</h2><div id="td-ex" class="chips"></div><form id="f-ex" class="row" style="margin-top:10px"><input id="ex-t" class="in" required maxlength="60" placeholder="Ex. Partiel de droit"><input id="ex-d" type="date" class="in" required><select id="ex-sub" class="in subsel" aria-label="Matière"></select><button class="btn">Ajouter</button></form></div>
+<div class="card" style="margin-top:16px"><h2>Statistiques de la semaine</h2><div id="td-s"></div><label>Objectif de révision (min/semaine)<input id="gw" type="number" min="0" class="in"></label></div>
+<div class="card" style="margin-top:16px"><h2>Recherche</h2><input id="sr" class="in" placeholder="Tâche, note, flashcard, événement…"><div id="sr-r"></div></div></div>
+</div></section>
+
+<section id="v-tasks" class="v"><div class="g">
+<aside class="card"><h2>Nouvelle tâche</h2>
+<form id="f-task"><label>Titre<input id="t-title" class="in" required maxlength="120"></label>
+<label>Contenu<textarea id="t-body" class="in" rows="4" maxlength="2000" placeholder="Pain&#10;Lait&#10;Œufs"></textarea></label>
+<label>Liste<input id="t-list" class="in" required maxlength="50" list="dl-l" placeholder="Ex. Courses"></label>
+<label>Catégorie<input id="t-cat" class="in" maxlength="50" list="dl-c" value="Personnel"></label>
+<label>Priorité<select id="t-prio" class="in"><option value="1">Urgent</option><option value="2" selected>Normal</option><option value="3">Plus tard</option></select></label>
+<label>Matière<select id="t-sub" class="in subsel"></select></label>
+<label>Échéance<input id="t-date" type="date" class="in"></label>
+<button class="btn">Ajouter la tâche</button></form>
+<datalist id="dl-l"></datalist><datalist id="dl-c"></datalist>
+<h3>Mes listes</h3><form id="f-list" class="row"><input id="l-new" class="in" required maxlength="50" placeholder="Nouvelle liste"><button class="btn">Ajouter</button></form><div id="m-l" class="chips"></div>
+<h3>Mes catégories</h3><form id="f-cat" class="row"><input id="c-new" class="in" required maxlength="50" placeholder="Nouvelle catégorie"><button class="btn">Ajouter</button></form><div id="m-c" class="chips"></div>
+</aside>
+<section class="card"><div class="row"><h2>Mes tâches</h2><select id="fl" class="in"></select><select id="fc" class="in"></select></div>
+<p id="prog" style="font-weight:600;margin:12px 0 0"></p><div class="bar"><i id="bar"></i></div><div id="tl"></div></section>
+</div></section>
+
+<section id="v-cal" class="v"><div class="g c">
+<section class="card"><div class="row" style="margin-bottom:10px">
+<div><button class="soft mb sm" data-a="mode" data-id="day">Jour</button> <button class="soft mb sm" data-a="mode" data-id="week">Semaine</button> <button class="soft mb sm" data-a="mode" data-id="plan">Planning</button> <button class="soft mb sm on" data-a="mode" data-id="month">Mois</button> <button class="soft mb sm" data-a="mode" data-id="year">Année</button></div>
+<div><button class="soft sm" data-a="tod">Aujourd'hui</button> <button class="soft sm" data-a="nav" data-id="-1" aria-label="Précédent">‹</button> <b id="ct" style="text-transform:capitalize"></b> <button class="soft sm" data-a="nav" data-id="1" aria-label="Suivant">›</button></div></div>
+<div class="cw"><div id="grid"></div></div></section>
+<aside class="card"><h2>Nouvel événement</h2>
+<form id="f-ev"><label>Titre<input id="e-title" class="in" required maxlength="120"></label>
+<div class="row"><div style="flex:1"><label>Date<input id="e-date" type="date" class="in" required></label></div><div style="flex:1"><label>Heure<input id="e-time" type="time" class="in"></label></div><div style="flex:1"><label>Fin<input id="e-end" type="time" class="in"></label></div></div>
+<label>Catégorie<input id="e-cat" class="in" list="dl-e" maxlength="50" value="Personnel"></label>
+<datalist id="dl-e"><option value="Personnel"><option value="Études"><option value="Bien-être"><option value="Important"></datalist>
+<label>Matière<select id="e-sub" class="in subsel"></select></label>
+<label>Répétition<select id="e-rep" class="in"><option value="">Aucune</option><option value="d">Chaque jour</option><option value="w">Chaque semaine</option><option value="m">Chaque mois</option><option value="y">Chaque année</option></select></label>
+<label>Notes<textarea id="e-notes" class="in" maxlength="300" rows="3"></textarea></label>
+<button class="btn">Ajouter l'événement</button></form><h3>À venir (30 jours)</h3><div id="up"></div><h3>Google Agenda</h3><p style="font-size:13px;color:var(--soft)">La synchronisation automatique n'est pas possible dans cette page. Importe un fichier .ics exporté depuis Google Agenda, exporte le tien, ou ouvre un jour (vue « Jour ») et appuie sur 📅 à côté d'un événement pour l'ajouter à Google Agenda.</p><a class="soft sm" style="display:inline-block;text-decoration:none" href="https://calendar.google.com" target="_blank" rel="noopener">Ouvrir Google Agenda</a> <button class="soft sm" id="ics-x" type="button">Exporter (.ics)</button><label>Importer un fichier .ics<input id="ics-f" type="file" accept=".ics,text/calendar" class="in"></label></aside>
+</div></section>
+
+<section id="v-time" class="v"><div class="g e">
+<section class="card ctr"><h2>Minuteur</h2><div id="tm" class="big">25:00</div>
+<label>Matière<select id="tm-sub" class="in subsel"></select></label><label style="display:flex;gap:8px;align-items:center;justify-content:center"><input type="checkbox" id="pm"> Pomodoro</label><div id="pm-o" hidden style="display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:6px"><select id="pm-p" class="in" style="width:auto" aria-label="Rythme"><option value="25/5">25 / 5</option><option value="50/10">50 / 10</option><option value="45/15">45 / 15</option><option value="90/20">90 / 20</option><option value="x">Personnalisé</option></select><span id="pm-c" hidden style="display:flex;gap:6px;align-items:center"><input id="pm-w" type="number" min="1" max="180" class="in ctr" style="width:80px" aria-label="Travail (min)"> / <input id="pm-b" type="number" min="1" max="60" class="in ctr" style="width:80px" aria-label="Pause (min)"></span></div><div id="pm-st" style="min-height:1.4em"></div><label>Minutes<input id="tm-min" class="in ctr" type="number" min="1" max="180" value="25" style="max-width:160px;margin:auto"></label>
+<p><button id="tm-s" class="btn">Démarrer</button> <button id="tm-r" class="soft">Réinitialiser</button></p></section>
+<section class="card ctr"><h2>Chronomètre</h2><div id="sw" class="big">00:00</div>
+<p style="margin-top:78px"><button id="sw-s" class="btn">Démarrer</button> <button id="sw-r" class="soft">Réinitialiser</button></p></section>
+</div></section>
+
+<section id="v-calm" class="v"><div class="sub"><button class="soft sb on" data-a="sub" data-id="subs">Matières</button><button class="soft sb" data-a="sub" data-id="grades">Notes et moyennes</button><button class="soft sb" data-a="sub" data-id="tt">Emploi du temps</button><button class="soft sb" data-a="sub" data-id="plan">Révisions auto</button><button class="soft sb" data-a="sub" data-id="cards">Flashcards</button><button class="soft sb" data-a="sub" data-id="calm">Calme</button><button class="soft sb" data-a="sub" data-id="pause">Pause</button><button class="soft sb" data-a="sub" data-id="adm">Démarches</button><button class="soft sb" data-a="sub" data-id="bud">Budget</button><button class="soft sb" data-a="sub" data-id="well">Bien-être</button></div><div id="sp-calm" class="sp"><div id="calm"><div class="g e">
+<section class="card"><h2>Horloge du monde</h2><div id="clk" class="big">--:--:--</div>
+<label>Fuseau<select id="tz" class="in"><option value="Europe/Paris">Paris</option><option value="Europe/London">Londres</option><option value="America/New_York">New York</option><option value="Asia/Tokyo">Tokyo</option><option value="Australia/Sydney">Sydney</option></select></label>
+<p><button id="fs-o" class="btn">Mode grand écran</button></p><div id="cq" class="fq" style="margin-top:12px;font-size:18px"></div><p><button id="cq-p" class="soft sm"></button></p></section>
+<section class="card"><h2>Ambiance</h2>
+<label>Thème<select id="th" class="in"><option value="pastel">Pastel doux</option><option value="bw">Noir et blanc</option><option value="one">Couleur unique</option><option value="night">Nuit</option></select></label>
+<div id="sw-c"></div><span style="display:block;margin-top:8px" id="th-w"><span class="emw cw"><input type="hidden" id="th-c" value="#f7dfe7"><button type="button" class="soft cb" data-a="eb"><i class="cs" style="background:#f7dfe7"></i> <span>Couleur</span> ▾</button><div class="emg cpop"></div></span></span>
+<label>Son d'ambiance<input id="snd-f" class="in" type="file" accept="audio/*"></label>
+<p><button id="snd-p" class="btn">Lire</button> <button id="snd-s" class="soft">Arrêter</button></p><p id="snd-st" aria-live="polite" style="opacity:.8"></p></section>
+</div></div></div>
+<div id="sp-study" class="sp on"><div id="st"></div></div>
+<div id="sp-cards" class="sp"><div class="g"><aside class="card"><h2>Nouvelle flashcard</h2><form id="f-fc"><label>Paquet<input id="fc-d" class="in" required maxlength="50" list="dl-d" placeholder="Ex. Droit administratif"></label><datalist id="dl-d"></datalist><label>Matière<select id="fc-sub" class="in subsel"></select></label><label>Recto (question)<textarea id="fc-q" class="in" rows="3" required maxlength="500"></textarea></label><label>Verso (réponse)<textarea id="fc-a" class="in" rows="3" required maxlength="1000"></textarea></label><button class="btn">Ajouter</button></form></aside>
+<section class="card"><div class="row"><h2>Réviser</h2><select id="fc-s" class="in"></select><select id="fc-f" class="in"><option value="due">À revoir aujourd'hui (conseillé)</option><option value="all">Toutes</option><option value="0">Pas apprises</option><option value="1">Presque apprises</option><option value="2">Apprises</option></select></div><p><button id="fc-go" class="btn">Commencer</button> <button id="ff-o" class="soft">Plein écran</button></p><div id="fc-lv" class="chips" style="justify-content:center"></div><div id="fc-st" class="ctr"></div><h3>Mes flashcards</h3><div id="fc-l"></div></section></div></div>
+<div id="sp-pause" class="sp"><div class="card ctr"><h2>Pause</h2><label>Durée (minutes)<input id="pz-m" type="number" min="1" max="120" value="10" class="in ctr" style="max-width:140px;margin:auto"></label><div id="pz-t" class="big">--:--</div><p>Choisis ta pause :</p><div id="pz-o"></div><form id="f-pz" class="row" style="margin-top:10px"><input id="pz-n" class="in" required maxlength="30" placeholder="Nom"><input id="pz-u" class="in" required placeholder="Lien (https://…)"><button class="btn">Ajouter</button></form><p><button id="pz-b" class="soft">Pause</button> <button id="pz-r" class="soft">Recommencer</button></p>
+<p id="pz-msg" aria-live="polite"></p></div></div>
+</section>
+
+<section id="v-quotes" class="v"><div class="g e">
+<section class="card"><small>Citation du jour</small><div id="q" class="q"></div><button class="soft" data-a="rq">Une autre citation</button></section>
+<aside class="card"><h2>Ajouter une citation</h2><form id="f-q"><label>Ma citation<textarea id="q-in" class="in" required maxlength="350" rows="3"></textarea></label><button class="btn">Ajouter</button></form><div id="ql"></div></aside>
+</div></section>
+
+<section id="v-habits" class="v"><div class="g">
+<aside class="card"><h2>Nouvelle habitude</h2><form id="f-h"><label>Habitude<input id="h-in" class="in" required maxlength="100" placeholder="Ex. Boire de l'eau"></label><button class="btn">Ajouter</button></form></aside>
+<section class="card"><h2>Mes habitudes</h2><div id="hl"></div></section>
+</div></section>
+
+<section id="v-notes" class="v"><div class="card"><div class="row"><h2>Mes dossiers</h2><form id="f-fo" class="row" style="flex:1;justify-content:flex-end"><input id="fo-new" class="in" required maxlength="60" placeholder="Nouveau dossier"><span class="emw cw"><input type="hidden" id="fo-c" value="#cf9fa8"><button type="button" class="soft cb" data-a="eb"><i class="cs" style="background:#cf9fa8"></i> <span>Couleur</span> ▾</button><div class="emg cpop"></div></span><input id="fo-e" type="hidden"><span id="fo-w" class="emw"></span><button class="btn">Ajouter</button></form></div><div id="m-f" class="fg"></div></div>
+<div class="g" style="margin-top:16px"><aside class="card"><h2>Nouvelle note</h2><form id="f-n"><label>Titre<input id="n-t" class="in" required maxlength="120"></label><datalist id="dl-f"></datalist><label>Dossier<input id="n-f" class="in" list="dl-f" required maxlength="60" placeholder="Ex. Études"></label>
+<label>Matière<select id="n-sub" class="in subsel"></select></label>
+<div class="row"><div style="flex:1"><label>Papier<select id="n-bg" class="in"><option value="lines">Lignes</option><option value="blank">Page blanche</option><option value="white">Blanc simple</option><option value="grid">Quadrillage</option><option value="color">Couleur unie</option></select></label></div><div style="flex:1"><label>Écriture<select id="n-fo" class="in"></select></label></div></div>
+<div id="n-cw" hidden><div id="n-sw" style="margin-top:8px"></div><span style="display:block;margin-top:8px"><span class="emw cw"><input type="hidden" id="n-col" value="#f7dfe7"><button type="button" class="soft cb" data-a="eb"><i class="cs" style="background:#f7dfe7"></i> <span>Couleur</span> ▾</button><div class="emg cpop"></div></span></span></div>
+<label>Contenu</label><div class="tb"><button type="button" class="soft sm" data-f="bold" title="Gras"><b>B</b></button><button type="button" class="soft sm" data-f="italic" title="Italique"><i>I</i></button><button type="button" class="soft sm" data-f="underline" title="Souligné"><u>U</u></button><button type="button" class="hl" data-f="hl" data-v="#f3e2a0" style="background:#f3e2a0" title="Surligner"></button><button type="button" class="hl" data-f="hl" data-v="#efc5cd" style="background:#efc5cd" title="Surligner"></button><button type="button" class="hl" data-f="hl" data-v="#cfe0c9" style="background:#cfe0c9" title="Surligner"></button><span class="emw cw"><input type="hidden" id="hl-c" value="#f3e2a0"><button type="button" class="soft sm cb" data-a="eb" title="Surligner"><i class="cs" style="background:#f3e2a0"></i> <span>Couleur</span> ▾</button><div class="emg cpop"></div></span><button type="button" class="soft sm" data-f="hl" data-v="transparent" title="Retirer le surlignage">✕</button></div>
+<div id="n-b" class="ed" contenteditable="true" role="textbox" aria-label="Contenu"></div>
+<button class="btn" id="n-sv">Enregistrer la note</button> <button type="button" class="soft" id="n-cx" hidden style="margin-top:8px">Annuler</button></form></aside>
+<section class="card"><h2>Mes notes</h2><div id="nl" style="display:grid;gap:12px;margin-top:12px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))"></div></section></div></section>
+<section id="v-tips" class="v"><div class="g">
+<aside class="card"><h2>Ajouter une astuce</h2><p style="font-size:13px;color:var(--soft)">Tes astuces sont enregistrées sur cet appareil : toi seule peux les voir.</p><div id="tp-form"></div><datalist id="dl-t"></datalist><p style="margin-top:14px"><button id="tp-x" class="soft sm" type="button">Exporter mes astuces</button></p></aside>
+<section class="card"><h2>Techniques et astuces</h2><input id="tp-q" class="in" type="search" placeholder="Rechercher une astuce…" aria-label="Rechercher"><div id="tp-f" class="chips"></div><div id="tp-l"></div></section>
+</div></section>
+</div>
+<div id="fs" hidden><div id="fs-t" class="t">--:--</div><div id="fs-d" style="font-size:20px;opacity:.8"></div><div id="fs-q" class="fq" style="margin-top:28px"></div><div id="fs-p"></div>
+<div class="ctl"><button id="fs-x" class="soft">Quitter</button><button id="fs-s" class="soft">Son</button><button id="fs-qp" class="soft"></button><select id="th2" class="in" aria-label="Thème"><option value="pastel">Pastel doux</option><option value="bw">Noir et blanc</option><option value="one">Couleur unique</option><option value="night">Nuit</option></select></div></div>
+<div id="ff" hidden><div id="ff-c" class="ctr" style="width:min(900px,92vw)"></div><button id="ff-x" class="soft" style="position:absolute;top:16px;right:16px">Quitter</button></div>
+<div id="md" hidden><div class="card" id="mbx" role="dialog" aria-modal="true"></div></div>
+<div id="ts" hidden></div>
+<script>
+const $=s=>document.querySelector(s),esc=t=>String(t??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const iso=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+const D={name:"",lists:[],cats:["Personnel","Études","Routine","Repas"],tasks:[],events:[],quotes:[],habits:[],notes:[],folders:[],lang:"fr",app:"vintage",subs:[],grades:[],tt:[],adm:[],bud:[],well:[],revS:{},tips:[],planO:{},pomo:{w:25,b:5},fl:[],cov:{},fem:{},pz:[],cards:[],exams:[],rev:{},fcs:{},noAsk:false,calm:{th:"pastel",col:"#f7dfe7"}};
+const DEF=JSON.stringify(D);
+const fixU=u=>{u=String(u||"").trim();if(/^https?:\/\//i.test(u))return u;if(/^[a-z][a-z0-9+.-]*:/i.test(u))return"";return u?"https://"+u:""};
+function norm(o){const r={},S=x=>String(x??"");if(!o||typeof o!="object"||Array.isArray(o))return r;
+ if(typeof o.name=="string")r.name=o.name.slice(0,40);if(["fr","en","es","de"].includes(o.lang))r.lang=o.lang;if(typeof o.noAsk=="boolean")r.noAsk=o.noAsk;if(["vintage","sage","lavande","ciel","nuit"].includes(o.app))r.app=o.app;if(typeof o.qstop=="boolean")r.qstop=o.qstop;["obj","goalW","budM"].forEach(k=>{if(o[k]!==undefined&&o[k]!==""&&!isNaN(+o[k]))r[k]=o[k]});
+ ["lists","cats","folders"].forEach(k=>{if(Array.isArray(o[k]))r[k]=o[k].filter(x=>typeof x=="string")});
+ ["cov","fem","rev","fcs","calm","qd","revS","planO","pomo"].forEach(k=>{if(o[k]&&typeof o[k]=="object"&&!Array.isArray(o[k]))r[k]={...o[k]}});Object.keys(r.cov||{}).forEach(k=>{const v=r.cov[k];if(!(typeof v=="string"&&/^#[0-9a-f]{6}$/i.test(v))&&!(Number.isInteger(+v)&&+v>=1&&+v<=8))r.cov[k]=1});
+ ["tasks","events","quotes","habits","notes","cards","exams","pz","subs","grades","tt","adm","bud","well","tips"].forEach(k=>{if(Array.isArray(o[k]))r[k]=o[k].filter(x=>x&&typeof x=="object"&&typeof x.id=="string").map(x=>({...x}))});
+ if(r.pomo){const w=+r.pomo.w,b=+r.pomo.b;if(Number.isInteger(w)&&Number.isInteger(b)&&w>=1&&w<=180&&b>=1&&b<=60)r.pomo={w,b};else delete r.pomo}
+ if(Array.isArray(o.fl))r.fl=o.fl.filter(f=>f&&typeof f.id=="string").slice(0,3).map(f=>({id:f.id,x:+f.x||8,y:+f.y||8,w:Math.max(220,+f.w||320),h:Math.max(140,+f.h||380),min:!!f.min}));
+ if(r.calm){if(!/^#[0-9a-f]{6}$/i.test(S(r.calm.col)))r.calm.col="#f7dfe7";if(typeof r.calm.th!="string")r.calm.th="pastel"}
+ (r.tasks||[]).forEach(t=>{t.title=S(t.title);t.list=S(t.list);t.cat=S(t.cat);t.items=Array.isArray(t.items)?t.items.filter(i=>i&&typeof i.t=="string").map(i=>({t:i.t,d:!!i.d})):[];if(!["open","progress","done"].includes(t.st))t.st="open"});
+ if(r.events){r.events.forEach(e=>{["title","date","time","end","cat","notes"].forEach(k=>e[k]=S(e[k]));if(!["","d","w","m","y"].includes(e.rep))e.rep=""});r.events=r.events.filter(e=>/^\d{4}-\d\d-\d\d$/.test(e.date))}
+ (r.habits||[]).forEach(h=>{h.name=S(h.name);h.log=Array.isArray(h.log)?h.log.filter(x=>typeof x=="string"):[]});
+ (r.notes||[]).forEach(n=>{["title","folder","body","at"].forEach(k=>n[k]=S(n[k]));if(n.h==null)n.h=/<\/?(b|i|u|br|div|span|p|strong|em|mark|ul|ol|li)\b/i.test(n.body)?1:0});
+ (r.cards||[]).forEach(c=>{["deck","q","a"].forEach(k=>c[k]=S(c[k]));delete c._r});
+ (r.quotes||[]).forEach(q=>q.text=S(q.text));(r.tips||[]).forEach(t=>{["title","cat","body"].forEach(k=>t[k]=S(t[k]))});(r.exams||[]).forEach(e=>{e.title=S(e.title);e.date=S(e.date)});
+ if(r.pz)r.pz=r.pz.map(p=>({id:p.id,n:S(p.n),u:fixU(p.u)})).filter(p=>p.u);
+ ["subs","grades","tt","adm","bud","well"].forEach(k=>(r[k]||[]).forEach(x=>{for(const y in x)if(x[y]&&typeof x[y]=="object")delete x[y]}));
+ (r.subs||[]).forEach(s=>{s.name=S(s.name);if(!/^#[0-9a-f]{6}$/i.test(S(s.col)))s.col="#cfa9ae"});(r.tt||[]).forEach(x=>{x.day=+x.day||0;["start","end","kind","room","teacher","sub"].forEach(k=>x[k]=S(x[k]))});(r.grades||[]).forEach(g=>{g.title=S(g.title);g.sub=S(g.sub);g.date=S(g.date)});(r.adm||[]).forEach(x=>{x.t=S(x.t);x.d=S(x.d);x.done=!!x.done});(r.bud||[]).forEach(x=>{x.label=S(x.label);x.date=S(x.date)});(r.well||[]).forEach(x=>x.date=S(x.date));
+ return r}
+try{Object.assign(D,norm(JSON.parse(localStorage.getItem("journal")||"{}")))}catch(e){}
+const LOCS={fr:"fr-FR",en:"en-GB",es:"es-ES",de:"de-DE"};let LOC=LOCS[D.lang]||"fr-FR";
+let SF=0;const save=()=>{try{localStorage.setItem("journal",JSON.stringify(D));if(SF){SF=0;$("#sw-warn").hidden=true}}catch(e){SF=1;$("#sw-warn").hidden=false}},upd=()=>{save();render()};
+let today=new Date();let mode="month",cur=new Date(),pend="",qi=null;
+const ST={open:"À faire",progress:"En cours",done:"Terminée"},NEXT={open:"progress",progress:"done",done:"open"};
+const lists=()=>[...new Set([...D.lists,...D.tasks.map(t=>t.list)])].filter(Boolean).sort(),cats=()=>[...new Set([...D.cats,...D.tasks.map(t=>t.cat)])].filter(Boolean).sort();
+const PAL={"Personnel":["#f3dfe2","#7a3945"],"Études":["#e6e1ec","#5d4f73"],"Routine":["#e4e9ee","#4e6070"],"Repas":["#f3e6c8","#80632a"],"Bien-être":["#ead9e6","#6d4a66"],"Important":["#ecc9cf","#6b2733"]},CUS=[["#e4edf7","#55708f"],["#f1e8f5","#80618d"],["#e7efe1","#66805d"],["#fff0df","#9b7442"]];
+const pal=c=>{if(PAL[c])return PAL[c];let h=0;for(const x of c||"")h=(h*31+x.charCodeAt(0))>>>0;return CUS[h%4]},sty=c=>{const p=pal(c);return`background:${p[0]};color:${p[1]}`};
+const fill=(sel,first,arr,keep)=>{sel.innerHTML=`<option value="all">${first}</option>`+arr.map(a=>`<option>${esc(a)}</option>`).join("");sel.value=arr.includes(keep)?keep:"all"};
+
+function rHead(){$("#ttl").textContent=D.name?"Journal de "+D.name:"Mon Journal Quotidien";$("#hello").textContent=(D.name?"Bonjour "+D.name+" · ":"")+today.toLocaleDateString(LOC,{weekday:"long",day:"numeric",month:"long"})}
+const setDone=(t,x)=>{t.st=x?"done":"open";t.dn=x?iso(today):"";(t.items||[]).forEach(i=>i.d=x)};
+const items=(t,old=[])=>t.split("\n").map(x=>x.trim()).filter(Boolean).map(x=>({t:x,d:!!old.find(o=>o.t==x&&o.d)}));
+const folders=()=>[...new Set([...D.folders,...D.notes.map(n=>n.folder)])].filter(Boolean).sort();
+function chips(id,arr,dl,ed){$(id).innerHTML=arr.map(n=>`<span class="chip">${esc(n)}<button data-a="${ed}" data-id="${esc(n)}" aria-label="Modifier ${esc(n)}">✎</button><button data-a="${dl}" data-id="${esc(n)}" aria-label="Supprimer ${esc(n)}">×</button></span>`).join("")}
+function rTasks(){
+ const L=lists(),C=cats();chips("#m-l",L,"dl","el");chips("#m-c",C,"dc","ec");
+ $("#dl-l").innerHTML=L.map(x=>`<option value="${esc(x)}">`).join("");$("#dl-c").innerHTML=C.map(x=>`<option value="${esc(x)}">`).join("");
+ fill($("#fl"),"Toutes les listes",L,$("#fl").value);fill($("#fc"),"Toutes les catégories",C,$("#fc").value);
+ const sh=D.tasks.filter(t=>($("#fl").value=="all"||t.list==$("#fl").value)&&($("#fc").value=="all"||t.cat==$("#fc").value)).sort((a,b)=>(a.st=="done")-(b.st=="done")||(a.p||2)-(b.p||2));
+ $("#tl").innerHTML=sh.length?sh.map(t=>{const it=t.items||[],nd=it.filter(i=>i.d).length;return`<article class="ti ${t.st}"><input type="checkbox" data-c="tdone" data-id="${t.id}" ${t.st=="done"?"checked":""} aria-label="Terminer"><div><p class="tn" translate="no">${esc(t.title)}</p><div class="chips"><span class="chip" translate="no">${esc(t.list)}</span>${SCh(t.sub)}${(t.p||2)!=2?`<span class="chip" style="${t.p==1?"background:#ecc9cf;color:#6b2733":"background:#e4e9ee;color:#4e6070"}">${PRIO[t.p]}</span>`:""}${t.cat?`<span class="chip" translate="no">${esc(t.cat)}</span>`:""}${t.due?`<span class="chip">${new Date(t.due+"T00:00").toLocaleDateString(LOC,{day:"numeric",month:"short"})}</span>`:""}${it.length?`<span class="chip">${nd}/${it.length}</span>`:""}</div>${it.map((i,n)=>`<label class="ck ${i.d?"d":""}"><input type="checkbox" data-c="item" data-id="${t.id}" data-i="${n}" ${i.d?"checked":""}><span translate="no">${esc(i.t)}</span></label>`).join("")}</div><button class="soft sm" data-a="tst" data-id="${t.id}">${ST[t.st]}</button><button class="ic" data-a="etask" data-id="${t.id}" aria-label="Modifier">✎</button><button class="ic" data-a="dtask" data-id="${t.id}" aria-label="Supprimer">🗑</button></article>`}).join(""):`<div class="empty">Aucune tâche pour l'instant.</div>`;
+ const d=D.tasks.filter(t=>t.st=="done").length;$("#prog").textContent=D.tasks.length?`${d} sur ${D.tasks.length} terminée${d>1?"s":""}`:"Une belle journée commence par une intention.";$("#bar").style.width=D.tasks.length?d/D.tasks.length*100+"%":"0"}
+const WD=["Lun","Mar","Mer","Jeu","Ven","Sam","Dim"],evCh=e=>`<span class="ev" style="${evSty(e)}" title="${esc(e.notes||e.title)}" translate="no">${e.time?e.time+(e.end?"–"+e.end:"")+" · ":""}${esc(e.title)}</span>`;
+const gl=e=>{const z=n=>String(n).padStart(2,"0"),[y,m,d]=e.date.split("-").map(Number);let a,b;if(e.time){const[h,i]=e.time.split(":").map(Number),s=new Date(y,m-1,d,h,i),E=e.end?e.end.split(":").map(Number):null,t=E&&new Date(y,m-1,d,E[0],E[1])>s?new Date(y,m-1,d,E[0],E[1]):new Date(+s+36e5),f=x=>x.getFullYear()+z(x.getMonth()+1)+z(x.getDate())+"T"+z(x.getHours())+z(x.getMinutes())+"00";a=f(s);b=f(t)}else{a=e.date.replace(/-/g,"");const n=new Date(y,m-1,d+1);b=n.getFullYear()+z(n.getMonth()+1)+z(n.getDate())}return"https://calendar.google.com/calendar/render?action=TEMPLATE&text="+encodeURIComponent(e.title)+"&dates="+a+"/"+b+"&details="+encodeURIComponent(e.notes||"")+(e.rep?"&recur=RRULE:FREQ="+{d:"DAILY",w:"WEEKLY",m:"MONTHLY",y:"YEARLY"}[e.rep]:"")};
+const ttOn=k=>{const w=(new Date(k+"T00:00").getDay()+6)%7;return D.tt.filter(x=>+x.day==w&&(!x.from||k>=x.from)&&(!x.to||k<=x.to)&&!(x.skip||"").split(",").includes(k)).map(x=>({id:"tt"+x.id,title:(x.kind||"Cours")+(SC(x.sub)?" · "+SC(x.sub).name:""),date:k,time:x.start,end:x.end,cat:"Études",notes:[x.room,x.teacher].filter(Boolean).join(" · "),sub:x.sub,tt:1}))};
+const occ=(e,k)=>{if(e.date==k)return 1;if(!e.rep||k<e.date||(e.until&&k>e.until))return 0;const a=new Date(e.date+"T00:00"),b=new Date(k+"T00:00"),iv=Math.max(1,+e.iv||1),dd=Math.round((b-a)/864e5),mm=(b.getFullYear()-a.getFullYear())*12+b.getMonth()-a.getMonth(),dim=new Date(b.getFullYear(),b.getMonth()+1,0).getDate(),day=Math.min(a.getDate(),dim);return e.rep=="d"?dd%iv==0:e.rep=="w"?dd%(7*iv)==0:e.rep=="m"?mm%iv==0&&b.getDate()==day:mm%(12*iv)==0&&b.getDate()==day},evOn=k=>[...D.events.filter(e=>occ(e,k)),...ttOn(k)].sort((a,b)=>(a.time||"").localeCompare(b.time||"")),tk=k=>D.tasks.filter(t=>t.due==k&&t.st!="done"),tc=t=>`<span class="ev" style="background:#f3e6c8;color:#80632a" translate="no">☐ ${esc(t.title)}</span>`;
+function rUp(){const o=[];for(let i=0;i<31&&o.length<6;i++){const d=new Date(today.getFullYear(),today.getMonth(),today.getDate()+i),k=iso(d);evOn(k).forEach(e=>o.push(`<div style="padding:4px 0"><b>${d.toLocaleDateString(LOC,{weekday:"short",day:"numeric",month:"short"})}</b> ${e.time||""} · <span translate="no">${esc(e.title)}</span></div>`))}$("#up").innerHTML=o.join("")||`<div class="empty">Rien à venir.</div>`}
+function rCal(){
+ const y=cur.getFullYear(),m=cur.getMonth(),g=$("#grid");
+ document.querySelectorAll(".mb").forEach(b=>b.classList.toggle("on",b.dataset.id==mode));
+ if(mode=="year"){$("#ct").textContent=y;g.className="yr";g.innerHTML=Array.from({length:12},(_,i)=>{const n=Array.from({length:new Date(y,i+1,0).getDate()},(_,d)=>evOn(iso(new Date(y,i,d+1))).length).reduce((a,b)=>a+b,0);return`<button data-a="mon" data-id="${i}">${new Date(y,i,1).toLocaleDateString(LOC,{month:"long"})}<small>${n} événement${n>1?"s":""}</small></button>`}).join("");return}
+ if(mode=="day"){const k=iso(cur);$("#ct").textContent=cur.toLocaleDateString(LOC,{weekday:"long",day:"numeric",month:"long",year:"numeric"});g.className="dv";const l=evOn(k),t=tk(k);
+  g.innerHTML=(l.length||t.length)?l.map(e=>`<span class="ev" style="${evSty(e)}"><span><b translate="yes">${e.time?e.time+(e.end?"–"+e.end:""):"Journée"}</b> · <span translate="no">${esc(e.title)}</span> <small>(<span translate="no">${esc(e.cat)}</span>${e.rep?" · répété":""})</small>${e.notes?`<br><small translate="no">${esc(e.notes)}</small>`:""}</span><span><a class="ic" href="${gl(e)}" target="_blank" rel="noopener" aria-label="Ajouter à Google Agenda" style="text-decoration:none">📅</a><button class="ic" data-a="eev" data-id="${e.id}" aria-label="Modifier">✎</button><button class="ic" data-a="dev" data-id="${e.id}" aria-label="Supprimer">🗑</button></span></span>`).join("")+t.map(x=>`<span class="ev" style="background:#f3e6c8;color:#80632a">☐ Tâche : ${esc(x.title)}</span>`).join(""):`<div class="empty">Rien de prévu ce jour-là.</div>`;return}
+ if(mode=="plan"){const s=new Date(y,m,cur.getDate()-((cur.getDay()+6)%7)),ds=Array.from({length:7},(_,i)=>new Date(s.getFullYear(),s.getMonth(),s.getDate()+i)),H=e=>e.time?+e.time.slice(0,2):-1;$("#ct").textContent="Semaine du "+s.toLocaleDateString(LOC,{day:"numeric",month:"long"});g.className="pl";
+  let h=`<div></div>`+ds.map(d=>`<div class="hdc ${iso(d)==iso(today)?"td":""}">${WD[(d.getDay()+6)%7]} ${d.getDate()}</div>`).join("")+`<div class="hc">Journée</div>`+ds.map(d=>`<div class="pc">${evOn(iso(d)).filter(e=>H(e)<7||H(e)>21).map(evCh).join("")}${tk(iso(d)).map(tc).join("")}</div>`).join("");
+  for(let hr=7;hr<=21;hr++)h+=`<div class="hc">${String(hr).padStart(2,"0")}h</div>`+ds.map(d=>`<div class="pc">${evOn(iso(d)).filter(e=>H(e)==hr).map(evCh).join("")}</div>`).join("");
+  g.innerHTML=h;return}
+ let s,n;if(mode=="week"){s=new Date(y,m,cur.getDate()-((cur.getDay()+6)%7));n=7;$("#ct").textContent="Semaine du "+s.toLocaleDateString(LOC,{day:"numeric",month:"long"})}
+ else{s=new Date(y,m,1-((new Date(y,m,1).getDay()+6)%7));n=42;$("#ct").textContent=cur.toLocaleDateString(LOC,{month:"long",year:"numeric"})}
+ g.className="mg";let h=WD.map(w=>`<div class="hdc">${w}</div>`).join("");
+ for(let i=0;i<n;i++){const d=new Date(s.getFullYear(),s.getMonth(),s.getDate()+i),k=iso(d);
+  h+=`<button class="day ${mode=="month"&&d.getMonth()!=m?"out":""} ${k==iso(today)?"td":""}" data-a="day" data-id="${k}"><b>${d.getDate()}</b>${(()=>{const L=[...evOn(k).map(evCh),...tk(k).map(tc)];return L.slice(0,3).join("")+(L.length>3?`<span class="ev" translate="no">+${L.length-3}</span>`:"")})()}</button>`}
+ g.innerHTML=h}
+
+const QD=["Un petit pas chaque jour vaut mieux qu'un grand bond rare.","Fais de ton mieux avec ce que tu as, là où tu es.","La constance bat l'intensité.","Respire : tu avances déjà.","Ce qui compte, c'est de continuer."];
+function rQuote(){const P=QD.concat(D.quotes.map(q=>q.text)),day=Math.floor(new Date(today.getFullYear(),today.getMonth(),today.getDate())/864e5);
+ if(!D.qd||D.qd.k!=iso(today)){D.qd={k:iso(today),t:P[day%P.length]};save()}$("#q").textContent="“"+(qi!=null?P[qi%P.length]:D.qd.t)+"”";
+ $("#ql").innerHTML=D.quotes.map(q=>`<div class="qi"><span translate="no">“${esc(q.text)}”</span><button class="ic" data-a="eq" data-id="${q.id}" aria-label="Modifier">✎</button><button class="ic" data-a="dq" data-id="${q.id}" aria-label="Supprimer">🗑</button></div>`).join("")}
+const wkS=()=>new Date(today.getFullYear(),today.getMonth(),today.getDate()-((today.getDay()+6)%7)),streak=h=>{let n=0,d=new Date(today.getFullYear(),today.getMonth(),today.getDate());const s=iso(wkS());if(!h.log.includes(iso(d)))d.setDate(d.getDate()-1);while(iso(d)>=s&&h.log.includes(iso(d))){n++;d.setDate(d.getDate()-1)}return n};
+function rHab(){const w=wkS();$("#hl").innerHTML=D.habits.length?D.habits.map(h=>{const n=streak(h);return`<article class="hb"><input type="checkbox" data-c="hab" data-id="${h.id}" ${h.log.includes(iso(today))?"checked":""} aria-label="Valider"><div><b translate="no">${esc(h.name)}</b><div class="wk">${WD.map((x,i)=>`<div class="${h.log.includes(iso(new Date(w.getFullYear(),w.getMonth(),w.getDate()+i)))?"on":""}">${x}<span>🔥</span></div>`).join("")}</div></div><div style="font-size:22px;font-weight:700;white-space:nowrap">🔥 ${n}<div style="font-size:11px;font-weight:400;color:var(--soft)">jour${n>1?"s":""} · remise à zéro lundi</div></div><button class="ic" data-a="eh" data-id="${h.id}" aria-label="Modifier">✎</button><button class="ic" data-a="dh" data-id="${h.id}" aria-label="Supprimer">🗑</button></article>`}).join(""):`<div class="empty">Aucune habitude pour l'instant.</div>`}
+const OK={B:1,STRONG:1,I:1,EM:1,U:1,BR:1,DIV:1,P:1,SPAN:1,MARK:1,UL:1,OL:1,LI:1};
+function clean(h){const t=document.createElement("template");t.innerHTML=h;(function w(n){[...n.childNodes].forEach(c=>{if(c.nodeType==3)return;if(c.nodeType!=1){c.remove();return}if(!OK[c.tagName]){if(/^(SCRIPT|STYLE)$/.test(c.tagName)){c.remove();return}w(c);c.replaceWith(...c.childNodes);return}const st=c.tagName=="SPAN"&&/^(#[0-9a-f]{3,8}|rgba?\([\d\s,.]+\)|transparent)$/i.test(c.style.backgroundColor||"")?c.style.backgroundColor:"";[...c.attributes].forEach(a=>c.removeAttribute(a.name));if(st)c.style.backgroundColor=st;w(c)})})(t.content);return t.innerHTML}
+const nb=(b,h)=>clean(h?b:esc(b).replace(/\n/g,"<br>"));
+const FONTS=[["Standard","'Lora',Georgia,serif"],["Élégante","'Cormorant Garamond',Georgia,serif"],["Manuscrite","'Caveat','Bradley Hand',cursive"],["Machine à écrire","'Courier New',monospace"],["Arrondie","'Nunito',system-ui,sans-serif"]];
+const COV=[["Rose","linear-gradient(135deg,#ecd0d4,#cf9fa8)","🌸"],["Vert","linear-gradient(135deg,#dfe8dc,#a3b9a0)","🌿"],["Bleu","linear-gradient(135deg,#d9e3e9,#9bb0be)","🌊"],["Violet","linear-gradient(135deg,#e6dde9,#b3a1c2)","🔮"],["Jaune","linear-gradient(135deg,#f1e4b8,#cfa954)","☀️"],["Beige","linear-gradient(135deg,#f5ecdb,#d8c19b)","📖"],["Marron","linear-gradient(135deg,#94684f,#5e3a2b)","📚"],["Nuit","linear-gradient(135deg,#4a5d52,#22302a)","🌙"]],COVN=Object.fromEntries(COV.map((c,i)=>[i+1,c[0]]));
+let cf="all",EDN=null;
+const VG="radial-gradient(ellipse at center,#f9f0db 0%,#f2e4c4 65%,#e5d2a6 100%)",VL="rgba(139,101,63,.28)";
+const paper=(b,c,f)=>b=="white"?"background:#fff;font-family:"+(FONTS[+f]||FONTS[0])[1]+";line-height:28px;border:1px solid #e6d9c8;color:#3b2f29":(b=="grid"?"background:linear-gradient(rgba(139,101,63,.18) 1px,transparent 1px),linear-gradient(90deg,rgba(139,101,63,.18) 1px,transparent 1px),"+VG+";background-size:20px 20px,20px 20px,auto":b=="color"?"background:linear-gradient(rgba(139,101,63,.12),rgba(139,101,63,.12)),"+c:b=="blank"?"background:"+VG:"background:repeating-linear-gradient(transparent 0,transparent 27px,"+VL+" 27px,"+VL+" 28px),"+VG)+";font-family:"+(FONTS[+f]||FONTS[0])[1]+";line-height:28px;box-shadow:inset 0 0 36px rgba(139,101,63,.28);border:1px solid #d9c49a;color:#4a3b28";
+function prevN(){$("#n-cw").hidden=$("#n-bg").value!="color";$("#n-b").setAttribute("style",paper($("#n-bg").value,$("#n-col").value,$("#n-fo").value))}
+const COVH=["#cf9fa8","#a3b9a0","#9bb0be","#b3a1c2","#cfa954","#d8c19b","#5e3a2b","#22302a"],HX=/^#[0-9a-f]{6}$/i;
+function covHex(v){return typeof v=="string"&&HX.test(v)?v:COVH[(+v||1)-1]||COVH[0]}
+function covEm(n){const v=D.cov[n];return D.fem[n]!==undefined?D.fem[n]:HX.test(v||"")?"":COV[(+v||1)-1]?COV[(+v||1)-1][2]:""}
+function lum(h){const n=parseInt(h.slice(1),16);return .299*(n>>16)+.587*(n>>8&255)+.114*(n&255)}
+function mixc(h,t){const n=parseInt(h.slice(1),16),c=[n>>16,n>>8&255,n&255].map(x=>Math.round(x+(255-x)*t));return"#"+c.map(x=>x.toString(16).padStart(2,"0")).join("")}
+function covBg(h){return`linear-gradient(135deg,${mixc(h,.45)},${h})`}
+function h2x(h,s,l){s/=100;l/=100;const a=s*Math.min(l,1-l),f=n=>{const k=(n+h/30)%12;return Math.round(255*(l-a*Math.max(-1,Math.min(k-3,9-k,1))))};return"#"+[f(0),f(8),f(4)].map(x=>x.toString(16).padStart(2,"0")).join("")}
+function shades(){const b=c=>`<button type="button" class="shb" data-h="${c}" style="background:${c}" title="${c}" aria-label="${c}"></button>`;let o="";for(let i=0;i<12;i++)o+=b(h2x(0,0,Math.round(97-i*8.2)));[88,78,68,56,44,32].forEach(l=>{for(let h=0;h<360;h+=30)o+=b(h2x(h,l>70?55:50,l))});return`<div class="cpv"></div><div class="shg">${o}</div><div class="cnl"><input type="color" class="cn" aria-label="Autre nuance"><span>Autre nuance</span></div><button type="button" class="btn cok">OK</button>`}
+function cpick(name,val,id){val=HX.test(val||"")?val:"#cfa9ae";return`<span class="emw cw"><input type="hidden"${id?` id="${id}"`:""} name="${name}" value="${val}"><button type="button" class="soft cb" data-a="eb"><i class="cs" style="background:${val}"></i> <span>Couleur</span> ▾</button><div class="emg cpop"></div></span>`}
+function syncCol(w){if(!w)return;const h=w.querySelector("input[type=hidden]"),s=w.querySelector(".cs"),c=w.querySelector(".cn");if(s)s.style.background=h.value;const pv=w.querySelector(".cpv");if(pv){pv.style.background=h.value;pv.textContent=h.value;pv.style.color=lum(h.value)<140?"#fff":"#222"}if(c&&HX.test(h.value))c.value=h.value}
+function setCol(w,c,silent){const h=w.querySelector("input[type=hidden]");h.value=c;syncCol(w);if(!silent)h.dispatchEvent(new Event("input",{bubbles:true}))}
+let SR=null;
+document.addEventListener("selectionchange",()=>{const n=document.getElementById("n-b"),s=getSelection();if(n&&s.rangeCount&&n.contains(s.anchorNode))SR=s.getRangeAt(0).cloneRange()});
+document.addEventListener("mousedown",e=>{if(e.target.closest(".tb .cw"))if(e.target.closest(".shb,[data-a=eb]"))e.preventDefault()});
+document.addEventListener("click",e=>{const b=e.target.closest(".shb");if(b)setCol(b.closest(".emw"),b.dataset.h);const ok=e.target.closest(".cok");if(ok)ok.closest(".emg").classList.remove("open");const t=e.target.closest("[data-a=eb]");if(t){const g=t.parentNode.querySelector(".cpop");if(g&&!g.firstChild){g.innerHTML=shades();syncCol(t.parentNode)}}});
+document.addEventListener("input",e=>{if(e.target.classList&&e.target.classList.contains("cn"))setCol(e.target.closest(".emw"),e.target.value)});
+const HELP={"#tp-x": "Affiche toutes tes astuces sous forme de texte à copier.","a:tipc": "Affiche seulement les astuces de cette catégorie.","a:tipcp": "Copie cette astuce dans tes astuces pour pouvoir la modifier.","#tp-q": "Cherche dans toutes les astuces.","a:tab:tips": "Techniques et astuces pour les révisions, la vie de tous les jours, la skincare... et les tiennes.","a:npin": "Affiche cette note dans une fenêtre flottante : elle reste ouverte quand tu changes de page et tu peux continuer à la modifier.","#mn-b": "Ouvre le menu pour aller vers n'importe quelle page du planner.","#mn-x": "Ferme le menu.","#e-time":"Heure de début (facultatif).","#e-end":"Heure de fin (facultatif).","f:f-pz":"Ajoute cette activité à tes idées de pause.","#lg": "Choisis la langue du planner.", "#app-th": "Change les couleurs de tout le planner.", "#bk": "Enregistre une copie de toutes tes données dans un fichier, ou restaure une copie.", "#askc": "Si tu décoches, plus aucune confirmation ne sera demandée avant de supprimer.", "a:tab:today": "Ta journée : tâches, événements, habitudes et examens du jour.", "a:tab:tasks": "Tes tâches et tes listes (courses, projets...).", "a:tab:cal": "Ton calendrier : jour, semaine, mois ou année.", "a:tab:time": "Minuteur de révision (pomodoro) et chronomètre.", "a:tab:calm": "Tout pour les études : matières, notes, emploi du temps, flashcards, mode calme...", "a:tab:quotes": "Tes citations préférées.", "a:tab:habits": "Tes habitudes de chaque jour et tes séries (flammes).", "a:tab:notes": "Tes notes, rangées par dossiers.", "a:mode:day": "Affiche le calendrier jour par jour.", "a:mode:week": "Affiche la semaine entière.", "a:mode:plan": "Affiche la liste de tes prochains événements.", "a:mode:month": "Affiche le mois entier.", "a:mode:year": "Affiche l'année entière.", "a:tod": "Revenir à la date d'aujourd'hui.", "a:nav:-1": "Période précédente.", "a:nav:1": "Période suivante.", "a:day": "Ouvrir ce jour.", "a:mon": "Voir ce mois en détail.", "#ics-x": "Télécharge ton calendrier (fichier .ics) pour l'importer dans Google Agenda, Apple Calendrier...", "#tm-s": "Démarre ou met en pause le minuteur.", "#tm-r": "Remet le minuteur à zéro.", "#sw-s": "Démarre ou met en pause le chronomètre.", "#sw-r": "Remet le chronomètre à zéro.", "#pm": "Alterne automatiquement travail et pause, selon le rythme choisi (25/5, 50/10, 45/15...).","#pm-p": "Choisis la durée de travail et de pause, en minutes. Toutes les 4 séances, la pause est plus longue.", "#tm-sub": "Le temps de révision sera ajouté à cette matière.", "#tz": "Fuseau horaire utilisé pour afficher l'heure.", "a:sub:subs": "Tes matières, avec temps de révision et moyenne.", "a:sub:grades": "Saisis tes notes pour calculer tes moyennes.", "a:sub:tt": "Ton emploi du temps : les cours apparaissent aussi dans le calendrier.", "a:sub:plan": "Planifie automatiquement des séances de révision avant un examen.", "a:sub:cards": "Crée des flashcards et révise-les.", "a:sub:calm": "Mode calme : heure en grand, ambiance sonore et citations.", "a:sub:pause": "Une pause cadrée avec un minuteur, pour ne pas t'y perdre.", "a:sub:adm": "Suivi de tes démarches administratives.", "a:sub:bud": "Suivi simple de ton budget.", "a:sub:well": "Suis ton sommeil et ton humeur.", "#fs-o": "Affiche l'heure en plein écran avec ton thème de couleur.", "#cq-p": "Arrête ou relance le défilement des citations.", "#fs-qp": "Arrête ou relance le défilement des citations.", "#th": "Choisis le thème de couleur du mode calme.", "#th2": "Choisis le thème de couleur du mode calme.", "a:col": "Utiliser cette couleur unie.", "#snd-p": "Lance le son d'ambiance choisi.", "#snd-s": "Arrête le son d'ambiance.", "#fs-s": "Active ou coupe le son d'ambiance.", "#fs-x": "Quitter le plein écran.", "#ff-x": "Quitter le plein écran.", "#fc-go": "Lance la session de révision avec les cartes choisies.", "#fc-s": "Choisis le paquet de cartes à réviser.", "#fc-sub": "Matière liée à cette carte (facultatif).", "#fc-f": "Choisis quelles cartes revoir : celles à revoir aujourd'hui, ou selon ton niveau.", "#ff-o": "Révise en plein écran.", "a:flip": "Retourne la carte pour voir la réponse.", "a:lv:0": "Je ne la savais pas : elle reviendra aujourd'hui.", "a:lv:1": "Presque : elle reviendra dans 2 jours.", "a:lv:2": "Je la sais : elle reviendra dans 7 jours.", "#pz-b": "Met la pause en pause, ou la reprend.", "#pz-r": "Recommence la pause depuis le début.", "a:pz:calm": "Remplace la pause par le mode calme.", "a:pz": "Ouvre cette appli dans un nouvel onglet pendant ta pause.", "a:rq": "Affiche une autre citation.", "a:ncol": "Utiliser cette couleur pour le papier.", "#n-bg": "Style du papier : lignes, page blanche ou couleur.", "#n-fo": "Police d'écriture de la note.", "#n-sv": "Enregistre la note (ou la met à jour si tu la modifies).", "#n-cx": "Annule la modification en cours.", "#n-sub": "Matière liée à cette note (facultatif).", "a:ff": "Affiche les notes de ce dossier.", "a:n2c": "Crée des flashcards à partir de cette note.", "l:B": "Met le texte sélectionné en gras.", "l:I": "Met le texte sélectionné en italique.", "l:U": "Souligne le texte sélectionné.", "l:✕": "Retire le surlignage du texte sélectionné.", "a:hl": "Surligne le texte sélectionné de cette couleur.", "a:eb:col": "Ouvre la palette pour choisir une couleur.", "a:eb:em": "Ouvre la liste d'emojis, rangés par catégorie.", "a:eb:hl": "Choisis une couleur pour surligner le texte sélectionné.", "a:tst": "Change l'état de la tâche : à faire, en cours, terminée.", "c:tdone": "Coche pour terminer cette tâche.", "c:hab": "Coche pour valider cette habitude aujourd'hui.", "c:item": "Coche cet élément de la liste.", "c:adm": "Coche quand cette démarche est faite.", "a:ttskip": "Ne pas afficher ce cours à une date précise (vacances, absence...).", "a:ttun": "Rétablir ce cours à cette date.", "a:adml": "Ajoute une liste de démarches courantes pour les étudiants.", "a:plan": "Ajoute au calendrier des séances de révision avant cet examen.", "a:go": "Aller à ce résultat.", "#po-r": "Choisis le rythme des séances de révision.", "#po-a": "Décale les séances qui tombent un jour déjà très chargé.", "#po-t": "Heure à laquelle placer les séances (laisse vide pour aucune heure).", "#po-d": "Durée de chaque séance, en minutes.", "#ts-u": "Annule la suppression que tu viens de faire.", "#ts-ok": "Ferme ce message : la suppression est confirmée.", "#mn": "Ferme sans rien enregistrer.", "#t-prio": "Priorité de la tâche : urgente, normale ou plus tard.", "#t-sub": "Matière liée à cette tâche (facultatif).", "#e-sub": "Matière liée à cet événement (facultatif).", "#ex-sub": "Matière liée à cet examen (facultatif).", "#e-rep": "Fait revenir l'événement automatiquement (chaque jour, semaine, mois...).", "#fl": "Affiche seulement les tâches d'une liste.", "#fc": "Affiche seulement une catégorie.", "f:f-task": "Ajoute cette tâche.", "f:f-ev": "Ajoute cet événement au calendrier.", "f:f-ex": "Ajoute cet examen : il apparaît dans Aujourd'hui.", "f:f-fo": "Crée ce dossier de notes.", "f:f-fc": "Ajoute cette flashcard au paquet.", "f:f-q": "Ajoute cette citation.", "f:f-h": "Ajoute cette habitude.", "f:f-list": "Crée cette liste.", "f:f-cat": "Crée cette catégorie.", "f:gf": "Ajoute cet élément.", "edit": "Modifier cet élément.", "del": "Supprimer cet élément (tu pourras annuler juste après).", "sum": "Réglages facultatifs de la planification."},EDA="ec el en eq eh eev eex efc efo epz etask ce".split(" "),DLA="dc dl dn dq dh dev dex dfc dfo dpz dtask cd".split(" "),TIP=document.createElement("div");TIP.id="tip";TIP.setAttribute("role","tooltip");TIP.hidden=true;document.body.appendChild(TIP);
+let TCUR=null,TMT=0,TLP=0,THT=0,TLPON=0,TLAST=0,TX=0,TY=0;
+const TSEL="button,summary,select,a.btn,[role=button],[data-a],input[type=checkbox],input[type=range],input[type=time],.sw";
+function tTarget(n){if(!n||!n.closest||n.closest("#tip"))return null;const el=n.closest(TSEL);if(!el||el.matches(".emb,.shb,.cok,.cn")||el.closest(".emg:not(.cpop)")&&0)return null;return el}
+function tKeys(el){const d=el.dataset,a=d.a,K=[];if(el.id)K.push("#"+el.id);if(a){if(a=="eb"){const h=el.parentNode.querySelector("input[type=hidden]"),c=el.parentNode.querySelector(".cpop");K.push(el.closest(".tb")?"a:eb:hl":c?"a:eb:col":"a:eb:em")}K.push("a:"+a+":"+(d.id||""));if(a=="pe"||a=="day"||a=="mon")K.length=0;K.push("a:"+a);if(EDA.includes(a))K.push("edit");if(DLA.includes(a))K.push("del")}
+if(d.m){const q=d.m.split(":");K.push("a:"+q[0]+":"+q[1])}if(d.c)K.push("c:"+d.c);if(el.dataset.f=="hl")K.push("a:hl");const f=el.closest("form");if(f&&el.matches("button.btn,button:not([type])"))K.push(f.id?"f:"+f.id:f.classList.contains("gf")?"f:gf":"f:");if(el.tagName=="SUMMARY")K.push("sum");const tx=el.textContent.trim();if(["B","I","U","✕"].includes(tx)&&el.closest(".tb"))K.push("l:"+tx);return K}
+function tText(el){if(el.title){el.dataset.ti=el.title;el.removeAttribute("title")}for(const k of tKeys(el))if(HELP[k])return D.lang=="fr"?HELP[k]:trT(HELP[k]);return el.dataset.ti||""}
+function tHide(){clearTimeout(TMT);TIP.hidden=true;TCUR=null}
+function tShow(el,t){TIP.textContent=t;TIP.hidden=false;TIP.style.left="0px";TIP.style.top="0px";const r=el.getBoundingClientRect(),w=TIP.offsetWidth,h=TIP.offsetHeight;let y=r.top-h-8;if(y<6)y=r.bottom+8;let x=Math.min(Math.max(6,r.left+r.width/2-w/2),innerWidth-w-6);TIP.style.left=x+"px";TIP.style.top=Math.max(6,y)+"px"}
+document.addEventListener("mouseover",e=>{if(Date.now()-TLAST<1200)return;const el=tTarget(e.target);if(el===TCUR)return;tHide();TCUR=el;if(el){if(el.title){el.dataset.ti=el.title;el.removeAttribute("title")}TMT=setTimeout(()=>{const t=tText(el);if(t)tShow(el,t)},350)}});
+document.addEventListener("mousedown",tHide);document.addEventListener("wheel",tHide,{passive:true});window.addEventListener("scroll",tHide,true);
+document.addEventListener("keydown",e=>{if(e.key=="Escape")tHide()});
+document.addEventListener("focusin",e=>{const el=tTarget(e.target);if(el&&el.matches(":focus-visible")){const t=tText(el);if(t)tShow(el,t)}});document.addEventListener("focusout",tHide);
+document.addEventListener("touchstart",e=>{TLAST=Date.now();clearTimeout(THT);tHide();TLPON=0;const el=tTarget(e.target);if(!el||el.matches("select,input"))return;const q=e.touches[0];TX=q.clientX;TY=q.clientY;clearTimeout(TLP);TLP=setTimeout(()=>{const t=tText(el);if(t){tShow(el,t);TLPON=1;if(navigator.vibrate)try{navigator.vibrate(15)}catch(_){}}},500)},{passive:true});
+document.addEventListener("touchmove",e=>{const q=e.touches[0];if(Math.abs(q.clientX-TX)>10||Math.abs(q.clientY-TY)>10){clearTimeout(TLP)}},{passive:true});
+const tEnd=e=>{TLAST=Date.now();clearTimeout(TLP);if(TLPON){if(e.cancelable)e.preventDefault();TLPON=0;clearTimeout(THT);THT=setTimeout(tHide,2500)}};document.addEventListener("touchend",tEnd);document.addEventListener("touchcancel",tEnd);
+document.addEventListener("contextmenu",e=>{if(Date.now()-TLAST<1500&&tTarget(e.target))e.preventDefault()});
+const MG=[["Mon organisation",[["tab","today"],["tab","tasks"],["tab","cal"],["tab","time"]]],["Mes études",[["sub","subs"],["sub","grades"],["sub","tt"],["sub","plan"],["sub","cards"],["sub","adm"]]],["Détente",[["sub","calm"],["sub","pause"],["sub","well"]]],["Pour moi",[["tab","notes"],["tab","quotes"],["tab","habits"],["tab","tips"],["sub","bud"]]]];
+$("#mn-c").innerHTML=MG.map(g=>`<div class="mg2">${g[0]}</div>`+g[1].map(i=>`<button type="button" class="mi" data-m="${i[0]}:${i[1]}">${(i[0]=="tab"?document.querySelector("nav [data-id="+i[1]+"]"):document.querySelector(".sb[data-id="+i[1]+"]")).textContent}</button>`).join("")).join("");
+function setMenu(o){$("#mnu").hidden=!o;$("#mn-b").setAttribute("aria-expanded",o?"true":"false");if(o)$("#mn-p").querySelector(".mi.on,.mi").focus();else $("#mn-b").focus()}
+function updLabel(){const t=document.querySelector("nav button.on"),sb=document.querySelector(".sb.on");let l=t?t.textContent:"";const c=t&&t.dataset.id=="calm";if(c&&sb)l=sb.textContent;$("#mn-l").textContent=l;document.querySelectorAll(".mi").forEach(m=>{const q=m.dataset.m.split(":");m.classList.toggle("on",q[0]=="tab"?!!t&&t.dataset.id==q[1]:c&&!!sb&&sb.dataset.id==q[1])})}
+$("#mn-b").onclick=()=>setMenu($("#mnu").hidden);$("#mn-x").onclick=$("#mn-bd").onclick=()=>setMenu(false);
+document.addEventListener("click",e=>{const m=e.target.closest("[data-m]");if(m){const q=m.dataset.m.split(":");if(q[0]=="tab")document.querySelector("nav [data-id="+q[1]+"]").click();else{document.querySelector("nav [data-id=calm]").click();document.querySelector(".sb[data-id="+q[1]+"]").click()}setMenu(false);scrollTo(0,0)}setTimeout(updLabel,0)});
+document.addEventListener("keydown",e=>{if(e.key=="Escape"&&!$("#mnu").hidden)setMenu(false)});
+document.addEventListener("change",e=>{if(e.target.id=="lg"){setTimeout(updLabel,50);setTimeout(updLabel,500)}});updLabel();
+const FL=()=>(D.fl=Array.isArray(D.fl)?D.fl:[]),noteById=id=>D.notes.find(n=>n.id==id),fEl=id=>[...document.querySelectorAll(".flt")].find(e=>e.dataset.fid==id);
+let ZO=[],PEND={},FD=null;
+function fMinBtn(w,m){const b=w.querySelector("[data-fa=min]"),t=m?"Agrandir":"Réduire",x=D.lang=="fr"?t:trT(t);b.textContent=m?"+":"—";b.title=x;b.setAttribute("aria-label",x)}
+function fFront(id){ZO=ZO.filter(x=>x!=id);ZO.push(id);ZO.forEach((x,i)=>{const e=fEl(x);if(e)e.style.zIndex=60+i})}
+function fSave(id){clearTimeout(PEND[id]);delete PEND[id];const e=fEl(id),n=noteById(id);if(!e||!n)return;const t=e.querySelector(".flt-t").value.trim();if(t)n.title=t;n.body=clean(e.querySelector(".flb").innerHTML);n.h=1;save();rNotes()}
+const fSch=id=>{clearTimeout(PEND[id]);PEND[id]=setTimeout(()=>fSave(id),500)},fFlush=()=>Object.keys(PEND).forEach(fSave);
+function mkFloat(f){const n=noteById(f.id);if(!n||fEl(f.id))return;const e=document.createElement("div");e.className="flt"+(f.min?" min":"");e.dataset.fid=f.id;e.setAttribute("role","dialog");e.setAttribute("aria-label",n.title);e.style.cssText=`left:${f.x}px;top:${f.y}px;width:${f.w}px;height:${f.h}px`;
+ e.innerHTML=`<div class="flh"><span class="fgr" aria-hidden="true" title="Déplacer">⠿</span><input class="flt-t" translate="no" maxlength="120" aria-label="Titre" value="${esc(n.title)}"><button type="button" class="soft sm" data-fa="min" title="Réduire" aria-label="Réduire">—</button><button type="button" class="soft sm" data-fa="x" title="Fermer" aria-label="Fermer">✕</button></div><div class="ftb"><button type="button" class="soft sm" data-f="bold" title="Gras"><b>B</b></button><button type="button" class="soft sm" data-f="italic" title="Italique"><i>I</i></button><button type="button" class="soft sm" data-f="underline" title="Souligné"><u>U</u></button><button type="button" class="hl" data-f="hl" data-v="#f3e2a0" style="background:#f3e2a0" title="Surligner"></button><button type="button" class="soft sm" data-f="hl" data-v="transparent" title="Retirer le surlignage">✕</button></div><div class="ed flb" contenteditable="true" role="textbox" translate="no" aria-label="Contenu" style="${paper(n.bg||"lines",n.col||"#f7dfe7",n.font||0)}">${nb(n.body,n.h)}</div>`;
+ document.body.appendChild(e);fMinBtn(e,!!f.min);if(typeof ResizeObserver!="undefined"){let t;new ResizeObserver(()=>{if(e.classList.contains("min"))return;f.w=e.offsetWidth;f.h=e.offsetHeight;clearTimeout(t);t=setTimeout(save,400)}).observe(e)}fFront(f.id)}
+function openFloat(id){const n=noteById(id);if(!n)return;if(EDN==id)resetN();let f=FL().find(x=>x.id==id);if(!f){if(FL().length>=3)closeFloat(FL()[0].id);const w=Math.min(340,innerWidth-24),k=FL().length;f={id,x:Math.max(8,innerWidth-w-16-k*28),y:Math.max(8,innerHeight-420-k*28),w,h:380,min:false};FL().push(f);save()}mkFloat(f);fFront(id);const e=fEl(id);if(e)e.querySelector(".flb").focus()}
+function closeFloat(id){fSave(id);D.fl=FL().filter(x=>x.id!=id);const e=fEl(id);if(e)e.remove();ZO=ZO.filter(x=>x!=id);save()}
+function rFloat(){D.fl=FL().filter(f=>noteById(f.id));document.querySelectorAll(".flt").forEach(e=>{if(!noteById(e.dataset.fid))e.remove()});D.fl.forEach(mkFloat)}
+document.addEventListener("input",e=>{const w=e.target.closest&&e.target.closest(".flt");if(w)fSch(w.dataset.fid)});
+document.addEventListener("click",e=>{const b=e.target.closest("[data-fa]");if(!b)return;const w=b.closest(".flt"),id=w.dataset.fid;if(b.dataset.fa=="x")return closeFloat(id);const f=FL().find(x=>x.id==id);f.min=!f.min;w.classList.toggle("min",f.min);fMinBtn(w,f.min);save()});
+document.addEventListener("pointerdown",e=>{const w=e.target.closest&&e.target.closest(".flt");if(!w)return;fFront(w.dataset.fid);const h=e.target.closest(".flh");if(h&&!e.target.closest("button,input")){FD={w,dx:e.clientX-w.offsetLeft,dy:e.clientY-w.offsetTop};if(h.setPointerCapture)try{h.setPointerCapture(e.pointerId)}catch(_){}}});
+document.addEventListener("pointermove",e=>{if(!FD)return;FD.w.style.left=Math.min(Math.max(0,e.clientX-FD.dx),innerWidth-60)+"px";FD.w.style.top=Math.min(Math.max(0,e.clientY-FD.dy),innerHeight-40)+"px"});
+const fUp=()=>{if(!FD)return;const f=FL().find(x=>x.id==FD.w.dataset.fid);if(f){f.x=FD.w.offsetLeft;f.y=FD.w.offsetTop;save()}FD=null};document.addEventListener("pointerup",fUp);document.addEventListener("pointercancel",fUp);
+window.addEventListener("pagehide",fFlush);document.addEventListener("visibilitychange",()=>{if(document.hidden)fFlush()});
+const TIPS=[],SUGG=["Révisions","Vie quotidienne","Skincare","Bien-être","Organisation"];
+let TIPF="all";
+const tT=x=>D.lang=="fr"?x:trT(x),tipDC=()=>SUGG;
+function rTips(){if(!$("#tp-form").firstChild){$("#tp-form").innerHTML=gf("tips");const c=$("#tp-form [name=cat]");if(c)c.setAttribute("list","dl-t");$("#tp-q").oninput=rTips;$("#tp-x").onclick=()=>{const t=JSON.stringify(D.tips.map(({cat,title,body})=>({cat,title,body})),null,1);info(`<h3>Mes astuces</h3><p>Sélectionne et copie ce texte pour le garder ou l'envoyer.</p><textarea class="in" rows="10" readonly aria-label="Mes astuces">${esc(t)}</textarea>`);const a=document.querySelector("#mbx textarea");if(a)a.onclick=()=>a.select()}}
+ const dc=tipDC(),cats=[...new Set([...TIPS.map(t=>t[1]),...D.tips.map(t=>t.cat).filter(Boolean)])];$("#dl-t").innerHTML=[...new Set([...dc,...cats])].map(c=>`<option value="${esc(c)}">`).join("");if(TIPF!="all"&&!cats.includes(TIPF))TIPF="all";
+ const nt=c=>dc.includes(c)?"":' translate="no"';$("#tp-f").innerHTML=[["all","Toutes"],...cats.map(c=>[c,c])].map(([k,l])=>`<button type="button" class="chip ${TIPF==k?"on":""}" data-a="tipc" data-id="${esc(k)}"${k=="all"?"":nt(k)}>${esc(l)}</button>`).join("");
+ const q=($("#tp-q").value||"").trim().toLowerCase(),it=[...TIPS.map(t=>({d:1,id:t[0],cat:t[1],title:t[2],body:t[3]})),...D.tips.map(t=>({d:0,...t}))].filter(t=>(TIPF=="all"||t.cat==TIPF)&&(!q||(t.d?tT(t.title)+" "+tT(t.body)+" "+tT(t.cat):t.title+" "+t.body+" "+t.cat).toLowerCase().includes(q)));
+ $("#tp-l").innerHTML=cats.filter(c=>it.some(i=>i.cat==c)).map(c=>`<h3${nt(c)}>${esc(c)}</h3>`+it.filter(i=>i.cat==c).map(i=>`<article class="nt" style="margin-top:8px"><div class="row"><b${i.d?"":' translate="no"'}>${esc(i.title)}</b><span>${i.d?`<span class="chip">Conseil du planner</span> <button class="ic" data-a="tipcp" data-id="${i.id}" aria-label="Copier">📋</button>`:EB("tips",i.id)}</span></div><p${i.d?"":' translate="no"'}>${esc(i.body)}</p></article>`).join("")).join("")||`<div class="empty">${TIPS.length||D.tips.length?"Aucune astuce trouvée.":"Aucune astuce pour l'instant. Ajoute la première avec le formulaire."}</div>`}
+document.addEventListener("submit",e=>{const fm=e.target.closest&&e.target.closest("form.gf");if(fm&&fm.dataset.k=="tips")setTimeout(()=>fm.reset(),0)});
+function resetN(){EDN=null;$("#f-n").reset();setCol($("#n-col").closest(".emw"),"#f7dfe7",1);$("#n-b").innerHTML="";$("#n-sv").textContent="Enregistrer la note";$("#n-cx").hidden=true;prevN()}
+function rNotes(){const F=folders();$("#dl-f").innerHTML=F.map(x=>`<option value="${esc(x)}">`).join("");const NF=D.notes.some(n=>!n.folder);if(cf!="all"&&!(cf=="__none"?NF:F.includes(cf)))cf="all";
+ $("#m-f").innerHTML=`<div class="fc ${cf=="all"?"on":""}" data-a="ff" data-id="all" style="background:#fff;border:1px solid #e6d9c8"><span class="em">🗂</span><b>Toutes les notes</b><small>${D.notes.length} notes</small></div>`+(NF?`<div class="fc ${cf=="__none"?"on":""}" data-a="ff" data-id="__none" style="background:#fff;border:1px solid #e6d9c8"><span class="em">📄</span><b>Sans dossier</b><small>${D.notes.filter(n=>!n.folder).length} notes</small></div>`:"")+F.map(n=>{const hx=covHex(D.cov[n]),em=covEm(n);return`<div class="fc ${cf==n?"on":""}" data-a="ff" data-id="${esc(n)}" style="background:${covBg(hx)};${lum(hx)<140?"color:#fff":""}">${em?`<span class="em">${esc(em)}</span>`:""}<b translate="no">${esc(n)}</b><small>${D.notes.filter(x=>x.folder==n).length} notes</small><span class="fa"><button class="ic" data-a="efo" data-id="${esc(n)}" aria-label="Modifier">✎</button><button class="ic" data-a="dfo" data-id="${esc(n)}" aria-label="Supprimer">🗑</button></span></div>`}).join("");
+ const l=D.notes.filter(n=>cf=="all"||(cf=="__none"?!n.folder:n.folder==cf)).sort((a,b)=>b.at.localeCompare(a.at));
+ $("#nl").innerHTML=l.length?l.map(n=>`<article class="nt" style="${paper(n.bg||"lines",n.col,n.font)}"><div class="row"><span><span class="chip" ${n.folder?'translate="no"':""}>${esc(n.folder||"Sans dossier")}</span>${SCh(n.sub)}</span><span><button class="ic" data-a="n2c" data-id="${n.id}" title="→ Flashcards" aria-label="→ Flashcards">🃏</button><button class="ic" data-a="npin" data-id="${n.id}" title="Épingler cette note" aria-label="Épingler cette note">📌</button><button class="ic" data-a="en" data-id="${n.id}" aria-label="Modifier">✎</button><button class="ic" data-a="dn" data-id="${n.id}" aria-label="Supprimer">🗑</button></span></div><h3 translate="no">${esc(n.title)}</h3><div class="nb" translate="no">${nb(n.body,n.h)}</div></article>`).join(""):`<div class="empty">Aucune note pour l'instant.</div>`}
+function render(){rFloat();rHead();rTasks();rCal();rUp();rFc();rQuote();rHab();rNotes();rToday();rPz();rSubs();rStudy();rTips()}
+
+const md=$("#md"),mbx=$("#mbx"),REP={"":"Aucune",d:"Chaque jour",w:"Chaque semaine",m:"Chaque mois",y:"Chaque année"};
+function ask(m,fo){if(D.noAsk&&!fo)return Promise.resolve(true);return new Promise(res=>{md.hidden=false;mbx.innerHTML=`<h3>Confirmer la suppression</h3><p>${esc(m)}</p>${fo?"":`<label style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="na"> Ne plus me demander</label>`}<div class="row" style="margin-top:14px"><button class="soft" id="mn">Annuler</button><button class="btn" id="my">Supprimer</button></div>`;$("#mn").onclick=()=>{md.hidden=true;res(false)};$("#my").onclick=()=>{if($("#na")&&$("#na").checked){D.noAsk=true;$("#askc").checked=false}md.hidden=true;res(true)}})}
+function edit(t,F,v){return new Promise(res=>{md.hidden=false;mbx.innerHTML=`<h3>${t}</h3><form id="mf">${F.map(f=>`<label>${f[1]}${f[2]=="a"?`<textarea class="in" name="${f[0]}" rows="4">${esc(v[f[0]])}</textarea>`:f[2]=="s"?`<select class="in" name="${f[0]}">${Object.entries(typeof f[3]=="function"?f[3]():f[3]||REP).map(([k,x])=>`<option value="${k}" ${(v[f[0]]||"")==k?"selected":""}>${x}</option>`).join("")}</select>`:`${f[2]=="color"?cpick(f[0],v[f[0]],"me-c"):f[2]=="e"?`<span class="emw"><input type="hidden" id="me-e" name="${f[0]}" value="${esc(v[f[0]])}"><button type="button" class="soft" data-a="eb">${esc(v[f[0]]||"Emoji")} ▾</button>${emG("#me-e")}</span>`:`<input class="in" name="${f[0]}" step="any" type="${f[2]||"text"}" value="${esc(v[f[0]])}">`}`}</label>`).join("")}<div class="row" style="margin-top:14px"><button type="button" class="soft" id="mn">Annuler</button><button class="btn">Enregistrer</button></div></form>`;$("#mn").onclick=()=>{md.hidden=true;res(null)};$("#mf").onsubmit=e=>{e.preventDefault();md.hidden=true;res(Object.fromEntries(new FormData(e.target)))}})}
+let tsT;function toast(sn){const t=$("#ts");t.hidden=false;t.innerHTML=`<span>Supprimé</span><button type="button" class="soft sm" id="ts-u">Annuler</button><button type="button" class="soft sm" id="ts-ok">OK</button>`;$("#ts-ok").onclick=()=>{clearTimeout(tsT);t.hidden=true};$("#ts-u").onclick=()=>{const o=JSON.parse(sn);Object.keys(D).forEach(k=>delete D[k]);Object.assign(D,o);t.hidden=true;upd()};clearTimeout(tsT);tsT=setTimeout(()=>t.hidden=true,8000)}
+const del=async(m,fn,fo)=>{if(await ask(m,fo)){const sn=JSON.stringify(D);fn();upd();toast(sn)}},ren=async(id,fn)=>{const r=await edit("Renommer",[["n","Nouveau nom"]],{n:id});if(r&&r.n.trim()){fn(r.n.trim());upd()}};
+$("#askc").checked=!D.noAsk;$("#askc").onchange=e=>{D.noAsk=!e.target.checked;save()};
+document.addEventListener("click",async e=>{const b=e.target.closest("[data-a]");if(!b)return;const a=b.dataset.a,id=b.dataset.id,f=k=>D[k].find(x=>x.id==id);
+ if(a=="tab"){document.querySelectorAll(".v").forEach(v=>v.classList.toggle("on",v.id=="v-"+id));document.querySelectorAll("nav button").forEach(n=>{n.classList.toggle("on",n==b);n.setAttribute("aria-current",n==b?"page":"false")});return}
+ if(a=="mode"){mode=id;return rCal()}
+ if(a=="cd"){const k=b.dataset.k;return del("Supprimer cet élément ?",()=>D[k]=D[k].filter(x=>x.id!=id))}
+ if(a=="ce"){const k=b.dataset.k,v=f(k),r=await edit("Modifier",CF[k].map(x=>x.slice(0,4)),v);if(r){CF[k].forEach(x=>{v[x[0]]=cv(x,r[x[0]])});upd()}return}
+ if(a=="adml"){ADM.forEach(t=>{if(!D.adm.some(x=>x.t==t))D.adm.push({id:uid(),t,d:"",done:false})});return upd()}
+ if(a=="plan"){const x=f("exams"),k=iso(today),o=D.planO||{},R={int:[7,6,5,4,3,2,1],lite:[14,7,3,1]}[o.rhy]||[21,14,10,7,5,3,2,1],tm=/^\d\d:\d\d$/.test(o.t||"")?o.t:"",du=Math.min(480,Math.max(15,+o.dur||60));let en="";if(tm){const m=Math.min(1439,(+tm.slice(0,2))*60+(+tm.slice(3))+du);en=String(m/60|0).padStart(2,"0")+":"+String(m%60).padStart(2,"0")}D.events=D.events.filter(e=>e.auto!=x.id);const used=new Set(),busy=q=>evOn(q).filter(e=>!e.auto).length>=3;let n=0;R.forEach(j=>{const d0=new Date(x.date+"T00:00");d0.setDate(d0.getDate()-j);let c=iso(d0);if(c<k)return;if(o.avoid){for(let b=0;b<3;b++){const d=new Date(d0);d.setDate(d.getDate()-b);const q=iso(d);if(q<k)break;if(!busy(q)&&!used.has(q)){c=q;break}}}if(used.has(c))return;used.add(c);D.events.push({id:uid(),title:"Réviser : "+x.title,date:c,time:tm,end:en,cat:"Études",rep:"",notes:"",sub:x.sub||"",auto:x.id});n++});upd();info(`<h3>Révisions auto</h3><p>${n} séances ajoutées au calendrier.</p>`);return}
+ if(a=="n2c"){const v=f("notes"),tx=nb(v.body,v.h).replace(/<br\s*\/?>|<\/(div|p|li)>/gi,"\n").replace(/<[^>]+>/g,""),ta=document.createElement("textarea");ta.innerHTML=tx;const out=[];ta.value.split("\n").map(x=>x.trim()).filter(Boolean).forEach(l=>{const m=l.match(/^(.+?)\s*(?:::| : |—|–|=>)\s*(.+)$/);if(m)out.push({id:uid(),deck:(SC(v.sub)||{}).name||v.folder||v.title,q:m[1],a:m[2],sub:v.sub||""})});D.cards.push(...out);if(out.length)upd();info(out.length?`<h3>Flashcards</h3><p>${out.length} flashcards créées.</p>`:`<h3>Flashcards</h3><p>Aucune ligne « question : réponse » trouvée dans cette note.</p>`);return}
+ if(a=="pe"){document.querySelector(b.dataset.t).value=id;b.closest(".emw").querySelector("[data-a=eb]").textContent=(id||"Emoji")+" ▾";return}
+ if(a=="go"){const[t,x]=id.split("|");if(t=="cards"){document.querySelector("nav [data-id=calm]").click();document.querySelector(".sb[data-id=cards]").click();return}document.querySelector("nav [data-id="+t+"]").click();if(t=="notes"){cf=x;rNotes()}if(t=="cal"){const[y,m,d]=x.split("-");cur=new Date(+y,+m-1,+d);mode="day";rCal()}return}
+ if(a=="sub"){if(PN[id]){SS=id;rStudy()}document.querySelectorAll(".sp").forEach(v=>v.classList.toggle("on",v.id=="sp-"+(PN[id]?"study":id)));document.querySelectorAll(".sb").forEach(n=>n.classList.toggle("on",n==b));return}
+ if(a=="pz")return pause(id);
+ if(a=="dex")return del("Supprimer ce compte à rebours ?",()=>D.exams=D.exams.filter(x=>x.id!=id));
+ if(a=="eex"){const v=f("exams"),r=await edit("Modifier le compte à rebours",[["title","Titre"],["date","Date","date"],["sub","Matière","s",SUBO]],v);if(r&&r.date){Object.assign(v,{sub:r.sub,title:r.title.trim()||v.title,date:r.date});upd()}return}
+ if(a=="col"){D.calm.col=id;D.calm.th="one";save();return theme()}
+ if(a=="flip"){FS.flip=!FS.flip;return rFs()}
+ if(a=="lv"){const c=FS.q[FS.i],L=+id;c.lv=L;c.due=iso(new Date(today.getFullYear(),today.getMonth(),today.getDate()+[0,2,7][L]));if(L==2)D.fcs[iso(today)]=(D.fcs[iso(today)]||0)+1;if(L==0)FS.q.splice(Math.min(FS.i+4,FS.q.length),0,c);else if(L==1&&!FS.r.has(c.id)){FS.r.add(c.id);FS.q.push(c)}FS.i++;FS.flip=false;return upd()}
+ if(a=="dpz")return del("Supprimer ce lien ?",()=>D.pz=D.pz.filter(x=>x.id!=id));
+ if(a=="epz"){const v=f("pz"),r=await edit("Modifier le lien",[["n","Nom"],["u","Lien"]],v);if(r&&r.n.trim()&&nu(r.u)){Object.assign(v,{n:r.n.trim(),u:nu(r.u)});upd()}return}
+ if(a=="dfc")return del("Supprimer cette flashcard ?",()=>{D.cards=D.cards.filter(x=>x.id!=id);FS.q=FS.q.filter(x=>x.id!=id);if(FS.i>FS.q.length)FS.i=FS.q.length});
+ if(a=="efc"){const v=f("cards"),r=await edit("Modifier la flashcard",[["deck","Paquet"],["sub","Matière","s",SUBO],["q","Recto","a"],["a","Verso","a"]],v);if(r&&r.q.trim()&&r.a.trim()){Object.assign(v,{sub:r.sub,deck:r.deck.trim()||v.deck,q:r.q.trim(),a:r.a.trim()});upd()}return}
+ if(a=="tod"){cur=new Date();return rCal()}
+ if(a=="nav"){const s=+id,y=cur.getFullYear(),m=cur.getMonth();cur=mode=="day"?new Date(y,m,cur.getDate()+s):(mode=="week"||mode=="plan")?new Date(y,m,cur.getDate()+7*s):mode=="year"?new Date(y+s,m,Math.min(cur.getDate(),new Date(y+s,m+1,0).getDate())):new Date(y,m+s,Math.min(cur.getDate(),new Date(y,m+s+1,0).getDate()));return rCal()}
+ if(a=="day"){const[y,m,d]=id.split("-");cur=new Date(+y,+m-1,+d);mode="day";return rCal()}
+ if(a=="mon"){cur=new Date(cur.getFullYear(),+id,1);mode="month";return rCal()}
+ if(a=="rq"){qi=Math.floor(Math.random()*1e6);return rQuote()}
+ if(a=="tst"){const t=f("tasks"),n=NEXT[t.st];if(n=="done"||t.st=="done")setDone(t,n=="done");else t.st=n;return upd()}
+ if(a=="dtask")return del("Supprimer cette tâche ?",()=>D.tasks=D.tasks.filter(t=>t.id!=id));
+ if(a=="etask"){const t=f("tasks"),r=await edit("Modifier la tâche",[["title","Titre"],["list","Liste"],["cat","Catégorie"],["due","Échéance","date"],["p","Priorité","s",PRIO],["sub","Matière","s",SUBO],["body","Contenu","a"]],{...t,p:String(t.p||2),body:(t.items||[]).map(i=>i.t).join("\n")});if(r){Object.assign(t,{title:r.title.trim()||t.title,list:r.list.trim()||t.list,cat:r.cat.trim(),due:r.due,p:r.p,sub:r.sub,items:items(r.body,t.items)});upd()}return}
+ if(a=="dl")return del(`Supprimer la liste « ${id} » et ses tâches ?`,()=>{D.lists=D.lists.filter(x=>x!=id);D.tasks=D.tasks.filter(t=>t.list!=id)},D.tasks.some(t=>t.list==id));
+ if(a=="el")return ren(id,n=>{D.lists=D.lists.map(x=>x==id?n:x);D.tasks.forEach(t=>{if(t.list==id)t.list=n})});
+ if(a=="dc")return del(`Supprimer la catégorie « ${id} » ?`,()=>{D.cats=D.cats.filter(x=>x!=id);D.tasks.forEach(t=>{if(t.cat==id)t.cat=""})});
+ if(a=="ec")return ren(id,n=>{D.cats=D.cats.map(x=>x==id?n:x);D.tasks.forEach(t=>{if(t.cat==id)t.cat=n})});
+ if((a=="dev"||a=="eev")&&/^tt/.test(id))return;
+ if(a=="dev")return del("Supprimer cet événement (et toutes ses répétitions) ?",()=>D.events=D.events.filter(x=>x.id!=id));
+ if(a=="eev"){const v=f("events"),r=await edit("Modifier l'événement",[["title","Titre"],["date","Date","date"],["time","Heure","time"],["end","Fin","time"],["cat","Catégorie"],["rep","Répétition","s"],["notes","Notes","a"]],v);if(r&&r.date){Object.assign(v,r);upd()}return}
+ if(a=="dq")return del("Supprimer cette citation ?",()=>D.quotes=D.quotes.filter(x=>x.id!=id));
+ if(a=="eq"){const v=f("quotes"),r=await edit("Modifier la citation",[["text","Citation","a"]],v);if(r&&r.text.trim()){v.text=r.text.trim();upd()}return}
+ if(a=="dh")return del("Supprimer cette habitude ?",()=>D.habits=D.habits.filter(x=>x.id!=id));
+ if(a=="eh"){const v=f("habits"),r=await edit("Modifier l'habitude",[["name","Habitude"]],v);if(r&&r.name.trim()){v.name=r.name.trim();upd()}return}
+ if(a=="dn")return del("Supprimer cette note ?",()=>D.notes=D.notes.filter(x=>x.id!=id));
+ if(a=="tipc"){TIPF=id;return rTips()}
+ if(a=="tipcp"){const t=TIPS.find(x=>x[0]==id);if(t){D.tips.push({id:uid(),cat:tT(t[1]),title:tT(t[2]),body:tT(t[3])});upd()}return}
+ if(a=="npin"){openFloat(id);return}
+ if(a=="en"){closeFloat(id);const v=f("notes");EDN=id;$("#n-t").value=v.title;$("#n-f").value=v.folder;$("#n-bg").value=v.bg||"lines";$("#n-sub").value=v.sub||"";$("#n-fo").value=v.font||0;setCol($("#n-col").closest(".emw"),v.col||"#f7dfe7",1);$("#n-b").innerHTML=nb(v.body,v.h);$("#n-sv").textContent="Mettre à jour la note";$("#n-cx").hidden=false;prevN();$("#n-t").scrollIntoView({behavior:"smooth",block:"center"});return}
+ if(a=="ff"){cf=id;return rNotes()}
+ if(a=="ttskip"){const r=await edit("Sauter un cours",[["d","Date du cours à sauter","date"]],{d:""});if(r&&r.d){const x=f("tt"),l=(x.skip||"").split(",").filter(Boolean);if(!l.includes(r.d))l.push(r.d);x.skip=l.sort().join(",");upd()}return}
+ if(a=="ttun"){const x=f("tt");x.skip=(x.skip||"").split(",").filter(y=>y&&y!=b.dataset.d).join(",");upd();return}
+ if(a=="ncol"){setCol($("#n-col").closest(".emw"),id);return}
+ if(a=="dfo")return del(`Supprimer le dossier « ${id} » ? Ses notes seront classées « Sans dossier ».`,()=>{D.folders=D.folders.filter(x=>x!=id);delete D.cov[id];delete D.fem[id];D.notes.forEach(n=>{if(n.folder==id)n.folder=""})},D.notes.some(n=>n.folder==id));
+ if(a=="efo"){const r=await edit("Modifier le dossier",[["n","Nom"],["c","Couverture","color"],["e","Emoji (facultatif)","e"]],{n:id,c:covHex(D.cov[id]),e:covEm(id)});if(r&&r.n.trim()){const n=r.n.trim();D.folders=[...new Set(D.folders.map(x=>x==id?n:x).concat(n))];D.notes.forEach(x=>{if(x.folder==id)x.folder=n});if(n!=id)delete D.cov[id];D.cov[n]=r.c;if(n!=id)delete D.fem[id];D.fem[n]=r.e.trim();upd()}}});
+document.addEventListener("change",e=>{const c=e.target.dataset.c;if(!c)return;const id=e.target.dataset.id;
+ if(c=="tdone"){setDone(D.tasks.find(t=>t.id==id),e.target.checked)}
+ else if(c=="item"){const t=D.tasks.find(t=>t.id==id);t.items[+e.target.dataset.i].d=e.target.checked;const all=t.items.every(i=>i.d);if(all&&t.st!="done"){t.st="done";t.dn=iso(today)}else if(!all&&t.st=="done"){t.st="open";t.dn=""}else if(!all&&t.st=="open"&&t.items.some(i=>i.d))t.st="progress"}
+ else if(c=="adm")D.adm.find(x=>x.id==id).done=e.target.checked;
+ else{const h=D.habits.find(h=>h.id==id),k=iso(today);h.log=e.target.checked?[...new Set([...h.log,k])]:h.log.filter(x=>x!=k)}
+ upd()});
+$("#fl").onchange=$("#fc").onchange=rTasks;
+$("#name").value=D.name;$("#name").oninput=e=>{D.name=e.target.value.trim();save();rHead()};
+const sub=(f,fn)=>$(f).onsubmit=e=>{e.preventDefault();fn();e.target.reset();$("#e-date").value=iso(today);upd()};
+sub("#f-task",()=>D.tasks.push({id:uid(),title:$("#t-title").value.trim(),list:$("#t-list").value.trim(),cat:$("#t-cat").value.trim(),due:$("#t-date").value,items:items($("#t-body").value),p:$("#t-prio").value,sub:$("#t-sub").value,st:"open"}));
+sub("#f-list",()=>{const v=$("#l-new").value.trim();if(!lists().some(x=>x.toLowerCase()==v.toLowerCase()))D.lists.push(v)});
+sub("#f-cat",()=>{const v=$("#c-new").value.trim();if(!cats().some(x=>x.toLowerCase()==v.toLowerCase()))D.cats.push(v)});
+sub("#f-fo",()=>{const v=$("#fo-new").value.trim();if(v&&!folders().includes(v)){D.folders.push(v);D.cov[v]=$("#fo-c").value;D.fem[v]=$("#fo-e").value.trim()}$("#fo-eb").textContent="Emoji ▾"});
+sub("#f-ev",()=>D.events.push({id:uid(),title:$("#e-title").value.trim(),date:$("#e-date").value,time:$("#e-time").value,end:$("#e-end").value,sub:$("#e-sub").value,cat:$("#e-cat").value.trim(),rep:$("#e-rep").value,notes:$("#e-notes").value.trim()}));
+sub("#f-q",()=>D.quotes.push({id:uid(),text:$("#q-in").value.trim()}));
+sub("#f-h",()=>D.habits.push({id:uid(),name:$("#h-in").value.trim(),log:[]}));
+sub("#f-ex",()=>D.exams.push({id:uid(),title:$("#ex-t").value.trim(),date:$("#ex-d").value,sub:$("#ex-sub").value}));
+sub("#f-pz",()=>{const u=nu($("#pz-u").value);if(u)D.pz.push({id:uid(),n:$("#pz-n").value.trim(),u})});
+sub("#f-fc",()=>D.cards.push({id:uid(),deck:$("#fc-d").value.trim(),q:$("#fc-q").value.trim(),a:$("#fc-a").value.trim(),sub:$("#fc-sub").value}));
+
+/* Minuteur et chronomètre basés sur l'horloge (pas de dérive) */
+const mm=s=>String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0"),mins=()=>Math.min(180,Math.max(1,+$("#tm-min").value||25));
+const T={left:1500,end:0,iv:0,on:false};
+let BC;function beep(){try{BC=BC||new AudioContext();BC.resume();const c=BC,o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=660;g.gain.value=.08;o.start();o.stop(c.currentTime+.4)}catch(e){}}
+function tick(){T.left=Math.max(0,Math.ceil((T.end-Date.now())/1000));$("#tm").textContent=mm(T.left);if(!T.left){clearInterval(T.iv);T.on=false;$("#tm-s").textContent="Démarrer";const wk=!($("#pm").checked&&PM.ph=="b");if(wk){const mn=Math.round((T.tot||mins()*60)/60);D.rev[iso(today)]=(D.rev[iso(today)]||0)+mn;const sb=$("#tm-sub").value;if(sb)D.revS[sb]=(D.revS[sb]||0)+mn}T.run=0;save();rToday();beep();pomoNext()}}
+$("#tm-s").onclick=()=>{if(T.on){clearInterval(T.iv);T.on=false;$("#tm-s").textContent="Reprendre";return}if(T.left<=0)T.left=mins()*60;if(!T.run){T.tot=T.left;T.run=1}T.end=Date.now()+T.left*1000;T.on=true;$("#tm-s").textContent="Pause";T.iv=setInterval(tick,250);tick()};
+const tmReset=()=>{clearInterval(T.iv);T.on=false;T.run=0;T.left=mins()*60;$("#tm").textContent=mm(T.left);$("#tm-s").textContent="Démarrer"};
+$("#tm-r").onclick=tmReset;$("#tm-min").onchange=()=>{if(!T.on)tmReset()};
+const SW={acc:0,t0:0,on:false,iv:0},swT=()=>Math.floor((SW.acc+(SW.on?Date.now()-SW.t0:0))/1000),swD=()=>$("#sw").textContent=mm(swT());
+$("#sw-s").onclick=()=>{if(SW.on){SW.acc+=Date.now()-SW.t0;SW.on=false;clearInterval(SW.iv);$("#sw-s").textContent="Reprendre"}else{SW.t0=Date.now();SW.on=true;SW.iv=setInterval(swD,250);$("#sw-s").textContent="Pause"}swD()};
+$("#sw-r").onclick=()=>{clearInterval(SW.iv);SW.on=false;SW.acc=0;$("#sw-s").textContent="Démarrer";swD()};
+
+/* Calme : horloge, thème, son, grand écran */
+const TH={pastel:["linear-gradient(135deg,#f6e6e2,#ffffff 55%,#f3e4df)","#3b2f29","rgba(255,255,255,.85)","#3b2f29"],bw:["#fff","#111","#111","#fff"],one:[0,"#111","rgba(255,255,255,.75)","#111"],night:["#2a1e1b","#efe3cf","rgba(255,255,255,.08)","#efe3cf"]};
+const COLS=[["Rouge","#b5656f"],["Rose","#e8c6cc"],["Bleu","#b5c9d6"],["Beige","#eadfc8"],["Marron","#8a6a56"],["Vert","#b9cdb5"],["Violet","#c9b9d3"],["Jaune","#ecd9a0"],["Orange","#e3b793"],["Gris","#cfcac3"]];
+function theme(){const c=D.calm;let t=(TH[c.th]||TH.pastel).slice();if(c.th=="one"){const n=parseInt(c.col.slice(1),16);if((n>>16)*.299+((n>>8)&255)*.587+(n&255)*.114<140)t=[0,"#fff","rgba(255,255,255,.18)","#fff"]}
+ [$("#calm"),$("#fs")].forEach(el=>{const s=el.style;s.setProperty("--tbg",t[0]||c.col);s.setProperty("--tfg",t[1]);s.setProperty("--tcard",t[2]);s.setProperty("--tcfg",t[3])});
+ $("#th").value=$("#th2").value=c.th;$("#th-c").value=c.col;syncCol($("#th-c").closest(".emw"));$("#th-w").hidden=$("#sw-c").hidden=c.th!="one";$("#sw-c").innerHTML=COLS.map(x=>`<button class="sw" data-a="col" data-id="${x[1]}" style="background:${x[1]}" title="${x[0]}" aria-label="${x[0]}"></button>`).join("")}
+$("#th").onchange=$("#th2").onchange=e=>{D.calm.th=e.target.value;save();theme()};$("#th-c").oninput=e=>{D.calm.col=e.target.value;save();theme()};
+const clk=()=>{const n=new Date(),o={timeZone:$("#tz").value,hour:"2-digit",minute:"2-digit",hourCycle:"h23"};$("#clk").textContent=new Intl.DateTimeFormat(LOC,{...o,second:"2-digit"}).format(n);$("#fs-t").textContent=new Intl.DateTimeFormat(LOC,o).format(n);$("#fs-d").textContent=n.toLocaleDateString(LOC,{timeZone:$("#tz").value,weekday:"long",day:"numeric",month:"long"})};
+$("#tz").onchange=clk;setInterval(clk,1000);clk();
+let ac,buf,src;const stopSnd=()=>{if(src){try{src.stop()}catch(e){}src=null}$("#snd-st").textContent="Son arrêté."},playSnd=()=>{if(!buf){$("#snd-st").textContent="Ajoute d'abord un fichier sonore.";return}stopSnd();ac.resume();src=ac.createBufferSource();src.buffer=buf;src.loop=true;src.connect(ac.destination);src.start();$("#snd-st").textContent="Lecture en cours."};
+$("#snd-f").onchange=async e=>{const f=e.target.files[0];if(!f)return;try{ac=ac||new AudioContext();buf=await ac.decodeAudioData(await f.arrayBuffer());$("#snd-st").textContent="Son prêt : "+f.name}catch(x){$("#snd-st").textContent="Ce fichier ne peut pas être lu."}};
+$("#snd-p").onclick=playSnd;$("#snd-s").onclick=stopSnd;$("#fs-s").onclick=()=>src?stopSnd():playSnd();
+$("#fs-o").onclick=()=>{$("#fs").hidden=false;try{document.documentElement.requestFullscreen().catch(()=>{})}catch(e){}};
+$("#fs-x").onclick=()=>{$("#fs").hidden=true;if(document.fullscreenElement)document.exitFullscreen()};
+document.addEventListener("fullscreenchange",()=>{if(!document.fullscreenElement)$("#fs").hidden=$("#ff").hidden=true});
+theme();
+const info=h=>{md.hidden=false;mbx.innerHTML=h+`<div class="row" style="margin-top:14px;justify-content:flex-end"><button class="btn" id="mn">Fermer</button></div>`;$("#mn").onclick=()=>md.hidden=true};
+/* Pause */
+const P={left:0,end:0,iv:0,on:false,tot:0},nu=u=>fixU(u);
+const PZ=[["YouTube","https://www.youtube.com"],["Instagram","https://www.instagram.com"],["TikTok","https://www.tiktok.com"],["Snapchat","https://www.snapchat.com"],["X","https://x.com"],["Pinterest","https://www.pinterest.com"],["Reddit","https://www.reddit.com"],["Twitch","https://www.twitch.tv"]],PG=[["2048","https://play2048.co"],["Wordle","https://www.nytimes.com/games/wordle/index.html"],["Sudoku","https://sudoku.com"],["Tetris","https://tetris.com/play-tetris"]];
+const pzA=(n,u)=>`<a class="btn sm" data-a="pz" translate="no" data-id="x" href="${esc(fixU(u)||"#")}" target="_blank" rel="noopener">${esc(n)}</a>`,pzR=h=>`<div class="row" style="justify-content:center;gap:6px">${h}</div>`;
+function rPz(){$("#pz-o").innerHTML=`<h3>Réseaux sociaux</h3>${pzR(PZ.map(x=>pzA(...x)).join(""))}<h3>Jeux rapides</h3>${pzR(PG.map(x=>pzA(...x)).join(""))}${D.pz.length?`<h3>Mes liens</h3>`+pzR(D.pz.map(x=>`<span>${pzA(x.n,x.u)}<button class="ic" data-a="epz" data-id="${x.id}" aria-label="Modifier">✎</button><button class="ic" data-a="dpz" data-id="${x.id}" aria-label="Supprimer">🗑</button></span>`).join("")):""}<p><button class="soft" data-a="pz" data-id="calm">Mode calme</button></p>`}
+const pzD=()=>{$("#pz-t").textContent=P.tot?mm(P.left):"--:--";$("#pz-b").textContent=P.on?"Pause":"Reprendre";$("#fs-p").textContent=P.tot?(P.left?"☕ "+mm(P.left):$("#pz-msg").textContent):""};
+function pzTick(){P.left=Math.max(0,Math.ceil((P.end-Date.now())/1000));if(!P.left){clearInterval(P.iv);P.on=false;$("#pz-msg").textContent="Fin de la pause : retour aux révisions !";beep()}pzD()}
+function pzRun(){P.end=Date.now()+P.left*1000;P.on=true;clearInterval(P.iv);P.iv=setInterval(pzTick,500);pzTick()}
+function pause(app){const m=Math.min(120,Math.max(1,+$("#pz-m").value||10));P.tot=m*60;P.left=P.tot;$("#pz-msg").textContent=app=="calm"?"Pause en mode calme.":"Bonne pause !";pzRun();if(app=="calm")$("#fs-o").click()}
+$("#pz-b").onclick=()=>{if(!P.tot)return;if(P.on){clearInterval(P.iv);P.on=false;P.left=Math.max(0,Math.ceil((P.end-Date.now())/1000))}else if(P.left)pzRun();pzD()};
+$("#pz-r").onclick=()=>{if(P.tot){P.left=P.tot;$("#pz-msg").textContent="Bonne pause !";pzRun()}};
+/* Flashcards */
+let FS={q:[],i:0,flip:false,r:new Set()};
+function rFc(){const dk=[...new Set(D.cards.map(c=>c.deck))].sort();$("#dl-d").innerHTML=dk.map(x=>`<option value="${esc(x)}">`).join("");fill($("#fc-s"),"Tous les paquets",dk,$("#fc-s").value);
+ $("#fc-l").innerHTML=D.cards.length?D.cards.map(c=>`<article class="nt" style="margin-top:8px"><div class="row"><span><span class="chip" translate="no">${esc(c.deck)}</span>${SCh(c.sub)} <span class="chip">${["Pas apprise","Presque","Apprise"][c.lv||0]}</span></span><span><button class="ic" data-a="efc" data-id="${c.id}" aria-label="Modifier">✎</button><button class="ic" data-a="dfc" data-id="${c.id}" aria-label="Supprimer">🗑</button></span></div><p translate="no"><b>${esc(c.q)}</b></p><p translate="no">${esc(c.a)}</p></article>`).join(""):`<div class="empty">Aucune flashcard pour l'instant.</div>`;rFs()}
+function rFs(){const c=FS.q[FS.i];$("#fc-st").innerHTML=$("#ff-c").innerHTML=!FS.q.length?"":!c?`<p class="q">Session terminée 🎉</p>`:`<small>${FS.i+1}/${FS.q.length}</small><div class="card" data-a="flip" tabindex="0" role="button" style="cursor:pointer;margin:10px 0;min-height:110px;display:flex;align-items:center;justify-content:center;font-size:18px;white-space:pre-wrap">${esc(FS.flip?c.a:c.q)}</div>${FS.flip?`<button class="soft" data-a="lv" data-id="0">Pas apprise</button> <button class="soft" data-a="lv" data-id="1">Presque</button> <button class="btn" data-a="lv" data-id="2">Apprise</button>`:`<button class="soft" data-a="flip">Retourner</button>`}`;
+ $("#fc-lv").innerHTML=[["Apprises",2],["Presque",1],["Pas apprises",0]].map(x=>`<span class="chip">${x[0]} <b>${D.cards.filter(c=>(c.lv||0)==x[1]).length}</b></span>`).join("")}
+function startFc(){const d=$("#fc-s").value,f=$("#fc-f").value,k=iso(today),q=D.cards.filter(c=>(d=="all"||c.deck==d)&&(f=="due"?(!c.due||c.due<=k):f=="all"||(c.lv||0)==+f));FS={q:q.map(c=>[c,Math.random()]).sort((a,b)=>(a[0].lv||0)-(b[0].lv||0)||a[1]-b[1]).map(x=>x[0]),i:0,flip:false,r:new Set()};rFs()}
+$("#fc-go").onclick=startFc;$("#ff-o").onclick=()=>{startFc();$("#ff").hidden=false;try{document.documentElement.requestFullscreen().catch(()=>{})}catch(e){}};
+$("#ff-x").onclick=()=>{$("#ff").hidden=true;if(document.fullscreenElement)document.exitFullscreen()};
+/* Google Agenda : import / export .ics */
+function parseICS(t){t=t.replace(/\r?\n[ \t]/g,"");const out=[];t.split("BEGIN:VEVENT").slice(1).forEach(b=>{const g=k=>{const m=b.match(new RegExp("^"+k+"[^:\\n]*:(.*)$","m"));return m?m[1].trim().replace(/\\n/gi,"\n").replace(/\\,/g,",").replace(/\\;/g,";").replace(/\\\\/g,"\\"):""},P=v=>{const m=v.match(/(\d{4})(\d\d)(\d\d)(?:T(\d\d)(\d\d))?(Z)?/);if(!m)return null;const d=m[6]?new Date(Date.UTC(+m[1],+m[2]-1,+m[3],+(m[4]||0),+(m[5]||0))):new Date(+m[1],+m[2]-1,+m[3],+(m[4]||0),+(m[5]||0));return{d:iso(d),t:m[4]?String(d.getHours()).padStart(2,"0")+":"+String(d.getMinutes()).padStart(2,"0"):""}},s=P(g("DTSTART"));if(!s)return;
+ const e=P(g("DTEND")),rr=g("RRULE"),fq={DAILY:"d",WEEKLY:"w",MONTHLY:"m",YEARLY:"y"}[(rr.match(/FREQ=(\w+)/)||[])[1]]||"",iv=+(rr.match(/INTERVAL=(\d+)/)||[])[1]||1,cn=+(rr.match(/COUNT=(\d+)/)||[])[1],un=rr.match(/UNTIL=(\d{4})(\d\d)(\d\d)/);let until="";
+ if(un)until=un[1]+"-"+un[2]+"-"+un[3];else if(cn&&fq){const a=new Date(s.d+"T00:00"),n=(cn-1)*iv;until=iso(fq=="d"?new Date(a.getFullYear(),a.getMonth(),a.getDate()+n):fq=="w"?new Date(a.getFullYear(),a.getMonth(),a.getDate()+7*n):fq=="m"?new Date(a.getFullYear(),a.getMonth()+n,a.getDate()):new Date(a.getFullYear()+n,a.getMonth(),a.getDate()))}
+ out.push({id:uid(),title:g("SUMMARY")||"(Sans titre)",date:s.d,time:s.t,end:e&&e.d==s.d?e.t:"",cat:"Personnel",rep:fq,iv:fq?iv:1,until,notes:g("DESCRIPTION")})});return out}
+$("#ics-f").onchange=async e=>{const f=e.target.files[0];if(!f)return;const ev=parseICS(await f.text()).filter(x=>!D.events.some(o=>o.title==x.title&&o.date==x.date&&o.time==x.time));D.events.push(...ev);e.target.value="";upd();info(`<h3>Import terminé</h3><p>${ev.length} événement${ev.length>1?"s":""} ajouté${ev.length>1?"s":""}.</p>`)};
+$("#ics-x").onclick=()=>{const c=x=>x.replace(/-/g,""),stamp=new Date().toISOString().replace(/[-:]|\.\d+/g,""),F={d:"DAILY",w:"WEEKLY",m:"MONTHLY",y:"YEARLY"},X=s=>String(s).replace(/\\/g,"\\\\").replace(/\n/g,"\\n").replace(/[,;]/g,m=>"\\"+m),tm=x=>x.replace(":","")+"00";
+ const t=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Journal//FR",...D.events.flatMap(e=>["BEGIN:VEVENT","UID:"+e.id+"@journal","DTSTAMP:"+stamp,e.time?"DTSTART:"+c(e.date)+"T"+tm(e.time):"DTSTART;VALUE=DATE:"+c(e.date),...(e.time&&e.end?["DTEND:"+c(e.date)+"T"+tm(e.end)]:[]),"SUMMARY:"+X(e.title),...(e.notes?["DESCRIPTION:"+X(e.notes)]:[]),...(e.rep?["RRULE:FREQ="+F[e.rep]+(e.iv>1?";INTERVAL="+e.iv:"")+(e.until?";UNTIL="+c(e.until)+(e.time?"T235959":""):"")]:[]),"END:VEVENT"]),"END:VCALENDAR"].join("\r\n");
+ info(`<h3>Export .ics</h3><p style="font-size:13px">Copie ce texte dans un fichier .ics, puis importe-le dans Google Agenda (Paramètres, Importer et exporter).</p><textarea class="in" rows="8" readonly onfocus="this.select()">${esc(t)}</textarea>`)};
+/* Sauvegarde */
+$("#bk").onclick=()=>{info(`<h3>Sauvegarde</h3><p style="font-size:13px">Copie ce texte pour garder tes données ou les transférer sur un autre appareil. Pour restaurer, colle une sauvegarde puis clique sur Importer.</p><textarea id="bk-t" class="in" rows="8">${esc(JSON.stringify(D))}</textarea><button class="soft" id="bk-i" style="margin-top:8px">Importer ce texte</button><p id="bk-m" style="color:#722f3d"></p>`);$("#bk-i").onclick=()=>{let o;try{o=norm(JSON.parse($("#bk-t").value))}catch(e){o=null}if(!o||!Object.keys(o).length){$("#bk-m").textContent="Texte invalide";return}const old=JSON.stringify(D),put=x=>{Object.keys(D).forEach(k=>delete D[k]);Object.assign(D,x)};try{put(Object.assign(JSON.parse(DEF),o));md.hidden=true;upd();$("#askc").checked=!D.noAsk;$("#name").value=D.name;LOC=LOCS[D.lang]||"fr-FR";theme();applyTheme();tr()}catch(e){put(JSON.parse(old));upd();$("#bk-m").textContent="Texte invalide"}}};const PRIO={1:"Urgent",2:"Normal",3:"Plus tard"};
+function rToday(){const k=iso(today),w=wkS(),T0=new Date(today.getFullYear(),today.getMonth(),today.getDate()),ws=o=>Array.from({length:7},(_,i)=>o[iso(new Date(w.getFullYear(),w.getMonth(),w.getDate()+i))]||0).reduce((a,b)=>a+b,0);
+ $("#td-ev").innerHTML=evOn(k).map(e=>`<div class="ev" style="${evSty(e)};font-size:14px;padding:8px">${e.time||"Journée"} · ${esc(e.title)}</div>`).join("")||`<div class="empty">Aucun événement aujourd'hui.</div>`;
+ const tt=D.tasks.filter(t=>t.st!="done"&&((t.due&&t.due<=k)||t.p==1)).sort((a,b)=>(a.due||"9").localeCompare(b.due||"9"));
+ $("#td-t").innerHTML=tt.map(t=>`<label class="ck"><input type="checkbox" data-c="tdone" data-id="${t.id}"><span><span translate="no">${esc(t.title)}</span> ${t.due&&t.due<k?`<small style="color:var(--wine)">(en retard)</small>`:""}</span></label>`).join("")||`<div class="empty">Rien d'urgent.</div>`;
+ $("#td-h").innerHTML=D.habits.map(h=>`<label class="ck"><input type="checkbox" data-c="hab" data-id="${h.id}" ${h.log.includes(k)?"checked":""}><span>${esc(h.name)} 🔥 ${streak(h)}</span></label>`).join("")||`<div class="empty">Aucune habitude.</div>`;
+ $("#td-ex").innerHTML=D.exams.filter(e=>e.date>=k).sort((a,b)=>a.date.localeCompare(b.date)).map(e=>{const d=Math.round((new Date(e.date+"T00:00")-T0)/864e5);return`<div class="card" style="padding:10px;min-width:120px;text-align:center"><div style="font-size:26px;font-weight:700;color:var(--wine)">${d?"J-"+d:"Aujourd'hui"}</div><span translate="no">${esc(e.title)}</span><div><button class="ic" data-a="eex" data-id="${e.id}" aria-label="Modifier">✎</button><button class="ic" data-a="dex" data-id="${e.id}" aria-label="Supprimer">🗑</button></div></div>`}).join("")||`<div class="empty">Aucun examen à venir.</div>`;
+ $("#td-s").innerHTML=[["Tâches terminées cette semaine",D.tasks.filter(t=>t.dn&&t.dn>=iso(w)).length],["Tâches en retard",tt.filter(t=>t.due&&t.due<k).length],["Habitudes validées aujourd'hui",D.habits.filter(h=>h.log.includes(k)).length+"/"+D.habits.length],["Révision (minuteur) cette semaine",ws(D.rev)+" min"],["Flashcards sues cette semaine",ws(D.fcs)],["Objectif hebdomadaire",D.goalW?ws(D.rev)+" / "+D.goalW+" min":"–"]].map(x=>`<div class="row" style="padding:6px 0;border-top:1px solid var(--line)"><span>${x[0]}</span><b>${x[1]}</b></div>`).join("")}
+$("#sr").oninput=()=>{const q=$("#sr").value.trim().toLowerCase(),o=[],m=(...x)=>x.some(v=>String(v||"").toLowerCase().includes(q));if(q){D.tasks.filter(t=>m(t.title,t.list,t.cat,(t.items||[]).map(i=>i.t).join(" "))).forEach(t=>o.push(["Tâche",t.title,"tasks"]));D.notes.filter(n=>m(n.title,n.body.replace(/<[^>]*>/g," "),n.folder)).forEach(n=>o.push(["Note",n.title,"notes|"+(n.folder||"__none")]));folders().filter(f=>m(f)).forEach(f=>o.push(["Dossier",f,"notes|"+f]));D.cards.filter(c=>m(c.q,c.a,c.deck)).forEach(c=>o.push(["Flashcard",c.q,"cards"]));D.events.filter(e=>m(e.title,e.notes)).forEach(e=>o.push(["Événement",e.title+" · "+e.date,"cal|"+e.date]));D.quotes.filter(x=>m(x.text)).forEach(x=>o.push(["Citation",x.text,"quotes"]))}
+ $("#sr-r").innerHTML=o.slice(0,15).map(x=>`<button type="button" class="res" data-a="go" data-id="${esc(x[2])}"><span class="chip">${x[0]}</span> <span translate="no">${esc(x[1])}</span></button>`).join("")||(q?`<div class="empty">Aucun résultat.</div>`:"")};
+const TB=`Mon organisateur|My planner|Mi organizador|Mein Planer
+Ton prénom|Your first name|Tu nombre|Dein Vorname
+Confirmer avant suppression|Confirm before deleting|Confirmar antes de borrar|Vor dem Löschen bestätigen
+Sauvegarde|Backup|Copia de seguridad|Sicherung
+Aujourd'hui|Today|Hoy|Heute
+Tâches|Tasks|Tareas|Aufgaben
+Calendrier|Calendar|Calendario|Kalender
+Temps|Time|Tiempo|Zeit
+Révisions|Study|Estudio|Lernen
+Citations|Quotes|Citas|Zitate
+Habitudes|Habits|Hábitos|Gewohnheiten
+Tâches du jour et en retard|Tasks due today and overdue|Tareas de hoy y atrasadas|Heutige und überfällige Aufgaben
+Compte à rebours|Countdown|Cuenta atrás|Countdown
+Ajouter|Add|Añadir|Hinzufügen
+Statistiques de la semaine|Weekly stats|Estadísticas de la semana|Wochenstatistik
+Recherche|Search|Buscar|Suche
+Aucun événement aujourd'hui.|No events today.|Ningún evento hoy.|Heute keine Termine.
+Rien d'urgent.|Nothing urgent.|Nada urgente.|Nichts Dringendes.
+Aucune habitude.|No habits.|Ningún hábito.|Keine Gewohnheiten.
+Aucun examen à venir.|No upcoming exams.|Ningún examen próximo.|Keine anstehenden Prüfungen.
+(en retard)|(overdue)|(atrasada)|(überfällig)
+Journée|All day|Todo el día|Ganztägig
+Tâches terminées cette semaine|Tasks completed this week|Tareas completadas esta semana|Diese Woche erledigte Aufgaben
+Tâches en retard|Overdue tasks|Tareas atrasadas|Überfällige Aufgaben
+Habitudes validées aujourd'hui|Habits done today|Hábitos cumplidos hoy|Heute erledigte Gewohnheiten
+Révision (minuteur) cette semaine|Study time (timer) this week|Estudio (temporizador) esta semana|Lernzeit (Timer) diese Woche
+Flashcards sues cette semaine|Flashcards learned this week|Tarjetas aprendidas esta semana|Diese Woche gelernte Karteikarten
+Aucun résultat.|No results.|Sin resultados.|Keine Ergebnisse.
+Tâche|Task|Tarea|Aufgabe
+Événement|Event|Evento|Termin
+Citation|Quote|Cita|Zitat
+Nouvelle tâche|New task|Nueva tarea|Neue Aufgabe
+Titre|Title|Título|Titel
+Contenu (une ligne = une case à cocher)|Content (one line = one checkbox)|Contenido|Inhalt
+Liste|List|Lista|Liste
+Catégorie|Category|Categoría|Kategorie
+Priorité|Priority|Prioridad|Priorität
+Urgent|Urgent|Urgente|Dringend
+Normal|Normal|Normal|Normal
+Plus tard|Later|Más tarde|Später
+Échéance|Due date|Fecha límite|Fälligkeit
+Ajouter la tâche|Add task|Añadir tarea|Aufgabe hinzufügen
+Mes listes|My lists|Mis listas|Meine Listen
+Mes catégories|My categories|Mis categorías|Meine Kategorien
+Mes tâches|My tasks|Mis tareas|Meine Aufgaben
+Aucune tâche pour l'instant.|No tasks yet.|Aún no hay tareas.|Noch keine Aufgaben.
+Une belle journée commence par une intention.|A good day starts with an intention.|Un buen día empieza con una intención.|Ein guter Tag beginnt mit einer Absicht.
+À faire|To do|Pendiente|Offen
+En cours|In progress|En curso|In Arbeit
+Terminée|Done|Hecha|Erledigt
+Toutes les listes|All lists|Todas las listas|Alle Listen
+Toutes les catégories|All categories|Todas las categorías|Alle Kategorien
+Ex. Courses|E.g. Groceries|Ej. Compras|z. B. Einkauf
+Nouvelle liste|New list|Nueva lista|Neue Liste
+Nouvelle catégorie|New category|Nueva categoría|Neue Kategorie
+Ex. Partiel de droit|E.g. Law exam|Ej. Examen de derecho|z. B. Jura-Klausur
+Ex. Boire de l'eau|E.g. Drink water|Ej. Beber agua|z. B. Wasser trinken
+Ex. Études|E.g. Studies|Ej. Estudios|z. B. Studium
+Ex. Droit administratif|E.g. Administrative law|Ej. Derecho administrativo|z. B. Verwaltungsrecht
+Tâche, note, flashcard, événement…|Task, note, flashcard, event…|Tarea, nota, tarjeta, evento…|Aufgabe, Notiz, Karteikarte, Termin…
+Nouveau dossier|New folder|Nueva carpeta|Neuer Ordner
+Jour|Day|Día|Tag
+Semaine|Week|Semana|Woche
+Planning|Schedule|Horario|Stundenplan
+Mois|Month|Mes|Monat
+Année|Year|Año|Jahr
+Nouvel événement|New event|Nuevo evento|Neuer Termin
+Heure|Time|Hora|Uhrzeit
+Répétition|Repeat|Repetición|Wiederholung
+Aucune|None|Ninguna|Keine
+Chaque jour|Every day|Cada día|Täglich
+Chaque semaine|Every week|Cada semana|Wöchentlich
+Chaque mois|Every month|Cada mes|Monatlich
+Chaque année|Every year|Cada año|Jährlich
+Ajouter l'événement|Add event|Añadir evento|Termin hinzufügen
+À venir (30 jours)|Upcoming (30 days)|Próximos (30 días)|Demnächst (30 Tage)
+Rien à venir.|Nothing upcoming.|Nada próximo.|Nichts anstehend.
+Rien de prévu ce jour-là.|Nothing planned that day.|Nada previsto ese día.|Nichts geplant an diesem Tag.
+Google Agenda|Google Calendar|Google Calendar|Google Kalender
+La synchronisation automatique n'est pas possible dans cette page. Importe un fichier .ics exporté depuis Google Agenda, exporte le tien, ou ouvre un jour (vue « Jour ») et appuie sur 📅 à côté d'un événement pour l'ajouter à Google Agenda.|Automatic sync isn't possible on this page. Import an .ics file exported from Google Calendar, export yours, or open a day (“Day” view) and press 📅 next to an event to add it to Google Calendar.|La sincronización automática no es posible en esta página. Importa un archivo .ics exportado de Google Calendar, exporta el tuyo o abre un día (vista «Día») y pulsa 📅 junto a un evento para añadirlo a Google Calendar.|Die automatische Synchronisierung ist auf dieser Seite nicht möglich. Importiere eine aus Google Kalender exportierte .ics-Datei, exportiere deine eigene oder öffne einen Tag (Ansicht „Tag“) und tippe neben einem Termin auf 📅, um ihn zu Google Kalender hinzuzufügen.
+Ouvrir Google Agenda|Open Google Calendar|Abrir Google Calendar|Google Kalender öffnen
+Exporter (.ics)|Export (.ics)|Exportar (.ics)|Exportieren (.ics)
+Importer un fichier .ics|Import an .ics file|Importar un archivo .ics|.ics-Datei importieren
+Personnel|Personal|Personal|Persönlich
+Études|Studies|Estudios|Studium
+Repas|Meals|Comidas|Mahlzeiten
+Bien-être|Well-being|Bienestar|Wohlbefinden
+Notes|Notes|Notas|Notizen
+Lun|Mon|Lun|Mo
+Mar|Tue|Mar|Di
+Mer|Wed|Mié|Mi
+Jeu|Thu|Jue|Do
+Ven|Fri|Vie|Fr
+Sam|Sat|Sáb|Sa
+Dim|Sun|Dom|So
+Minuteur|Timer|Temporizador|Timer
+Minutes|Minutes|Minutos|Minuten
+Démarrer|Start|Iniciar|Starten
+Réinitialiser|Reset|Reiniciar|Zurücksetzen
+Pause|Pause|Pausa|Pause
+Reprendre|Resume|Reanudar|Fortsetzen
+Chronomètre|Stopwatch|Cronómetro|Stoppuhr
+Calme|Calm|Calma|Ruhe
+Horloge du monde|World clock|Reloj mundial|Weltuhr
+Fuseau|Time zone|Zona horaria|Zeitzone
+Mode grand écran|Fullscreen mode|Modo pantalla completa|Vollbildmodus
+Ambiance|Mood|Ambiente|Stimmung
+Thème|Theme|Tema|Thema
+Pastel doux|Soft pastel|Pastel suave|Sanftes Pastell
+Noir et blanc|Black and white|Blanco y negro|Schwarzweiß
+Couleur unique|Single colour|Color único|Einzelfarbe
+Nuit|Night|Noche|Nacht
+Son d'ambiance|Ambient sound|Sonido ambiente|Hintergrundklang
+Lire|Play|Reproducir|Abspielen
+Arrêter|Stop|Detener|Stoppen
+Quitter|Exit|Salir|Beenden
+Son|Sound|Sonido|Ton
+Londres|London|Londres|London
+Ajoute d'abord un fichier sonore.|Add a sound file first.|Primero añade un archivo de sonido.|Füge zuerst eine Audiodatei hinzu.
+Lecture en cours.|Playing.|Reproduciendo.|Wiedergabe läuft.
+Son arrêté.|Sound stopped.|Sonido detenido.|Ton gestoppt.
+Nouvelle flashcard|New flashcard|Nueva tarjeta|Neue Karteikarte
+Paquet|Deck|Mazo|Stapel
+Recto (question)|Front (question)|Anverso (pregunta)|Vorderseite (Frage)
+Verso (réponse)|Back (answer)|Reverso (respuesta)|Rückseite (Antwort)
+Réviser|Review|Repasar|Wiederholen
+Commencer|Start|Empezar|Beginnen
+Plein écran|Fullscreen|Pantalla completa|Vollbild
+Mes flashcards|My flashcards|Mis tarjetas|Meine Karteikarten
+Aucune flashcard pour l'instant.|No flashcards yet.|Aún no hay tarjetas.|Noch keine Karteikarten.
+Retourner|Flip|Girar|Umdrehen
+Pas apprise|Not learned|No aprendida|Nicht gelernt
+Presque|Almost|Casi|Fast
+Apprise|Learned|Aprendida|Gelernt
+Session terminée 🎉|Session complete 🎉|Sesión terminada 🎉|Sitzung beendet 🎉
+À revoir aujourd'hui (conseillé)|Due today (recommended)|Para repasar hoy (recomendado)|Heute fällig (empfohlen)
+Toutes|All|Todas|Alle
+Pas apprises|Not learned|No aprendidas|Nicht gelernt
+Presque apprises|Almost learned|Casi aprendidas|Fast gelernt
+Apprises|Learned|Aprendidas|Gelernt
+Tous les paquets|All decks|Todos los mazos|Alle Stapel
+Durée (minutes)|Duration (minutes)|Duración (minutos)|Dauer (Minuten)
+Choisis ta pause :|Choose your break:|Elige tu descanso:|Wähle deine Pause:
+Mode calme|Calm mode|Modo calma|Ruhemodus
+Recommencer|Restart|Reiniciar|Neu starten
+Réseaux sociaux|Social media|Redes sociales|Soziale Netzwerke
+Jeux rapides|Quick games|Juegos rápidos|Schnelle Spiele
+Mes liens|My links|Mis enlaces|Meine Links
+Nom|Name|Nombre|Name
+Lien (https://…)|Link (https://…)|Enlace (https://…)|Link (https://…)
+Bonne pause !|Enjoy your break!|¡Buen descanso!|Schöne Pause!
+Pause en mode calme.|Calm mode break.|Descanso en modo calma.|Pause im Ruhemodus.
+Fin de la pause : retour aux révisions !|Break over: back to studying!|Fin del descanso: ¡a estudiar!|Pause vorbei: zurück ans Lernen!
+Citation du jour|Quote of the day|Cita del día|Zitat des Tages
+Une autre citation|Another quote|Otra cita|Anderes Zitat
+Ajouter une citation|Add a quote|Añadir una cita|Zitat hinzufügen
+Ma citation|My quote|Mi cita|Mein Zitat
+Un petit pas chaque jour vaut mieux qu'un grand bond rare.|A small step every day beats a rare big leap.|Un pequeño paso cada día vale más que un gran salto raro.|Ein kleiner Schritt jeden Tag ist besser als ein seltener großer Sprung.
+Fais de ton mieux avec ce que tu as, là où tu es.|Do your best with what you have, where you are.|Haz lo mejor con lo que tienes, donde estés.|Gib dein Bestes mit dem, was du hast, dort, wo du bist.
+La constance bat l'intensité.|Consistency beats intensity.|La constancia vence a la intensidad.|Beständigkeit schlägt Intensität.
+Respire : tu avances déjà.|Breathe: you're already moving forward.|Respira: ya estás avanzando.|Atme durch: Du kommst schon voran.
+Ce qui compte, c'est de continuer.|What matters is to keep going.|Lo que importa es seguir.|Wichtig ist, weiterzumachen.
+Nouvelle habitude|New habit|Nuevo hábito|Neue Gewohnheit
+Habitude|Habit|Hábito|Gewohnheit
+Mes habitudes|My habits|Mis hábitos|Meine Gewohnheiten
+Aucune habitude pour l'instant.|No habits yet.|Aún no hay hábitos.|Noch keine Gewohnheiten.
+Nouvelle note|New note|Nueva nota|Neue Notiz
+Dossier|Folder|Carpeta|Ordner
+Contenu|Content|Contenido|Inhalt
+Enregistrer la note|Save note|Guardar nota|Notiz speichern
+Mes dossiers|My folders|Mis carpetas|Meine Ordner
+Mes notes|My notes|Mis notas|Meine Notizen
+Tous les dossiers|All folders|Todas las carpetas|Alle Ordner
+Aucune note pour l'instant.|No notes yet.|Aún no hay notas.|Noch keine Notizen.
+Confirmer la suppression|Confirm deletion|Confirmar eliminación|Löschen bestätigen
+Ne plus me demander|Don't ask me again|No volver a preguntar|Nicht mehr fragen
+Annuler|Cancel|Cancelar|Abbrechen
+Supprimer|Delete|Eliminar|Löschen
+Enregistrer|Save|Guardar|Speichern
+Fermer|Close|Cerrar|Schließen
+Renommer|Rename|Renombrar|Umbenennen
+Nouveau nom|New name|Nuevo nombre|Neuer Name
+Modifier la tâche|Edit task|Editar tarea|Aufgabe bearbeiten
+Modifier l'événement|Edit event|Editar evento|Termin bearbeiten
+Modifier la citation|Edit quote|Editar cita|Zitat bearbeiten
+Modifier l'habitude|Edit habit|Editar hábito|Gewohnheit bearbeiten
+Modifier la note|Edit note|Editar nota|Notiz bearbeiten
+Modifier la flashcard|Edit flashcard|Editar tarjeta|Karteikarte bearbeiten
+Modifier le lien|Edit link|Editar enlace|Link bearbeiten
+Modifier le compte à rebours|Edit countdown|Editar cuenta atrás|Countdown bearbeiten
+Import terminé|Import complete|Importación completada|Import abgeschlossen
+Texte invalide|Invalid text|Texto no válido|Ungültiger Text
+Importer ce texte|Import this text|Importar este texto|Diesen Text importieren
+Supprimer cette tâche ?|Delete this task?|¿Eliminar esta tarea?|Diese Aufgabe löschen?
+Supprimer cet événement (et toutes ses répétitions) ?|Delete this event (and all repeats)?|¿Eliminar este evento (y todas sus repeticiones)?|Diesen Termin (und alle Wiederholungen) löschen?
+Supprimer cette citation ?|Delete this quote?|¿Eliminar esta cita?|Dieses Zitat löschen?
+Supprimer cette habitude ?|Delete this habit?|¿Eliminar este hábito?|Diese Gewohnheit löschen?
+Supprimer cette note ?|Delete this note?|¿Eliminar esta nota?|Diese Notiz löschen?
+Supprimer cette flashcard ?|Delete this flashcard?|¿Eliminar esta tarjeta?|Diese Karteikarte löschen?
+Supprimer ce compte à rebours ?|Delete this countdown?|¿Eliminar esta cuenta atrás?|Diesen Countdown löschen?
+Supprimer ce lien ?|Delete this link?|¿Eliminar este enlace?|Diesen Link löschen?
+Sauvegarde|Backup|Copia de seguridad|Sicherung
+Copie ce texte pour garder tes données ou les transférer sur un autre appareil. Pour restaurer, colle une sauvegarde puis clique sur Importer.|Copy this text to keep your data or move it to another device. To restore, paste a backup and click Import.|Copia este texto para guardar tus datos o pasarlos a otro dispositivo. Para restaurar, pega una copia y pulsa Importar.|Kopiere diesen Text, um deine Daten zu sichern oder auf ein anderes Gerät zu übertragen. Zum Wiederherstellen füge eine Sicherung ein und klicke auf Importieren.
+Couverture|Cover|Portada|Einband
+Papier|Paper|Papel|Papier
+Lignes|Lined|Rayado|Liniert
+Page blanche|Blank page|Página en blanco|Leere Seite
+Quadrillage|Grid|Cuadrícula|Kariert
+Couleur unie|Solid colour|Color liso|Einfarbig
+Écriture|Font|Fuente|Schriftart
+Standard|Default|Estándar|Standard
+Élégante|Elegant|Elegante|Elegant
+Manuscrite|Handwritten|Manuscrita|Handschrift
+Machine à écrire|Typewriter|Máquina de escribir|Schreibmaschine
+Arrondie|Rounded|Redondeada|Rund
+Toutes les notes|All notes|Todas las notas|Alle Notizen
+Modifier le dossier|Edit folder|Editar carpeta|Ordner bearbeiten
+Mettre à jour la note|Update note|Actualizar nota|Notiz aktualisieren
+Rose|Pink|Rosa|Rosa
+Vert|Green|Verde|Grün
+Bleu|Blue|Azul|Blau
+Violet|Purple|Violeta|Lila
+Jaune|Yellow|Amarillo|Gelb
+Beige|Beige|Beige|Beige
+Marron|Brown|Marrón|Braun
+Blanc simple|Plain white|Blanco liso|Schlichtes Weiß
+Emoji (facultatif)|Emoji (optional)|Emoji (opcional)|Emoji (optional)
+Aucun|None|Ninguno|Keines
+Arrêter les citations|Stop quotes|Detener citas|Zitate anhalten
+Reprendre les citations|Resume quotes|Reanudar citas|Zitate fortsetzen
+Sans dossier|No folder|Sin carpeta|Ohne Ordner
+Fin|End|Fin|Ende
+· répété|· repeats|· se repite|· wiederholt
+Supprimé|Deleted|Eliminado|Gelöscht
+Enregistrement impossible : tes données ne seront pas conservées. Utilise le bouton Sauvegarde.|Saving failed: your data won't be kept. Use the Backup button.|No se puede guardar: tus datos no se conservarán. Usa el botón de copia de seguridad.|Speichern nicht möglich: Deine Daten werden nicht gespeichert. Nutze die Sicherung.
+Modifier|Edit|Editar|Bearbeiten
+Précédent|Previous|Anterior|Zurück
+Suivant|Next|Siguiente|Weiter
+Terminer|Complete|Completar|Abschließen
+Valider|Mark done|Marcar|Erledigen
+Couleur|Colour|Color|Farbe
+Autre couleur|Other colour|Otro color|Andere Farbe
+Langue|Language|Idioma|Sprache
+Gras|Bold|Negrita|Fett
+Italique|Italic|Cursiva|Kursiv
+Souligné|Underline|Subrayado|Unterstrichen
+Surligner|Highlight|Resaltar|Markieren
+Retirer le surlignage|Remove highlight|Quitar resaltado|Markierung entfernen
+Ajouter à Google Agenda|Add to Google Calendar|Añadir a Google Calendar|Zu Google Kalender hinzufügen
+Matières|Subjects|Asignaturas|Fächer
+Matière|Subject|Asignatura|Fach
+Notes et moyennes|Grades|Notas y medias|Noten
+Révisions auto|Auto revision|Repaso automático|Auto-Lernplan
+Emploi du temps|Timetable|Horario de clases|Stundenplan
+Démarches|Admin tasks|Trámites|Formalitäten
+Budget|Budget|Presupuesto|Budget
+Nouvelle matière|New subject|Nueva asignatura|Neues Fach
+Aucune matière pour l'instant.|No subjects yet.|Aún no hay asignaturas.|Noch keine Fächer.
+Tâches à faire|Open tasks|Tareas pendientes|Offene Aufgaben
+Temps de révision (min)|Study time (min)|Tiempo de estudio (min)|Lernzeit (Min.)
+Moyenne|Average|Media|Durchschnitt
+Moyenne générale|Overall average|Media general|Gesamtdurchschnitt
+Objectif de moyenne|Target average|Objetivo de media|Zieldurchschnitt
+Écart à l'objectif|Gap to target|Diferencia con el objetivo|Abstand zum Ziel
+Nouvelle évaluation|New grade|Nueva evaluación|Neue Bewertung
+Intitulé|Label|Descripción|Bezeichnung
+Résultat|Result|Resultado|Ergebnis
+Sur|Out of|Sobre|von
+Coefficient|Coefficient|Coeficiente|Gewichtung
+Aucune évaluation.|No grades yet.|Aún no hay evaluaciones.|Noch keine Bewertungen.
+Planifier les révisions|Plan revisions|Planificar repaso|Lernplan erstellen
+Séances planifiées|Planned sessions|Sesiones planificadas|Geplante Sitzungen
+Aucun examen : ajoute-en un dans l'onglet Aujourd'hui.|No exams: add one in the Today tab.|Sin exámenes: añade uno en la pestaña Hoy.|Keine Prüfungen: Füge eine im Tab Heute hinzu.
+Début|Start|Inicio|Beginn
+Type|Type|Tipo|Art
+Salle|Room|Aula|Raum
+Professeur|Teacher|Profesor|Lehrkraft
+Cours|Class|Clase|Kurs
+Ajouter un cours|Add a class|Añadir clase|Kurs hinzufügen
+Aucun cours.|No classes.|Sin clases.|Keine Kurse.
+Démarche|Step|Trámite|Schritt
+Charger la liste type|Load template list|Cargar lista modelo|Vorlage laden
+Aucune démarche.|No steps.|Sin trámites.|Keine Schritte.
+Budget mensuel (€)|Monthly budget (€)|Presupuesto mensual (€)|Monatsbudget (€)
+Libellé|Label|Concepto|Bezeichnung
+Montant (€, négatif = dépense)|Amount (€, negative = expense)|Importe (€, negativo = gasto)|Betrag (€, negativ = Ausgabe)
+Dépensé ce mois|Spent this month|Gastado este mes|Diesen Monat ausgegeben
+Reçu ce mois|Received this month|Ingresos este mes|Diesen Monat erhalten
+Reste|Remaining|Restante|Übrig
+Aucune opération.|No entries.|Sin movimientos.|Keine Einträge.
+Sommeil (h)|Sleep (h)|Sueño (h)|Schlaf (Std.)
+Humeur|Mood|Ánimo|Stimmung
+Sommeil moyen (7 j)|Average sleep (7 d)|Sueño medio (7 d)|Ø Schlaf (7 T.)
+Humeur moyenne (7 j)|Average mood (7 d)|Ánimo medio (7 d)|Ø Stimmung (7 T.)
+Aucune donnée.|No data.|Sin datos.|Keine Daten.
+Travail|Work|Trabajo|Arbeit
+Objectif de révision (min/semaine)|Study goal (min/week)|Objetivo de estudio (min/semana)|Lernziel (Min./Woche)
+Objectif hebdomadaire|Weekly goal|Objetivo semanal|Wochenziel
+Supprimer cet élément ?|Delete this item?|¿Eliminar este elemento?|Dieses Element löschen?
+Aucune ligne « question : réponse » trouvée dans cette note.|No “question : answer” line found in this note.|No se encontró ninguna línea «pregunta : respuesta» en esta nota.|Keine Zeile „Frage : Antwort“ in dieser Notiz gefunden.
+Sauge et crème|Sage and cream|Salvia y crema|Salbei und Creme
+Lavande et rose poudré|Lavender and powder pink|Lavanda y rosa empolvado|Lavendel und Puderrosa
+Bleu ciel et beige|Sky blue and beige|Azul cielo y beige|Himmelblau und Beige
+Thème du journal|Journal theme|Tema del diario|Tagebuch-DesignAutre nuance|Other shade|Otro tono|Andere Nuance
+Études et travail|Study and work|Estudios y trabajo|Studium und Arbeit
+Visages|Faces|Caras|Gesichter
+Gestes et personnes|Gestures and people|Gestos y personas|Gesten und Personen
+Cœurs et symboles|Hearts and symbols|Corazones y símbolos|Herzen und Symbole
+Animaux|Animals|Animales|Tiere
+Nourriture|Food|Comida|Essen
+Activités|Activities|Actividades|Aktivitäten
+Voyage et maison|Travel and home|Viajes y hogar|Reisen und Zuhause
+Santé et argent|Health and money|Salud y dinero|Gesundheit und Geld
+Nature|Nature|Naturaleza|Natur
+Début du semestre|Semester start|Inicio del semestre|Semesterbeginn
+Fin du semestre|Semester end|Fin del semestre|Semesterende
+Sauter une date|Skip a date|Omitir una fecha|Datum überspringen
+Sauter un cours|Skip a class|Omitir una clase|Unterricht überspringen
+Date du cours à sauter|Date of the class to skip|Fecha de la clase a omitir|Datum des zu überspringenden Kurses
+Ignoré :|Skipped:|Omitido:|Übersprungen:
+Du|From|Del|Vom
+au|to|al|bis
+Options|Options|Opciones|Optionen
+Rythme|Pace|Ritmo|Rhythmus
+Standard|Standard|Estándar|Standard
+Intensif|Intensive|Intensivo|Intensiv
+Léger|Light|Ligero|Leicht
+Heure de la séance (facultatif)|Session time (optional)|Hora de la sesión (opcional)|Uhrzeit der Sitzung (optional)
+Durée (min)|Duration (min)|Duración (min)|Dauer (Min.)
+Éviter les jours déjà chargés|Avoid already busy days|Evitar los días ya ocupados|Bereits volle Tage vermeiden
+Choisis la langue du planner.|Choose the planner's language.|Elige el idioma del planner.|Wähle die Sprache des Planers.
+Change les couleurs de tout le planner.|Changes the colours of the whole planner.|Cambia los colores de todo el planner.|Ändert die Farben des ganzen Planers.
+Enregistre une copie de toutes tes données dans un fichier, ou restaure une copie.|Saves a copy of all your data to a file, or restores one.|Guarda una copia de todos tus datos en un archivo o restaura una.|Speichert eine Kopie aller Daten in einer Datei oder stellt eine wieder her.
+Si tu décoches, plus aucune confirmation ne sera demandée avant de supprimer.|If you untick this, nothing will ask for confirmation before deleting.|Si lo desmarcas, no se pedirá confirmación antes de borrar.|Wenn du das abwählst, wird vor dem Löschen nicht mehr nachgefragt.
+Ta journée : tâches, événements, habitudes et examens du jour.|Your day: today's tasks, events, habits and exams.|Tu día: tareas, eventos, hábitos y exámenes de hoy.|Dein Tag: Aufgaben, Termine, Gewohnheiten und Prüfungen.
+Tes tâches et tes listes (courses, projets...).|Your tasks and lists (shopping, projects...).|Tus tareas y listas (compras, proyectos...).|Deine Aufgaben und Listen (Einkauf, Projekte...).
+Ton calendrier : jour, semaine, mois ou année.|Your calendar: day, week, month or year.|Tu calendario: día, semana, mes o año.|Dein Kalender: Tag, Woche, Monat oder Jahr.
+Minuteur de révision (pomodoro) et chronomètre.|Study timer (pomodoro) and stopwatch.|Temporizador de estudio (pomodoro) y cronómetro.|Lern-Timer (Pomodoro) und Stoppuhr.
+Tout pour les études : matières, notes, emploi du temps, flashcards, mode calme...|Everything for studying: subjects, grades, timetable, flashcards, calm mode...|Todo para estudiar: asignaturas, notas, horario, tarjetas, modo calma...|Alles fürs Studium: Fächer, Noten, Stundenplan, Karteikarten, Ruhemodus...
+Tes citations préférées.|Your favourite quotes.|Tus citas favoritas.|Deine Lieblingszitate.
+Tes habitudes de chaque jour et tes séries (flammes).|Your daily habits and streaks (flames).|Tus hábitos diarios y tus rachas (llamas).|Deine täglichen Gewohnheiten und Serien (Flammen).
+Tes notes, rangées par dossiers.|Your notes, organised in folders.|Tus notas, organizadas por carpetas.|Deine Notizen, in Ordnern sortiert.
+Affiche le calendrier jour par jour.|Shows the calendar day by day.|Muestra el calendario día a día.|Zeigt den Kalender tageweise.
+Affiche la semaine entière.|Shows the whole week.|Muestra la semana entera.|Zeigt die ganze Woche.
+Affiche la liste de tes prochains événements.|Shows the list of your upcoming events.|Muestra la lista de tus próximos eventos.|Zeigt die Liste deiner nächsten Termine.
+Affiche le mois entier.|Shows the whole month.|Muestra el mes entero.|Zeigt den ganzen Monat.
+Affiche l'année entière.|Shows the whole year.|Muestra el año entero.|Zeigt das ganze Jahr.
+Revenir à la date d'aujourd'hui.|Go back to today's date.|Volver a la fecha de hoy.|Zurück zum heutigen Datum.
+Période précédente.|Previous period.|Periodo anterior.|Voriger Zeitraum.
+Période suivante.|Next period.|Periodo siguiente.|Nächster Zeitraum.
+Ouvrir ce jour.|Open this day.|Abrir este día.|Diesen Tag öffnen.
+Voir ce mois en détail.|See this month in detail.|Ver este mes en detalle.|Diesen Monat im Detail ansehen.
+Télécharge ton calendrier (fichier .ics) pour l'importer dans Google Agenda, Apple Calendrier...|Downloads your calendar (.ics file) to import into Google Calendar, Apple Calendar...|Descarga tu calendario (archivo .ics) para importarlo en Google Calendar, Apple Calendar...|Lädt deinen Kalender (.ics-Datei) zum Import in Google Kalender, Apple Kalender... herunter.
+Démarre ou met en pause le minuteur.|Starts or pauses the timer.|Inicia o pausa el temporizador.|Startet oder pausiert den Timer.
+Remet le minuteur à zéro.|Resets the timer.|Reinicia el temporizador.|Setzt den Timer zurück.
+Démarre ou met en pause le chronomètre.|Starts or pauses the stopwatch.|Inicia o pausa el cronómetro.|Startet oder pausiert die Stoppuhr.
+Remet le chronomètre à zéro.|Resets the stopwatch.|Reinicia el cronómetro.|Setzt die Stoppuhr zurück.
+Alterne automatiquement 25 min de travail et 5 min de pause.|Automatically alternates 25 min of work and 5 min of break.|Alterna automáticamente 25 min de trabajo y 5 min de descanso.|Wechselt automatisch zwischen 25 Min. Arbeit und 5 Min. Pause.
+Le temps de révision sera ajouté à cette matière.|Study time will be added to this subject.|El tiempo de estudio se sumará a esta asignatura.|Die Lernzeit wird diesem Fach gutgeschrieben.
+Fuseau horaire utilisé pour afficher l'heure.|Time zone used to display the time.|Zona horaria usada para mostrar la hora.|Zeitzone für die Uhrzeit-Anzeige.
+Tes matières, avec temps de révision et moyenne.|Your subjects, with study time and average.|Tus asignaturas, con tiempo de estudio y media.|Deine Fächer mit Lernzeit und Durchschnitt.
+Saisis tes notes pour calculer tes moyennes.|Enter your grades to calculate your averages.|Introduce tus notas para calcular tus medias.|Trage deine Noten ein, um Durchschnitte zu berechnen.
+Ton emploi du temps : les cours apparaissent aussi dans le calendrier.|Your timetable: classes also appear in the calendar.|Tu horario: las clases también aparecen en el calendario.|Dein Stundenplan: Kurse erscheinen auch im Kalender.
+Planifie automatiquement des séances de révision avant un examen.|Automatically schedules revision sessions before an exam.|Planifica automáticamente sesiones de repaso antes de un examen.|Plant automatisch Lerneinheiten vor einer Prüfung.
+Crée des flashcards et révise-les.|Create flashcards and revise them.|Crea tarjetas y repásalas.|Erstelle Karteikarten und wiederhole sie.
+Mode calme : heure en grand, ambiance sonore et citations.|Calm mode: large clock, ambient sound and quotes.|Modo calma: hora grande, sonido ambiente y citas.|Ruhemodus: große Uhr, Klangkulisse und Zitate.
+Une pause cadrée avec un minuteur, pour ne pas t'y perdre.|A timed break so you don't lose yourself in it.|Un descanso con temporizador para no perderte en él.|Eine Pause mit Timer, damit du dich nicht verlierst.
+Suivi de tes démarches administratives.|Tracking your administrative tasks.|Seguimiento de tus trámites administrativos.|Verfolgung deiner Behördengänge.
+Suivi simple de ton budget.|Simple budget tracking.|Seguimiento sencillo de tu presupuesto.|Einfache Budgetverfolgung.
+Suis ton sommeil et ton humeur.|Track your sleep and mood.|Sigue tu sueño y tu estado de ánimo.|Verfolge Schlaf und Stimmung.
+Affiche l'heure en plein écran avec ton thème de couleur.|Shows the clock full screen with your colour theme.|Muestra la hora a pantalla completa con tu tema de color.|Zeigt die Uhr im Vollbild mit deinem Farbthema.
+Arrête ou relance le défilement des citations.|Stops or restarts the quotes scrolling.|Detiene o reanuda el desfile de citas.|Stoppt oder startet den Zitatwechsel.
+Arrête ou relance le défilement des citations.|Stops or restarts the quotes scrolling.|Detiene o reanuda el desfile de citas.|Stoppt oder startet den Zitatwechsel.
+Choisis le thème de couleur du mode calme.|Choose the calm mode colour theme.|Elige el tema de color del modo calma.|Wähle das Farbthema des Ruhemodus.
+Choisis le thème de couleur du mode calme.|Choose the calm mode colour theme.|Elige el tema de color del modo calma.|Wähle das Farbthema des Ruhemodus.
+Utiliser cette couleur unie.|Use this plain colour.|Usar este color liso.|Diese einfarbige Farbe verwenden.
+Lance le son d'ambiance choisi.|Plays the chosen ambient sound.|Reproduce el sonido ambiente elegido.|Spielt die gewählte Klangkulisse ab.
+Arrête le son d'ambiance.|Stops the ambient sound.|Detiene el sonido ambiente.|Stoppt die Klangkulisse.
+Active ou coupe le son d'ambiance.|Turns the ambient sound on or off.|Activa o corta el sonido ambiente.|Schaltet die Klangkulisse ein oder aus.
+Quitter le plein écran.|Leave full screen.|Salir de pantalla completa.|Vollbild verlassen.
+Quitter le plein écran.|Leave full screen.|Salir de pantalla completa.|Vollbild verlassen.
+Lance la session de révision avec les cartes choisies.|Starts a revision session with the chosen cards.|Inicia una sesión de repaso con las tarjetas elegidas.|Startet eine Wiederholung mit den gewählten Karten.
+Choisis le paquet de cartes à réviser.|Choose the deck of cards to revise.|Elige el mazo de tarjetas a repasar.|Wähle den Kartenstapel zum Wiederholen.
+Matière liée à cette carte (facultatif).|Subject linked to this card (optional).|Asignatura de esta tarjeta (opcional).|Fach dieser Karte (optional).
+Choisis quelles cartes revoir : celles à revoir aujourd'hui, ou selon ton niveau.|Choose which cards to review: those due today, or by your level.|Elige qué tarjetas repasar: las de hoy o según tu nivel.|Wähle die Karten: heute fällige oder nach Stand.
+Révise en plein écran.|Revise in full screen.|Repasa a pantalla completa.|Im Vollbild wiederholen.
+Retourne la carte pour voir la réponse.|Flip the card to see the answer.|Da la vuelta a la tarjeta para ver la respuesta.|Karte umdrehen, um die Antwort zu sehen.
+Je ne la savais pas : elle reviendra aujourd'hui.|I didn't know it: it will come back today.|No la sabía: volverá hoy.|Nicht gewusst: kommt heute wieder.
+Presque : elle reviendra dans 2 jours.|Almost: it will come back in 2 days.|Casi: volverá en 2 días.|Fast: kommt in 2 Tagen wieder.
+Je la sais : elle reviendra dans 7 jours.|I know it: it will come back in 7 days.|La sé: volverá en 7 días.|Gewusst: kommt in 7 Tagen wieder.
+Met la pause en pause, ou la reprend.|Pauses or resumes your break.|Pone en pausa o reanuda tu descanso.|Pausiert die Pause oder setzt sie fort.
+Recommence la pause depuis le début.|Restarts the break from the start.|Reinicia el descanso desde el principio.|Startet die Pause von vorn.
+Remplace la pause par le mode calme.|Replaces the break with calm mode.|Sustituye el descanso por el modo calma.|Ersetzt die Pause durch den Ruhemodus.
+Ouvre cette appli dans un nouvel onglet pendant ta pause.|Opens this app in a new tab for your break.|Abre esta app en una pestaña nueva durante tu descanso.|Öffnet diese App in einem neuen Tab für deine Pause.
+Affiche une autre citation.|Shows another quote.|Muestra otra cita.|Zeigt ein anderes Zitat.
+Utiliser cette couleur pour le papier.|Use this colour for the paper.|Usar este color para el papel.|Diese Farbe für das Papier verwenden.
+Style du papier : lignes, page blanche ou couleur.|Paper style: lines, blank page or colour.|Estilo del papel: líneas, página en blanco o color.|Papierstil: Linien, leere Seite oder Farbe.
+Police d'écriture de la note.|The note's font.|Tipo de letra de la nota.|Schriftart der Notiz.
+Enregistre la note (ou la met à jour si tu la modifies).|Saves the note (or updates it if you are editing).|Guarda la nota (o la actualiza si la estás editando).|Speichert die Notiz (oder aktualisiert sie beim Bearbeiten).
+Annule la modification en cours.|Cancels the current edit.|Cancela la edición en curso.|Bricht die aktuelle Bearbeitung ab.
+Matière liée à cette note (facultatif).|Subject linked to this note (optional).|Asignatura de esta nota (opcional).|Fach dieser Notiz (optional).
+Affiche les notes de ce dossier.|Shows the notes in this folder.|Muestra las notas de esta carpeta.|Zeigt die Notizen dieses Ordners.
+Crée des flashcards à partir de cette note.|Creates flashcards from this note.|Crea tarjetas a partir de esta nota.|Erstellt Karteikarten aus dieser Notiz.
+Met le texte sélectionné en gras.|Makes the selected text bold.|Pone el texto seleccionado en negrita.|Macht den markierten Text fett.
+Met le texte sélectionné en italique.|Makes the selected text italic.|Pone el texto seleccionado en cursiva.|Macht den markierten Text kursiv.
+Souligne le texte sélectionné.|Underlines the selected text.|Subraya el texto seleccionado.|Unterstreicht den markierten Text.
+Retire le surlignage du texte sélectionné.|Removes the highlight from the selected text.|Quita el resaltado del texto seleccionado.|Entfernt die Markierung des ausgewählten Textes.
+Surligne le texte sélectionné de cette couleur.|Highlights the selected text in this colour.|Resalta el texto seleccionado de este color.|Markiert den ausgewählten Text in dieser Farbe.
+Ouvre la palette pour choisir une couleur.|Opens the palette to pick a colour.|Abre la paleta para elegir un color.|Öffnet die Palette zur Farbauswahl.
+Ouvre la liste d'emojis, rangés par catégorie.|Opens the emoji list, sorted by category.|Abre la lista de emojis por categorías.|Öffnet die Emoji-Liste nach Kategorien.
+Choisis une couleur pour surligner le texte sélectionné.|Pick a colour to highlight the selected text.|Elige un color para resaltar el texto seleccionado.|Wähle eine Farbe, um den markierten Text hervorzuheben.
+Change l'état de la tâche : à faire, en cours, terminée.|Changes the task status: to do, in progress, done.|Cambia el estado de la tarea: pendiente, en curso, terminada.|Ändert den Status: offen, in Arbeit, erledigt.
+Coche pour terminer cette tâche.|Tick to complete this task.|Marca para terminar esta tarea.|Anhaken, um die Aufgabe abzuschließen.
+Coche pour valider cette habitude aujourd'hui.|Tick to log this habit today.|Marca para registrar este hábito hoy.|Anhaken, um diese Gewohnheit heute zu erfassen.
+Coche cet élément de la liste.|Tick this item of the list.|Marca este elemento de la lista.|Diesen Listenpunkt abhaken.
+Coche quand cette démarche est faite.|Tick when this task is done.|Marca cuando este trámite esté hecho.|Anhaken, wenn erledigt.
+Ne pas afficher ce cours à une date précise (vacances, absence...).|Hide this class on a specific date (holiday, absence...).|No mostrar esta clase en una fecha concreta (vacaciones, ausencia...).|Diesen Kurs an einem bestimmten Datum ausblenden (Ferien, Abwesenheit...).
+Rétablir ce cours à cette date.|Restore this class on this date.|Restablecer esta clase en esta fecha.|Diesen Kurs an diesem Datum wiederherstellen.
+Ajoute une liste de démarches courantes pour les étudiants.|Adds a list of common student errands.|Añade una lista de trámites habituales para estudiantes.|Fügt eine Liste üblicher Behördengänge für Studierende hinzu.
+Ajoute au calendrier des séances de révision avant cet examen.|Adds revision sessions to the calendar before this exam.|Añade al calendario sesiones de repaso antes de este examen.|Fügt vor dieser Prüfung Lerneinheiten in den Kalender ein.
+Aller à ce résultat.|Go to this result.|Ir a este resultado.|Zu diesem Ergebnis gehen.
+Choisis le rythme des séances de révision.|Choose the pace of revision sessions.|Elige el ritmo de las sesiones de repaso.|Wähle den Rhythmus der Lerneinheiten.
+Décale les séances qui tombent un jour déjà très chargé.|Moves sessions that fall on an already busy day.|Mueve las sesiones que caen en un día ya muy cargado.|Verschiebt Einheiten, die auf einen vollen Tag fallen.
+Heure à laquelle placer les séances (laisse vide pour aucune heure).|Time to place sessions at (leave empty for none).|Hora de las sesiones (déjalo vacío para ninguna).|Uhrzeit der Einheiten (leer lassen für keine).
+Durée de chaque séance, en minutes.|Length of each session, in minutes.|Duración de cada sesión, en minutos.|Dauer jeder Einheit in Minuten.
+Annule la suppression que tu viens de faire.|Undoes the deletion you just made.|Deshace el borrado que acabas de hacer.|Macht das gerade Gelöschte rückgängig.
+Ferme ce message : la suppression est confirmée.|Closes this message: the deletion is confirmed.|Cierra este mensaje: el borrado queda confirmado.|Schließt diese Meldung: das Löschen gilt.
+Ferme sans rien enregistrer.|Closes without saving anything.|Cierra sin guardar nada.|Schließt ohne zu speichern.
+Priorité de la tâche : urgente, normale ou plus tard.|Task priority: urgent, normal or later.|Prioridad de la tarea: urgente, normal o más tarde.|Priorität: dringend, normal oder später.
+Matière liée à cette tâche (facultatif).|Subject linked to this task (optional).|Asignatura de esta tarea (opcional).|Fach dieser Aufgabe (optional).
+Matière liée à cet événement (facultatif).|Subject linked to this event (optional).|Asignatura de este evento (opcional).|Fach dieses Termins (optional).
+Matière liée à cet examen (facultatif).|Subject linked to this exam (optional).|Asignatura de este examen (opcional).|Fach dieser Prüfung (optional).
+Fait revenir l'événement automatiquement (chaque jour, semaine, mois...).|Repeats the event automatically (daily, weekly, monthly...).|Repite el evento automáticamente (cada día, semana, mes...).|Wiederholt den Termin automatisch (täglich, wöchentlich, monatlich...).
+Affiche seulement les tâches d'une liste.|Shows only the tasks of one list.|Muestra solo las tareas de una lista.|Zeigt nur die Aufgaben einer Liste.
+Affiche seulement une catégorie.|Shows only one category.|Muestra solo una categoría.|Zeigt nur eine Kategorie.
+Ajoute cette tâche.|Adds this task.|Añade esta tarea.|Fügt diese Aufgabe hinzu.
+Ajoute cet événement au calendrier.|Adds this event to the calendar.|Añade este evento al calendario.|Fügt diesen Termin zum Kalender hinzu.
+Ajoute cet examen : il apparaît dans Aujourd'hui.|Adds this exam: it appears in Today.|Añade este examen: aparece en Hoy.|Fügt diese Prüfung hinzu: sie erscheint unter Heute.
+Crée ce dossier de notes.|Creates this notes folder.|Crea esta carpeta de notas.|Erstellt diesen Notizordner.
+Ajoute cette flashcard au paquet.|Adds this flashcard to the deck.|Añade esta tarjeta al mazo.|Fügt diese Karteikarte dem Stapel hinzu.
+Ajoute cette citation.|Adds this quote.|Añade esta cita.|Fügt dieses Zitat hinzu.
+Ajoute cette habitude.|Adds this habit.|Añade este hábito.|Fügt diese Gewohnheit hinzu.
+Crée cette liste.|Creates this list.|Crea esta lista.|Erstellt diese Liste.
+Crée cette catégorie.|Creates this category.|Crea esta categoría.|Erstellt diese Kategorie.
+Ajoute cet élément.|Adds this item.|Añade este elemento.|Fügt diesen Eintrag hinzu.
+Modifier cet élément.|Edit this item.|Modificar este elemento.|Diesen Eintrag bearbeiten.
+Supprimer cet élément (tu pourras annuler juste après).|Delete this item (you can undo right after).|Borrar este elemento (podrás deshacerlo justo después).|Diesen Eintrag löschen (direkt danach rückgängig möglich).
+Réglages facultatifs de la planification.|Optional scheduling settings.|Ajustes opcionales de la planificación.|Optionale Planungseinstellungen.
+Heure de début (facultatif).|Start time (optional).|Hora de inicio (opcional).|Startzeit (optional).
+Heure de fin (facultatif).|End time (optional).|Hora de fin (opcional).|Endzeit (optional).
+Ajoute cette activité à tes idées de pause.|Adds this activity to your break ideas.|Añade esta actividad a tus ideas de descanso.|Fügt diese Aktivität deinen Pausenideen hinzu.
+Alterne automatiquement travail et pause, selon le rythme choisi (25/5, 50/10, 45/15...).|Automatically alternates work and break, at the pace you choose (25/5, 50/10, 45/15...).|Alterna automáticamente trabajo y descanso, según el ritmo elegido (25/5, 50/10, 45/15...).|Wechselt automatisch zwischen Arbeit und Pause im gewählten Rhythmus (25/5, 50/10, 45/15...).
+Choisis la durée de travail et de pause, en minutes. Toutes les 4 séances, la pause est plus longue.|Choose the work and break length, in minutes. Every 4 sessions, the break is longer.|Elige la duración de trabajo y descanso, en minutos. Cada 4 sesiones, el descanso es más largo.|Wähle Arbeits- und Pausendauer in Minuten. Alle 4 Einheiten ist die Pause länger.
+Personnalisé|Custom|Personalizado|Benutzerdefiniert
+Travail (min)|Work (min)|Trabajo (min)|Arbeit (Min.)
+Pause (min)|Break (min)|Descanso (min)|Pause (Min.)
+Mon organisation|My organisation|Mi organización|Meine Organisation
+Mes études|My studies|Mis estudios|Mein Studium
+Détente|Relaxation|Relax|Entspannung
+Pour moi|For me|Para mí|Für mich
+Menu|Menu|Menú|Menü
+Fermer le menu|Close the menu|Cerrar el menú|Menü schließen
+Ouvre le menu pour aller vers n'importe quelle page du planner.|Opens the menu to go to any page of the planner.|Abre el menú para ir a cualquier página del planner.|Öffnet das Menü, um zu jeder Seite des Planers zu gehen.
+Ferme le menu.|Closes the menu.|Cierra el menú.|Schließt das Menü.
+Affiche cette note dans une fenêtre flottante : elle reste ouverte quand tu changes de page et tu peux continuer à la modifier.|Shows this note in a floating window: it stays open when you change page and you can keep editing it.|Muestra esta nota en una ventana flotante: se queda abierta al cambiar de página y puedes seguir editándola.|Zeigt diese Notiz in einem schwebenden Fenster: Sie bleibt beim Seitenwechsel offen und du kannst sie weiter bearbeiten.
+Épingler cette note|Pin this note|Fijar esta nota|Diese Notiz anheften
+Réduire|Minimise|Minimizar|Minimieren
+Agrandir|Enlarge|Agrandar|Vergrößern
+Méthode Pomodoro|Pomodoro method|Método Pomodoro|Pomodoro-Methode
+Travaille 25 minutes, puis fais 5 minutes de pause. Après 4 séances, prends une pause plus longue.|Work for 25 minutes, then take a 5-minute break. After 4 sessions, take a longer break.|Trabaja 25 minutos y descansa 5. Después de 4 sesiones, haz un descanso más largo.|Arbeite 25 Minuten, dann mach 5 Minuten Pause. Nach 4 Einheiten gönn dir eine längere Pause.
+Rappel actif|Active recall|Recuerdo activo|Aktives Abrufen
+Ferme ton cours et essaie d'écrire tout ce dont tu te souviens, puis compare avec tes notes.|Close your notes and try to write down everything you remember, then compare with your notes.|Cierra tus apuntes e intenta escribir todo lo que recuerdes; luego compáralo con tus notas.|Schließe deine Unterlagen und schreibe auf, woran du dich erinnerst. Vergleiche es danach mit deinen Notizen.
+Répétition espacée|Spaced repetition|Repetición espaciada|Verteiltes Wiederholen
+Revois une notion le lendemain, puis 3 jours après, puis une semaine après. Les flashcards du planner sont faites pour ça.|Review a topic the next day, then 3 days later, then a week later. The planner's flashcards are made for this.|Repasa un tema al día siguiente, luego 3 días después y luego una semana después. Las tarjetas del planner sirven para eso.|Wiederhole ein Thema am nächsten Tag, dann 3 Tage später, dann eine Woche später. Die Karteikarten des Planers sind dafür gemacht.
+Règle des 2 minutes|Two-minute rule|Regla de los 2 minutos|Zwei-Minuten-Regel
+Si une tâche prend moins de 2 minutes, fais-la tout de suite.|If a task takes less than 2 minutes, do it right away.|Si una tarea lleva menos de 2 minutos, hazla enseguida.|Wenn eine Aufgabe weniger als 2 Minuten dauert, erledige sie sofort.
+Préparer la veille|Prepare the night before|Preparar la víspera|Am Vorabend vorbereiten
+Prépare ton sac et tes vêtements le soir : le matin devient plus calme.|Pack your bag and pick your clothes in the evening: mornings become calmer.|Prepara tu bolso y tu ropa por la noche: la mañana será más tranquila.|Pack abends deine Tasche und leg deine Kleidung bereit: der Morgen wird ruhiger.
+Un verre d'eau au réveil|A glass of water on waking|Un vaso de agua al despertar|Ein Glas Wasser nach dem Aufwachen
+Bois un grand verre d'eau avant ton café pour bien démarrer la journée.|Drink a large glass of water before your coffee to start the day well.|Bebe un vaso grande de agua antes del café para empezar bien el día.|Trink ein großes Glas Wasser vor dem Kaffee, um gut in den Tag zu starten.
+Routine de base|Basic routine|Rutina básica|Basisroutine
+Nettoyant doux, hydratant, puis crème solaire le matin. Le soir : nettoyant et hydratant.|Gentle cleanser, moisturiser, then sunscreen in the morning. In the evening: cleanser and moisturiser.|Limpiador suave, hidratante y protector solar por la mañana. Por la noche: limpiador e hidratante.|Morgens: milder Reiniger, Feuchtigkeitspflege, dann Sonnencreme. Abends: Reiniger und Feuchtigkeitspflege.
+Crème solaire tous les jours|Sunscreen every day|Protector solar cada día|Täglich Sonnencreme
+Même en hiver et même quand il y a des nuages : c'est le geste qui protège le plus ta peau.|Even in winter and even when it's cloudy: it's the habit that protects your skin the most.|Incluso en invierno y con nubes: es el gesto que más protege tu piel.|Auch im Winter und bei Wolken: Sie schützt deine Haut am meisten.
+Un seul nouveau produit à la fois|One new product at a time|Un producto nuevo a la vez|Immer nur ein neues Produkt
+Introduis un produit à la fois, avec quelques jours d'écart, pour repérer ce que ta peau supporte.|Introduce one product at a time, a few days apart, to spot what your skin tolerates.|Introduce un producto cada vez, con unos días de diferencia, para saber qué tolera tu piel.|Führe Produkte einzeln und mit einigen Tagen Abstand ein, um zu merken, was deine Haut verträgt.
+Respiration 4-7-8|4-7-8 breathing|Respiración 4-7-8|4-7-8-Atmung
+Inspire 4 secondes, retiens 7 secondes, expire 8 secondes. Répète 4 fois pour te calmer avant un examen.|Breathe in for 4 seconds, hold for 7, breathe out for 8. Repeat 4 times to calm down before an exam.|Inhala 4 segundos, retén 7 y exhala 8. Repite 4 veces para calmarte antes de un examen.|4 Sekunden einatmen, 7 Sekunden halten, 8 Sekunden ausatmen. 4-mal wiederholen, um dich vor einer Prüfung zu beruhigen.
+Dormir à heures régulières|Regular sleep times|Horarios de sueño regulares|Feste Schlafenszeiten
+Se coucher et se lever à peu près à la même heure aide plus que dormir longtemps le week-end.|Going to bed and waking up at about the same time helps more than sleeping in at the weekend.|Acostarte y levantarte más o menos a la misma hora ayuda más que dormir mucho el fin de semana.|Ungefähr zur gleichen Zeit ins Bett zu gehen und aufzustehen hilft mehr als am Wochenende auszuschlafen.
+Marcher 10 minutes|Walk for 10 minutes|Caminar 10 minutos|10 Minuten gehen
+Une courte marche dehors entre deux séances de travail aide à se concentrer.|A short walk outside between two work sessions helps you concentrate.|Un paseo corto al aire libre entre dos sesiones de trabajo ayuda a concentrarse.|Ein kurzer Spaziergang zwischen zwei Arbeitseinheiten hilft bei der Konzentration.
+Les 3 priorités du jour|Today's 3 priorities|Las 3 prioridades del día|Die 3 Prioritäten des Tages
+Écris le matin les 3 choses qui comptent vraiment aujourd'hui, et commence par la plus difficile.|In the morning, write down the 3 things that really matter today, and start with the hardest.|Por la mañana, escribe las 3 cosas que realmente importan hoy y empieza por la más difícil.|Schreibe morgens die 3 Dinge auf, die heute wirklich zählen, und beginne mit der schwersten.
+Astuces|Tips|Consejos|Tipps
+Techniques et astuces|Techniques and tips|Técnicas y consejos|Techniken und Tipps
+Ajouter une astuce|Add a tip|Añadir un consejo|Tipp hinzufügen
+Tes astuces sont enregistrées sur cet appareil : toi seule peux les voir.|Your tips are saved on this device: only you can see them.|Tus consejos se guardan en este dispositivo: solo tú puedes verlos.|Deine Tipps werden auf diesem Gerät gespeichert: nur du kannst sie sehen.
+Rechercher une astuce…|Search a tip…|Buscar un consejo…|Tipp suchen…
+Toutes|All|Todas|Alle
+Conseil du planner|Planner tip|Consejo del planner|Planer-Tipp
+Aucune astuce trouvée.|No tips found.|Ningún consejo encontrado.|Keine Tipps gefunden.
+Astuce|Tip|Consejo|Tipp
+Révisions|Revision|Repaso|Lernen
+Vie quotidienne|Daily life|Vida diaria|Alltag
+Skincare|Skincare|Cuidado de la piel|Hautpflege
+Organisation|Organisation|Organización|Organisation
+Affiche seulement les astuces de cette catégorie.|Shows only the tips of this category.|Muestra solo los consejos de esta categoría.|Zeigt nur die Tipps dieser Kategorie.
+Copie cette astuce dans tes astuces pour pouvoir la modifier.|Copies this tip into your own tips so you can edit it.|Copia este consejo en tus consejos para poder editarlo.|Kopiert diesen Tipp in deine Tipps, damit du ihn bearbeiten kannst.
+Cherche dans toutes les astuces.|Searches all tips.|Busca en todos los consejos.|Durchsucht alle Tipps.
+Techniques et astuces pour les révisions, la vie de tous les jours, la skincare... et les tiennes.|Techniques and tips for studying, daily life, skincare... and your own.|Técnicas y consejos para estudiar, la vida diaria, el cuidado de la piel... y los tuyos.|Techniken und Tipps fürs Lernen, den Alltag, Hautpflege... und deine eigenen.
+Aucune astuce pour l'instant. Ajoute la première avec le formulaire.|No tips yet. Add the first one with the form.|Aún no hay consejos. Añade el primero con el formulario.|Noch keine Tipps. Füge den ersten mit dem Formular hinzu.
+Exporter mes astuces|Export my tips|Exportar mis consejos|Meine Tipps exportieren
+Mes astuces|My tips|Mis consejos|Meine Tipps
+Sélectionne et copie ce texte pour le garder ou l'envoyer.|Select and copy this text to keep it or send it.|Selecciona y copia este texto para guardarlo o enviarlo.|Markiere und kopiere diesen Text, um ihn aufzubewahren oder zu senden.
+Affiche toutes tes astuces sous forme de texte à copier.|Shows all your tips as text to copy.|Muestra todos tus consejos como texto para copiar.|Zeigt alle deine Tipps als Text zum Kopieren.
+`.split("\n").map(l=>l.split("|")),DIC={en:{},es:{},de:{}},LI={en:1,es:2,de:3};
+TB.forEach(x=>["en","es","de"].forEach((g,i)=>DIC[g][x[0]]=x[i+1]));
+const RX=[[/^(\d+) sur (\d+) terminées?$/,"$1 of $2 done","$1 de $2 hechas","$1 von $2 erledigt"],[/^(\d+) notes?$/,"$1 note(s)","$1 nota(s)","$1 Notiz(en)"],[/^(\d+) événements?$/,"$1 event(s)","$1 evento(s)","$1 Termin(e)"],[/^Semaine du (.*)$/,"Week of $1","Semana del $1","Woche vom $1"],[/^Bonjour (.*?) · (.*)$/,"Hello $1 · $2","Hola $1 · $2","Hallo $1 · $2"],[/^Journal de (.*)$/,"$1's Journal","Diario de $1","$1s Tagebuch"],[/^Mon Journal Quotidien$/,"My Daily Journal","Mi Diario","Mein Tagebuch"],[/^jours? · remise à zéro lundi$/,"days · resets Monday","días · se reinicia el lunes","Tage · Neustart am Montag"],[/^\((.*) · répété\)$/,"($1 · repeats)","($1 · se repite)","($1 · wiederholt)"],[/^Supprimer la liste « (.*) » et ses tâches \?$/,"Delete the list “$1” and its tasks?","¿Eliminar la lista «$1» y sus tareas?","Liste „$1“ und ihre Aufgaben löschen?"],[/^Supprimer la catégorie « (.*) » \?$/,"Delete the category “$1”?","¿Eliminar la categoría «$1»?","Kategorie „$1“ löschen?"],[/^Supprimer le dossier « (.*) » \? Ses notes seront classées « Sans dossier »\.$/,"Delete the folder “$1”? Its notes will be filed under “No folder”.","¿Eliminar la carpeta «$1»? Sus notas quedarán sin carpeta.","Ordner „$1“ löschen? Seine Notizen werden ohne Ordner abgelegt."],[/^(\d+) événements? ajoutés?\.$/,"$1 event(s) added.","$1 evento(s) añadido(s).","$1 Termin(e) hinzugefügt."],[/^Son prêt : (.*)$/,"Sound ready: $1","Sonido listo: $1","Ton bereit: $1"],[/^(\d+) séances? ajoutées? au calendrier\.$/,"$1 session(s) added to the calendar.","$1 sesión(es) añadida(s) al calendario.","$1 Sitzung(en) zum Kalender hinzugefügt."],[/^(\d+) flashcards? créées?\.$/,"$1 flashcard(s) created.","$1 tarjeta(s) creada(s).","$1 Karteikarte(n) erstellt."],[/^Modifier (.+)$/,"Edit $1","Editar $1","Bearbeiten: $1"],[/^Supprimer (.+)$/,"Delete $1","Eliminar $1","Löschen: $1"]];
+function trT(t){const k=t.trim();if(!k)return t;const g=D.lang,d=DIC[g];let v=d[k];if(v==null){const q=k.match(/^“(.*)”$/);if(q&&d[q[1]])v="“"+d[q[1]]+"”";else for(const x of RX)if(x[0].test(k)){v=k.replace(x[0],x[LI[g]]);break}}return v==null?t:t.replace(k,()=>v)}
+const PH={Pain:["Bread","Pan","Brot"],Lait:["Milk","Leche","Milch"],"Œufs":["Eggs","Huevos","Eier"]};
+function tr(root){root=root||document.body;const g=D.lang,on=g!="fr";
+ if(root===document.body){document.documentElement.lang=g;document.title=on?trT("Mon Journal Quotidien"):"Mon Journal Quotidien";if($("#lg").value!=g)$("#lg").value=g}
+ const fix=n=>{const p=n.parentNode;if(!p||!p.closest||p.closest("script,style,textarea"))return;const t=p.closest("[translate]");if(t&&t.getAttribute("translate")=="no")return;if(on){const b=n._o??n.nodeValue,v=trT(b);if(v!==n.nodeValue){n._o=b;n.nodeValue=v}}else if(n._o!=null){n.nodeValue=n._o;n._o=null}};
+ if(root.nodeType==3)return fix(root);
+ const w=document.createTreeWalker(root,4);let n;while(n=w.nextNode())fix(n);
+ [root,...root.querySelectorAll("[placeholder],[aria-label],[title]")].forEach(e=>{if(!e.getAttribute||e.closest("[translate=no]"))return;["placeholder","aria-label","title"].forEach(a=>{if(!e.hasAttribute(a))return;e._a=e._a||{};if(e._a[a]==null)e._a[a]=e.getAttribute(a);const b=e._a[a];e.setAttribute(a,on?(a=="placeholder"?b.split("\n").map(x=>PH[x]?.[LI[g]-1]??trT(x)).join("\n"):trT(b)):b)})})}
+new MutationObserver(ms=>{for(const m of ms)m.addedNodes.forEach(n=>{if(n.nodeType==1||n.nodeType==3)tr(n)})}).observe(document.body,{childList:true,subtree:true});
+$("#lg").onchange=e=>{D.lang=e.target.value;LOC=LOCS[D.lang];save();render();tr()};
+rPz();
+const EMC=[["Études et travail","📚 📖 📝 ✏️ 🖋️ 🎓 ⚖️ 🏛️ 💼 📅 🗓️ ✅ 📌 📎 🧮 🔬 🧪 🔭 💻 🖥️ 📊 📈 🗂️ 🔖 🏫 🧠 💡 🔍 📰 🗞️"],["Visages","😀 😊 🥰 😍 😎 🤓 🥹 😌 😴 🤔 😅 😂 🥳 🤩 😇 🙃 😉 😢 😭 😡 😱 🤗 🫶 🙂"],["Gestes et personnes","👍 👏 🙏 💪 ✌️ 🤞 👋 ✋ 🫰 👀 💃 🧘 🏃 🚶 🙋 👑 💅 🧕 👩 👩‍🎓"],["Cœurs et symboles","❤️ 🧡 💛 💚 💙 💜 🖤 🤍 🤎 💖 💗 💞 💌 ✨ ⭐ 🌟 💫 🔥 🎀 🔔 ♾️ ☮️ ⚜️ 🔮 💎"],["Nature","🌸 🌹 🌷 🌺 🌻 🌼 💐 🌿 🍀 🪴 🌱 🌳 🍂 🍁 🌾 🌙 ☀️ ⛅ 🌈 ☔ ❄️ ⚡ 🌊 🪨 🌍"],["Animaux","🐱 🐶 🐰 🦊 🐻 🐼 🦋 🐝 🐞 🕊️ 🦢 🦉 🐢 🐠 🦄 🐴 🐑 🦔 🐿️ 🦜"],["Nourriture","☕ 🍵 🧋 🍰 🧁 🍪 🍫 🍎 🍓 🍒 🍋 🥑 🥐 🥖 🧀 🍳 🍕 🍝 🥗 🍷 🥂 🍾 🍯 🍉"],["Activités","🎨 🎵 🎶 🎬 📷 🎭 🎤 🎧 🎮 🧵 🧶 🪡 📸 🎁 🎈 🎉 ⚽ 🏐 🎾 🏊 🚴 🧗 🏋️ 🛍️"],["Voyage et maison","🏠 🏡 🏙️ 🏖️ ⛰️ 🗺️ 🧳 ✈️ 🚆 🚗 🚲 ⛺ 🗼 🗽 🛋️ 🕯️ 🛁 🔑 🗝️ 🧸 🧴 🧺 🧹 🛒"],["Santé et argent","🩺 💊 🩹 🧘 🥦 💧 😴 💰 💳 💵 🪙 🏦 📉 🧾"]].map(c=>[c[0],c[1].split(" ")]),EMS=EMC.flatMap(c=>c[1]),emG=t=>`<div class="emg em2"><button type="button" class="emb" data-a="pe" data-t="${t}" data-id="">Aucun</button>${EMC.map(c=>`<div class="emc">${c[0]}</div><div class="emr">${c[1].map(x=>`<button type="button" class="emb" data-a="pe" data-t="${t}" data-id="${x}">${x}</button>`).join("")}</div>`).join("")}<button type="button" class="btn cok">OK</button></div>`;
+$("#fo-w").innerHTML=`<button type="button" id="fo-eb" class="soft" data-a="eb">Emoji ▾</button>${emG("#fo-e")}`;
+document.addEventListener("click",e=>{const w=e.target.closest(".emw");document.querySelectorAll(".emg.open").forEach(g=>{if(!w||g.parentNode!=w)g.classList.remove("open")});const t=e.target.closest("[data-a=eb]");if(t)t.parentNode.querySelector(".emg").classList.toggle("open");const p=e.target.closest(".emb");if(p)p.closest(".emg").classList.remove("open")});
+$("#n-fo").innerHTML=FONTS.map((f,i)=>`<option value="${i}">${f[0]}</option>`).join("");$("#n-sw").innerHTML=COLS.map(x=>`<button type="button" class="sw" data-a="ncol" data-id="${x[1]}" style="background:${x[1]}" title="${x[0]}" aria-label="${x[0]}"></button>`).join("");
+$("#n-bg").onchange=$("#n-fo").onchange=$("#n-col").oninput=prevN;$("#hl-c").oninput=e=>{$("#n-b").focus();if(SR){const q=getSelection();q.removeAllRanges();q.addRange(SR)}document.execCommand("hiliteColor",false,e.target.value)};document.querySelectorAll(".cw").forEach(syncCol);$("#n-cx").onclick=resetN;
+document.addEventListener("mousedown",e=>{const b=e.target.closest("[data-f]");if(!b)return;e.preventDefault();const f=b.dataset.f;document.execCommand(f=="hl"?"hiliteColor":f,false,f=="hl"?b.dataset.v:null)});
+$("#f-n").onsubmit=e=>{e.preventDefault();if(!$("#n-b").textContent.trim())return $("#n-b").focus();const o={title:$("#n-t").value.trim(),folder:$("#n-f").value.trim(),body:clean($("#n-b").innerHTML),h:1,sub:$("#n-sub").value,bg:$("#n-bg").value,col:$("#n-col").value,font:$("#n-fo").value};if(EDN)Object.assign(D.notes.find(n=>n.id==EDN),o);else D.notes.push({id:uid(),at:new Date().toISOString(),...o});resetN();upd()};
+prevN();
+let qn=Math.floor(Math.random()*20);
+function qNext(){if(D.qstop&&$("#cq").textContent)return;const P=QD.concat(D.quotes.map(q=>q.text)),els=[$("#fs-q"),$("#cq")];qn=(qn+1)%P.length;els.forEach(e=>e.classList.remove("on"));setTimeout(()=>els.forEach(e=>{e.textContent="“"+P[qn]+"”";e.classList.add("on")}),1300)}
+qNext();setInterval(qNext,12000);const qb=()=>["#fs-qp","#cq-p"].forEach(i=>$(i).textContent=D.qstop?"Reprendre les citations":"Arrêter les citations");qb();["#fs-qp","#cq-p"].forEach(i=>$(i).onclick=()=>{D.qstop=!D.qstop;save();qb()});
+/* Études */
+const SC=id=>D.subs.find(s=>s.id==id),SCh=id=>{const s=SC(id);return s?`<span class="chip" translate="no" style="background:${s.col}33;border-left:4px solid ${s.col}">${esc(s.name)}</span>`:""},SUBO=()=>Object.fromEntries([["","—"],...D.subs.map(s=>[s.id,s.name])]);
+const evSty=e=>{const s=e.sub&&SC(e.sub);return s?`background:${s.col}33;color:#3b2f29`:sty(e.cat)};
+const DAYS=Object.fromEntries(WD.map((d,i)=>[i,d])),KINDS={Cours:"Cours",TD:"TD",TP:"TP",CM:"CM"},MOODS={1:"😞",2:"😕",3:"😐",4:"🙂",5:"😄"},T0=()=>iso(today);
+const CF={subs:[["name","Nom","text",0,"","r"],["col","Couleur","color",0,"#cfa9ae"]],grades:[["sub","Matière","s",SUBO],["title","Intitulé","text",0,"","r"],["val","Résultat","number",0,"","r"],["max","Sur","number",0,20],["coef","Coefficient","number",0,1],["date","Date","date",0,T0]],tt:[["day","Jour","s",DAYS],["start","Début","time",0,"08:00","r"],["end","Fin","time",0,"10:00","r"],["sub","Matière","s",SUBO],["kind","Type","s",KINDS],["room","Salle"],["teacher","Professeur"],["from","Début du semestre","date"],["to","Fin du semestre","date"]],adm:[["t","Démarche","text",0,"","r"],["d","Échéance","date"]],bud:[["date","Date","date",0,T0,"r"],["label","Libellé","text",0,"","r"],["amt","Montant (€, négatif = dépense)","number",0,"","r"]],well:[["date","Date","date",0,T0,"r"],["s","Sommeil (h)","number"],["m","Humeur","s",MOODS]]};CF.tips=[["title","Titre","text",0,"","r"],["cat","Catégorie","text",0,"","r"],["body","Astuce","a",0,"","r"]];
+const ADM=["Formuler et confirmer les vœux Parcoursup","Constituer le dossier social étudiant (bourse)","Demander un logement (CROUS, résidence)","S'inscrire administrativement à l'université","Régler la CVEC","Souscrire une assurance logement","Choisir une mutuelle et rattacher sa sécurité sociale","Prendre un abonnement de transport","Ouvrir un compte bancaire","Acheter le matériel et les fournitures","Choisir ses options et s'inscrire aux TD"];
+const cv=(x,n)=>x[2]=="number"?(n===""||isNaN(+n)?"":+n):(x[0]=="day"||x[0]=="m")?+n:String(n).trim();
+const fi=x=>{const t=x[2]||"text",o=typeof x[3]=="function"?x[3]():x[3],dv=typeof x[4]=="function"?x[4]():x[4];return`<label>${x[1]}${t=="a"?`<textarea class="in" name="${x[0]}" rows="4" maxlength="2000" ${x[5]?"required":""}></textarea>`:t=="color"?cpick(x[0],dv||"#cfa9ae",""):t=="s"?`<select class="in" name="${x[0]}">${Object.entries(o).map(([k,l])=>`<option value="${esc(k)}">${esc(l)}</option>`).join("")}</select>`:`<input class="in" name="${x[0]}" type="${t}" ${t=="number"?'step="any"':""} value="${esc(dv??"")}" ${x[5]?"required":""}>`}</label>`},gf=k=>`<form class="gf" data-k="${k}">${CF[k].map(fi).join("")}<button class="btn">Ajouter</button></form>`,EB=(k,id)=>`<button class="ic" data-a="ce" data-k="${k}" data-id="${id}" aria-label="Modifier">✎</button><button class="ic" data-a="cd" data-k="${k}" data-id="${id}" aria-label="Supprimer">🗑</button>`;
+const avg=l=>{const c=l.filter(g=>+g.max>0&&g.val!==""&&+g.coef>0),w=c.reduce((a,g)=>a+ +g.coef,0);return w?c.reduce((a,g)=>a+g.val/g.max*20*g.coef,0)/w:null},RW='style="border-top:1px solid var(--line);padding:6px 0"';
+const day7=()=>Array.from({length:7},(_,i)=>iso(new Date(today.getFullYear(),today.getMonth(),today.getDate()-i)));
+const PN={
+subs:()=>`<div class="g"><aside class="card"><h2>Nouvelle matière</h2>${gf("subs")}</aside><section class="card"><h2>Matières</h2>${D.subs.length?D.subs.map(s=>{const a=avg(D.grades.filter(g=>g.sub==s.id));return`<article class="nt" style="border-left:6px solid ${s.col};background:var(--card);margin-top:10px"><div class="row"><b translate="no">${esc(s.name)}</b><span>${EB("subs",s.id)}</span></div><div class="row"><span>Tâches à faire</span><b>${D.tasks.filter(x=>x.sub==s.id&&x.st!="done").length}</b></div><div class="row"><span>Temps de révision (min)</span><b>${D.revS[s.id]||0}</b></div><div class="row"><span>Moyenne</span><b>${a==null?"–":a.toFixed(1)+"/20"}</b></div></article>`}).join(""):`<div class="empty">Aucune matière pour l'instant.</div>`}</section></div>`,
+grades:()=>{const o=avg(D.grades),ob=+D.obj||0;return`<div class="g"><aside class="card"><h2>Nouvelle évaluation</h2>${gf("grades")}<label>Objectif de moyenne<input id="ob" type="number" step="any" class="in" value="${esc(D.obj??"")}"></label></aside><section class="card"><h2>Moyenne générale</h2><div class="big">${o==null?"–":o.toFixed(2)}</div>${ob&&o!=null?`<p><span>Écart à l'objectif</span> <b>${o-ob>=0?"+":""}${(o-ob).toFixed(2)}</b></p>`:""}${D.subs.map(s=>{const a=avg(D.grades.filter(g=>g.sub==s.id));return a==null?"":`<div class="row" ${RW}><span translate="no">${esc(s.name)}</span><b>${a.toFixed(2)}/20</b></div>`}).join("")}<h3>Notes et moyennes</h3>${D.grades.length?[...D.grades].sort((a,b)=>b.date.localeCompare(a.date)).map(g=>`<div class="row" ${RW}><span>${SCh(g.sub)} <span translate="no">${esc(g.title)}</span></span><span><b>${g.val}/${g.max}</b> ×${g.coef} ${EB("grades",g.id)}</span></div>`).join(""):`<div class="empty">Aucune évaluation.</div>`}</section></div>`},
+plan:()=>`<div class="card"><h2>Révisions auto</h2><details class="po" style="margin:8px 0 14px"><summary>Options</summary><div class="g" style="margin-top:10px"><label>Rythme<select id="po-r" class="in"><option value="">Standard</option><option value="int" ${(D.planO||{}).rhy=="int"?"selected":""}>Intensif</option><option value="lite" ${(D.planO||{}).rhy=="lite"?"selected":""}>Léger</option></select></label><label>Heure de la séance (facultatif)<input id="po-t" type="time" class="in" value="${esc((D.planO||{}).t||"")}"></label><label>Durée (min)<input id="po-d" type="number" min="15" max="480" step="15" class="in" value="${+(D.planO||{}).dur||60}"></label></div><label class="ck" style="margin-top:8px"><input type="checkbox" id="po-a" ${(D.planO||{}).avoid?"checked":""}><span>Éviter les jours déjà chargés</span></label></details>${D.exams.length?[...D.exams].sort((a,b)=>a.date.localeCompare(b.date)).map(x=>`<div class="row" ${RW}><span>${SCh(x.sub)} <b translate="no">${esc(x.title)}</b> · ${esc(x.date)}</span><span><span>Séances planifiées</span> <b>${D.events.filter(e=>e.auto==x.id).length}</b> <button class="soft sm" data-a="plan" data-id="${x.id}">Planifier les révisions</button></span></div>`).join(""):`<div class="empty">Aucun examen : ajoute-en un dans l'onglet Aujourd'hui.</div>`}</div>`,
+tt:()=>`<div class="g"><aside class="card"><h2>Ajouter un cours</h2>${gf("tt")}</aside><section class="card"><h2>Emploi du temps</h2>${[0,1,2,3,4,5,6].map(d=>{const l=D.tt.filter(x=>+x.day==d).sort((a,b)=>a.start.localeCompare(b.start));return l.length?`<h3>${WD[d]}</h3>`+l.map(x=>`<div class="row" ${RW}><span><b>${x.start}–${x.end}</b> ${SCh(x.sub)} <span translate="no">${esc(x.kind)} ${esc(x.room)} ${esc(x.teacher)}</span>${x.from||x.to?`<br><small>${x.from?`<span>Du</span> ${x.from.split("-").reverse().join("/")}`:""} ${x.to?`<span>au</span> ${x.to.split("-").reverse().join("/")}`:""}</small>`:""}${(x.skip||"").split(",").filter(Boolean).length?`<br><small>Ignoré :</small> ${(x.skip||"").split(",").filter(Boolean).map(d=>`<button type="button" class="soft sm" data-a="ttun" data-id="${x.id}" data-d="${d}">${d.split("-").reverse().slice(0,2).join("/")} ✕</button>`).join(" ")}`:""}</span><span><button type="button" class="soft sm" data-a="ttskip" data-id="${x.id}">Sauter une date</button> ${EB("tt",x.id)}</span></div>`).join(""):""}).join("")||`<div class="empty">Aucun cours.</div>`}</section></div>`,
+adm:()=>`<div class="g"><aside class="card"><h2>Démarches</h2>${gf("adm")}<p><button class="soft" data-a="adml">Charger la liste type</button></p></aside><section class="card"><h2>Démarches</h2><p><b>${D.adm.filter(x=>x.done).length}/${D.adm.length}</b></p>${D.adm.length?[...D.adm].sort((a,b)=>(+!!a.done)-(+!!b.done)||(a.d||"9").localeCompare(b.d||"9")).map(x=>`<div class="row" ${RW}><label class="ck"><input type="checkbox" data-c="adm" data-id="${x.id}" ${x.done?"checked":""}><span translate="no">${esc(x.t)}</span></label><span>${esc(x.d||"")} ${EB("adm",x.id)}</span></div>`).join(""):`<div class="empty">Aucune démarche.</div>`}</section></div>`,
+bud:()=>{const m=iso(today).slice(0,7),l=D.bud.filter(x=>x.date.startsWith(m)),sp=-l.filter(x=>x.amt<0).reduce((a,x)=>a+ +x.amt,0),rc=l.filter(x=>x.amt>0).reduce((a,x)=>a+ +x.amt,0);return`<div class="g"><aside class="card"><h2>Budget</h2>${gf("bud")}<label>Budget mensuel (€)<input id="bm" type="number" step="any" class="in" value="${esc(D.budM??"")}"></label></aside><section class="card"><h2>Budget</h2><div class="row" ${RW}><span>Dépensé ce mois</span><b>${sp.toFixed(2)} €</b></div><div class="row" ${RW}><span>Reçu ce mois</span><b>${rc.toFixed(2)} €</b></div>${D.budM?`<div class="row" ${RW}><span>Reste</span><b>${(+D.budM-sp+rc).toFixed(2)} €</b></div>`:""}${D.bud.length?[...D.bud].sort((a,b)=>b.date.localeCompare(a.date)).slice(0,30).map(x=>`<div class="row" ${RW}><span>${esc(x.date)} · <span translate="no">${esc(x.label)}</span></span><span><b>${x.amt} €</b> ${EB("bud",x.id)}</span></div>`).join(""):`<div class="empty">Aucune opération.</div>`}</section></div>`},
+well:()=>{const d=day7(),l=D.well.filter(x=>d.includes(x.date)),a=k=>{const v=l.filter(x=>x[k]!==""&&x[k]!=null);return v.length?(v.reduce((s,x)=>s+ +x[k],0)/v.length).toFixed(1):"–"};return`<div class="g"><aside class="card"><h2>Bien-être</h2>${gf("well")}</aside><section class="card"><h2>Bien-être</h2><div class="row" ${RW}><span>Sommeil moyen (7 j)</span><b>${a("s")} h</b></div><div class="row" ${RW}><span>Humeur moyenne (7 j)</span><b>${a("m")}/5</b></div>${D.well.length?[...D.well].sort((x,y)=>y.date.localeCompare(x.date)).slice(0,14).map(x=>`<div class="row" ${RW}><span>${esc(x.date)}</span><span>${x.s!==""?x.s+" h":""} ${MOODS[x.m]||""} ${EB("well",x.id)}</span></div>`).join(""):`<div class="empty">Aucune donnée.</div>`}</section></div>`}};
+let SS="subs";
+function rStudy(){$("#st").innerHTML=PN[SS]()}
+function rSubs(){document.querySelectorAll(".subsel").forEach(e=>{const v=e.value;e.innerHTML=`<option value="">—</option>`+D.subs.map(x=>`<option value="${esc(x.id)}" translate="no">${esc(x.name)}</option>`).join("");e.value=D.subs.some(x=>x.id==v)?v:""})}
+document.addEventListener("submit",e=>{const fm=e.target.closest&&e.target.closest("form.gf");if(!fm)return;e.preventDefault();const k=fm.dataset.k,o={id:uid()};CF[k].forEach(x=>o[x[0]]=cv(x,fm.elements[x[0]].value));if(k=="grades"){if(!(o.max>0))o.max=20;if(!(o.coef>0))o.coef=1}D[k].push(o);upd()});
+document.addEventListener("change",e=>{if(/^po-/.test(e.target.id||"")){D.planO={rhy:$("#po-r").value,t:$("#po-t").value,dur:+$("#po-d").value||60,avoid:$("#po-a").checked};save();return}const i=e.target.id;if(i=="ob"||i=="bm"){D[i=="ob"?"obj":"budM"]=e.target.value;upd()}});
+$("#gw").value=D.goalW||"";$("#gw").oninput=e=>{D.goalW=+e.target.value||0;save();rToday()};
+/* Pomodoro */
+const PM={ph:"w",n:0};
+const pw=()=>(D.pomo&&+D.pomo.w)||25,pb=()=>(D.pomo&&+D.pomo.b)||5;
+function pomoNext(){if(!$("#pm").checked)return;if(PM.ph=="w"){PM.n++;PM.ph="b";T.left=(PM.n%4?pb():Math.min(30,pb()*3))*60}else{PM.ph="w";T.left=pw()*60}$("#pm-st").textContent=PM.ph=="w"?"Travail":"Pause";T.tot=T.left;T.run=1;T.end=Date.now()+T.left*1000;T.on=true;$("#tm-s").textContent="Pause";clearInterval(T.iv);T.iv=setInterval(tick,250);tick()}
+$("#pm").onchange=()=>{PM.ph="w";PM.n=0;$("#pm-st").textContent=$("#pm").checked?"Travail":"";$("#pm-o").hidden=!$("#pm").checked;if($("#pm").checked){$("#tm-min").value=pw();tmReset()}};
+(()=>{const k=pw()+"/"+pb(),o=[...$("#pm-p").options].some(x=>x.value==k);$("#pm-p").value=o?k:"x";$("#pm-c").hidden=o;$("#pm-w").value=pw();$("#pm-b").value=pb();const ap=()=>{let w,b;const v=$("#pm-p").value;if(v=="x"){w=Math.min(180,Math.max(1,Math.round(+$("#pm-w").value)||25));b=Math.min(60,Math.max(1,Math.round(+$("#pm-b").value)||5))}else[w,b]=v.split("/").map(Number);D.pomo={w,b};$("#pm-w").value=w;$("#pm-b").value=b;$("#pm-c").hidden=v!="x";save();if($("#pm").checked&&!T.on&&PM.ph=="w"){$("#tm-min").value=w;tmReset()}};$("#pm-p").onchange=ap;$("#pm-w").onchange=$("#pm-b").onchange=ap})();
+document.addEventListener("keydown",e=>{if(e.key=="Escape"){if(!md.hidden){const c=$("#mn");c?c.click():md.hidden=true;return}if(!$("#fs").hidden)return $("#fs-x").click();if(!$("#ff").hidden)return $("#ff-x").click();document.querySelectorAll(".emg.open").forEach(g=>g.classList.remove("open"))}if((e.key=="Enter"||e.key==" ")&&e.target.matches&&e.target.matches("[data-a=flip][role=button]")){e.preventDefault();e.target.click()}});
+new MutationObserver(()=>{if(!md.hidden){const f=mbx.querySelector("input:not([type=hidden]),textarea,select,button");if(f)f.focus()}}).observe(mbx,{childList:true});
+const applyTheme=()=>{document.documentElement.dataset.theme=D.app||"vintage";$("#app-th").value=D.app||"vintage"};$("#app-th").onchange=e=>{D.app=e.target.value;save();applyTheme()};applyTheme();
+const dayCheck=()=>{const n=new Date();if(iso(n)!=iso(today)){today=n;render()}};setInterval(dayCheck,30000);document.addEventListener("visibilitychange",()=>{if(!document.hidden)dayCheck()});
+$("#e-date").value=iso(today);render();tr();
+</script></body></html>
+
+</body></html>
