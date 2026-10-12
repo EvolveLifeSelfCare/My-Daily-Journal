@@ -2,6 +2,7 @@
 <html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Mon Journal Quotidien</title>
+<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#722f3d"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="icon" type="image/png" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Journal"><meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Playfair+Display:wght@600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Lora:wght@400;600&family=Caveat:wght@500&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#fff;--card:#fff;--ink:#3b2f29;--soft:#80705f;--rose:#d8b4ae;--btn:#722f3d;--dg:#722f3d;--wine:#722f3d;--gold:#a8884a;--pale:#f7eeeb;--line:#ece3d3;--green:#e6dcc8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -1314,4 +1315,6 @@ $("#cus-r").onclick=()=>{D.cus={ink:"",bd:"",card:"",page:"",ff:"",rad:""};save(
 $("#app-th").onchange=e=>{D.app=e.target.value;save();applyTheme()};applyTheme();
 const dayCheck=()=>{const n=new Date();if(iso(n)!=iso(today)){today=n;render()}};setInterval(dayCheck,30000);document.addEventListener("visibilitychange",()=>{if(!document.hidden)dayCheck()});
 $("#e-date").value=iso(today);render();tr();
+
+try{if("serviceWorker" in navigator&&/^https?:$/.test(location.protocol)&&!/claude\.(ai|com)|anthropic/.test(location.hostname))addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}))}catch(e){}
 </script></body></html>
