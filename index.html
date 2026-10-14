@@ -230,7 +230,7 @@ function norm(o){const r={},S=x=>String(x??"");if(!o||typeof o!="object"||Array.
  ["subs","grades","tt","adm","bud","well"].forEach(k=>(r[k]||[]).forEach(x=>{for(const y in x)if(x[y]&&typeof x[y]=="object")delete x[y]}));
  (r.subs||[]).forEach(s=>{s.name=S(s.name);if(!/^#[0-9a-f]{6}$/i.test(S(s.col)))s.col="#cfa9ae"});(r.tt||[]).forEach(x=>{x.day=+x.day||0;["start","end","kind","room","teacher","sub"].forEach(k=>x[k]=S(x[k]))});(r.grades||[]).forEach(g=>{g.title=S(g.title);g.sub=S(g.sub);g.date=S(g.date)});(r.adm||[]).forEach(x=>{x.t=S(x.t);x.d=S(x.d);x.done=!!x.done});(r.bud||[]).forEach(x=>{x.label=S(x.label);x.date=S(x.date)});(r.well||[]).forEach(x=>x.date=S(x.date));
  return r}
-try{const _j=localStorage.getItem("journal");if(!_j)D.lang=/^fr/i.test(navigator.language||"fr")?"fr":"en";Object.assign(D,norm(JSON.parse(_j||"{}")))}catch(e){}
+try{const _j=localStorage.getItem("journal");if(!_j)D.lang="en";Object.assign(D,norm(JSON.parse(_j||"{}")))}catch(e){}
 const LOCS={fr:"fr-FR",en:"en-GB",es:"es-ES",de:"de-DE"};let LOC=LOCS[D.lang]||"fr-FR";
 let SF=0;const save=()=>{try{localStorage.setItem("journal",JSON.stringify(D));if(SF){SF=0;$("#sw-warn").hidden=true}}catch(e){SF=1;$("#sw-warn").hidden=false}},upd=()=>{save();render()};
 let today=new Date();let mode="month",cur=new Date(),pend="",qi=null;
