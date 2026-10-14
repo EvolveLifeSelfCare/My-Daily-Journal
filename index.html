@@ -480,7 +480,7 @@ sub("#f-pz",()=>{const u=nu($("#pz-u").value);if(u)D.pz.push({id:uid(),n:$("#pz-
 sub("#f-fc",()=>D.cards.push({id:uid(),deck:$("#fc-d").value.trim(),q:$("#fc-q").value.trim(),a:$("#fc-a").value.trim(),sub:$("#fc-sub").value}));
 
 /* Minuteur et chronomètre basés sur l'horloge (pas de dérive) */
-const mm=s=>String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0"),mins=()=>Math.min(180,Math.max(1,+$("#tm-min").value||25));
+const mm=s=>{const p=n=>String(n).padStart(2,"0"),h=Math.floor(s/3600);return (h?h+":":"")+p(Math.floor(s%3600/60))+":"+p(s%60)},mins=()=>Math.min(180,Math.max(1,+$("#tm-min").value||25));
 const T={left:1500,end:0,iv:0,on:false};
 let BC;function beep(){try{BC=BC||new AudioContext();BC.resume();const c=BC,o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=660;g.gain.value=.08;o.start();o.stop(c.currentTime+.4)}catch(e){}}
 function tick(){T.left=Math.max(0,Math.ceil((T.end-Date.now())/1000));$("#tm").textContent=mm(T.left);if(!T.left){clearInterval(T.iv);T.on=false;$("#tm-s").textContent="Démarrer";const wk=!($("#pm").checked&&PM.ph=="b");if(wk){const mn=Math.round((T.tot||mins()*60)/60);D.rev[iso(today)]=(D.rev[iso(today)]||0)+mn;const sb=$("#tm-sub").value;if(sb)D.revS[sb]=(D.revS[sb]||0)+mn}T.run=0;save();rToday();beep();pomoNext()}}
